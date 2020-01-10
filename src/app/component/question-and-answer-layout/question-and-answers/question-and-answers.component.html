@@ -1,0 +1,117 @@
+           
+<div style="background-color: #F7F7F7">
+
+    <div class="row" >
+        <h4 style="text-align:center" > create a question</h4>
+        <hr>
+        <div class="col-lg-11"> 
+            <app-question-controller (answertypeEvent)="receiveAnswerType($event)" [dropdownDisable]="qTypeDisable"></app-question-controller>
+        </div>
+        <div class="col-lg-1"  *ngIf="viewAnswerRowAddButton"><button type="button" (click)="onAddAnswer()" ><i class="material-icons" ></i> </button></div>
+      </div>
+      <div *ngIf="!viewmatrix" class="items-container"  cdkDropList (cdkDropListDropped)="drop($event)">
+          <div class="item" cdkDrag *ngFor="let addAnswerRow of addAnswerRows; let in = index"> 
+             <div class="item-content col-sm-6" *ngIf="answerType.type != 'dateRange' ">
+               <div class="row">
+                   <div class="col-lg-6">
+                       <app-input-component [type]="answerType.type"></app-input-component>
+                   </div>
+                   <div class="col-lg-6" >
+
+                       <input type="text" #typedAnswer placeholder="Enter an Answer choice" required class="form-control" name="getAnswer">
+                   </div>
+               </div>
+             </div>
+             <div *ngIf="answerType.type == 'dateRange'">
+
+                <app-input-component #typedAnswer [type]="answerType.type"> </app-input-component>
+               
+             </div>
+            
+
+             <div class="col-sm-6" *ngIf="answerRemoveButton">
+               <a data-toggle="modal"><i class="material-icons" (click)="onRemoveAnswer(in)"></i></a>						
+             </div>
+
+           </div>
+      </div>
+
+     <!-- this is for matrix table -->
+     <div *ngIf="viewmatrix">
+
+
+      
+        
+            <!-- levels -->
+            <div>
+                
+                    <label>levels</label>
+                    <div class="col-lg-1"><a data-toggle="modal"><i class="material-icons" (click)="onAddLevels()"></i> </a></div>
+    
+                    <div class="items-container"  cdkDropList (cdkDropListDropped)="dropForLevels($event)">
+                            <div class="item" cdkDrag *ngFor="let addAnswerRow of addLevelRows; let in = index"> 
+                            
+                                    <input type="text" #level placeholder="Enter an Answer choice" class="form-control" name="getAnswer">
+                              
+                  
+                               <div class="col-sm-6">
+                                 <a data-toggle="modal"><i class="material-icons" (click)="onRemoveLevel(in)"></i></a>						
+                               </div>
+                  
+                             </div>
+                    </div>
+                    
+             </div>
+    
+            <!-- points -->
+            <div>
+                    
+                        <label>points</label>
+                        <div class="col-lg-1" ><a data-toggle="modal"><i class="material-icons" (click)="onAddPoints()"></i> </a></div>
+                        
+                        <div  class="items-container"  cdkDropList (cdkDropListDropped)="dropForPoints($event)">
+                                <div class="item" cdkDrag *ngFor="let addAnswerRow of addPointRows; let in = index"> 
+                                
+                                        <input type="text" #point placeholder="Enter an Anser choice" class="form-control" name="getAnswer">
+                                  
+                      
+                                   <div class="col-sm-6">
+                                     <a data-toggle="modal"><i class="material-icons" (click)="onRemovePoint(in)"></i></a>						
+                                   </div>
+                      
+                                 </div>
+                        </div>
+                        
+             </div>
+         
+
+     </div>
+
+
+      <div *ngIf="answerType">
+      <input type="checkbox" [(ngModel)]="required">
+      <label>required</label>
+      </div>
+
+      <!-- <div>
+          <strong>Error!</strong> A problem has been occurred while submitting your data.
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+      </div> -->
+      <div class="alert alert-warning" *ngIf="viewmassege">
+          <strong>Error!</strong> fill the all Answer input field And Question
+        </div>
+  
+      <div class="row" *ngIf="viewAddButton" style="text-align:right;">
+          <a style="margin: 5px;" class="btn btn-primary" (click)="onAdd()"><span>Add</span></a>
+          <a style="margin: 5px;" class="btn btn-primary" (click)="onCancel()"><span>Cancel</span></a>
+          <a style="margin: 5px;" class="btn btn-primary" (click)="onReSet()"><span>ReSet</span></a>
+      </div>
+    
+
+</div>
+           
+
+           
+      
+            
+         

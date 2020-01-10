@@ -1,0 +1,149 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+                        <h1 style="text-align:center">Create Your Own Question And Answer Survey </h1>
+
+                        <!-- The preview shown when atlease ONE QUESTION is created -->
+                        <div *ngIf="qaObjects.length!==0" style="background-color:#DFE3EE">
+                            
+                            <h4 style="text-align:center">Preview</h4>
+                            <!-- items -->
+                            <div class="items-container" cdkDropList (cdkDropListDropped)="drop($event)">
+                                  <!-- item -->
+                                <div class="item" cdkDrag *ngFor="let qaObject of qaObjects;let i = index">
+                                     <!-- question -->
+                                    <div class="row question">
+                                        <div class="col-md-10" style="margin-right: 10px">{{i+1}}&nbsp;<span
+                                           >{{qaObject.question}}</span> </div>
+                                
+                                    
+                                        <div class="col-md-2">
+                                            <button type="button" class="btn btn-danger" (click)="onDelete(i)"
+                                                style=" margin-right: 5px">Delete</button>
+                                            <button type="button" class="btn btn-primary"  [disabled]="qaObjects.length!==0 && viewQuestion" 
+                                                (click)="onEdit(i)">Edit</button>
+                                        </div>
+                                    </div> 
+                                    <!-- !!!question -->
+
+                                     <!-- answer -->
+                                    <div class="row answer">
+                                        <ul class="list-group">
+                                            <!-- answer for matrixTable -->
+                                            <div *ngIf="qaObject.answerType.type =='matrixTable'">
+                                                <app-matrixtable [matrixObject]="qaObject.answerList"></app-matrixtable>
+                                            </div><!-- !!!answer for matrixTable -->
+
+                                             <!-- non matrix -->
+                                            <div *ngIf="qaObject.answerType.type !='matrixTable'">
+
+
+                                                <li *ngFor="let answer of qaObject.answerList" [ngSwitch]="qaObject.answerType.type">
+
+                                                    <div *ngSwitchCase="'radio'" style="display: inline-flex">                                                      
+                                                        <app-input-component [type]="qaObject.answerType.type"
+                                                            [answer]="answer.value" [inputDisable]="true" style=" margin-right: 10px">
+                                                        </app-input-component>
+                                                        <label style="padding-top: 5px">{{answer.value}}</label>
+                                                    </div>
+
+                                                    <div *ngSwitchCase="'checkBox'" style="display: inline-flex">                                                        
+                                                        <app-input-component [type]="qaObject.answerType.type"
+                                                            [answer]="answer.value" [inputDisable]="true" style=" margin-right: 10px">
+                                                        </app-input-component>
+                                                        <label style="padding-top: 5px">{{answer.value}}</label>
+                                                    </div>
+
+                                                    <div *ngSwitchCase="'dateRange'">
+                                                        <app-input-component [type]="qaObject.answerType.type"
+                                                            [answerObject]="answer" [viewQuestion]="true" [inputDisable]="true" 
+                                                            style=" margin-right: 10px"></app-input-component>
+                                                    </div>
+
+                                                    <div *ngSwitchCase="'inputBox'">                                                       
+                                                        <app-input-component [type]="qaObject.answerType.type"
+                                                            [answer]="answer.value" [qalayout]="true" [inputDisable]="true" style=" margin-right: 10px">
+                                                        </app-input-component>
+                                                    </div>
+
+                                                    <div *ngSwitchCase="'textArea'">                                                        
+                                                        <app-input-component [type]="qaObject.answerType.type"
+                                                            [answer]="answer.value" [qalayout]="true" [inputDisable]="true"  style=" margin-right: 10px">
+                                                        </app-input-component>
+                                                    </div>
+
+                                                    <div *ngSwitchCase="'singalDate'">
+                                                        <label>{{answer.date}}</label>
+                                                        <app-input-component [type]="qaObject.answerType.type"
+                                                            [answer]="answer.value" [inputDisable]="true"  style=" margin-right: 10px">
+                                                        </app-input-component>
+                                                    </div>
+
+                                                    <div *ngSwitchCase="'rating'">                                                     
+                                                        <app-input-component [type]="qaObject.answerType.type"
+                                                            [answer]="answer.value" [inputDisable]="true" style=" margin-right: 10px">
+                                                        </app-input-component>
+                                                    </div>
+
+                                                </li>
+                                            </div> <!-- !!!!!non matrix -->
+                                        </ul>
+                                    </div> <!-- !!!!answer -->
+                                    
+                                    <!-- for edit -->
+                                    <div>
+                                        <app-question-and-answers *ngIf="viewQuestion && editQuestion && objectIndex == i " (viewQuestion)=showQuesAnsComponent($event)
+                                            (rerunQA)=receiveQuesAns($event)></app-question-and-answers>
+                                    </div>   <!-- !!!!for edit -->
+
+                                </div><!-- !!!! item -->                  
+
+                                <button type="button" class="btn btn-info add-new" (click)="saveAll()"  [disabled]="qaObjects.length!==0 && viewQuestion">Save All</button>
+
+                            </div><!-- !!!!! items -->
+
+                        </div>
+
+
+
+                         <!-- questio-and-answer create -->
+                        <div style="margin-top: 10px">
+                            <app-question-and-answers *ngIf="viewQuestion && !editQuestion"  (viewQuestion)=showQuesAnsComponent($event)
+                                (rerunQA)=receiveQuesAns($event)></app-question-and-answers>
+                        </div><!-- !!!!!questio-and-answer create -->
+
+                        <div class="row">
+                            <hr>
+                            <div class="row" *ngIf="!viewQuestion" style="text-align:center;">
+                                <button type="button" class="btn btn-info add-new"
+                                    (click)="showQuesAnsComponent(true)"><i class="fa fa-plus"></i>ADD QUESTION</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- for  button -->
+<ng-template #saveSurveyModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Realtime suevey is save successfully</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+       
+       <label>saved survey name - </label><h1>{{savedSurveyName}}</h1>
+       <label>saved survey Key- </label><h1>{{surveyKey}}</h1>
+       
+    </div>
+</ng-template>

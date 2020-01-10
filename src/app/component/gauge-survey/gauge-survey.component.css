@@ -1,0 +1,165 @@
+
+.flipster-buttons{
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;  
+    cursor: pointer;   
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+}
+
+.flipster-next{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c500db+1,ff1180+100 */
+    background: #27abf0; /* Old browsers */
+    
+    
+    width: 100px;
+    }
+    
+    .flipster-previous{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff1180+1,c500db+100 */
+    background: #27abf0; /* Old browsers */
+    
+    
+    width:100px;
+    
+    }
+
+
+/* styles for add gauge survey */
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.fade.in {
+    opacity: 1;
+}
+.font-white{
+    color:white
+}
+#reward-page {
+    background-image: url(/assets/dist/img/gauge-ui/reward.png) !important;
+    background-size: cover !important;
+}
+#reward-page input{
+    height: 50px !important;
+    border-radius: 0px !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background-color: #55aef2 !important;
+   color:white;
+    font-size: 20px !important;
+}
+.form-group {
+     margin-bottom: 15px; 
+}
+.btn-white {
+    background-color: white;
+    color: #27abf0;
+    padding: 14px 60px;
+    letter-spacing: 2px;
+}
+.input-group-addon{
+    color: white;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.col-md-4.col-md-8{
+position: relative;
+min-height: 1px;
+padding-right: 15px;
+padding-left: 15px;
+}
+h4.summary-gauge-title.clearfix  {
+    color: #27abf0;
+}
+h4 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500; 
+    line-height: 1.1; 
+}
+.summary-feedback {
+    color: darkgrey;
+}
+h6 {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+td{
+    padding: 0%; 
+}
+table {
+     border-spacing: 0;
+     border-collapse: collapse;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+
+
+#reward-page input::placeholder {
+    color: white;
+    opacity: 1;
+   
+    font-size: 16px;
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: white ;
+	opacity: 0.5; /* Firefox */
+	
+}
+
+
+body{
+    background-image: url(/assets/dist/img/gauge-ui/Vector-Smart-Object.png) !important;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

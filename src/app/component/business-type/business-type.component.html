@@ -1,0 +1,92 @@
+<!-- <div class="wrapper">
+    <app-top-navbar></app-top-navbar>
+    <app-aside-navbar></app-aside-navbar> -->
+  <div class="content-wrapper">
+      <section class="content-header">
+        <section class="content">
+            <div class="box box-primary">
+
+                    <div class="box-header with-border">
+                            <div class="text-left componet-heading">Bussiness Type</div>
+                        </div>
+                        <br>
+
+              <div class="col-sm-3" >
+                    <button type="button" class="btn btn-custom btn-dark-blue pull-left" (click)="openModal(addTemplate)">
+                 + Add Type</button> 
+             </div> 
+
+              <div style="text-align: right" class="clearfix custom-form">
+        
+                    <input class="form-control pull-right" type="text" pInputText size="50" placeholder="Search"
+                        (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+                </div>
+                    <br>
+             
+                <p-table #dt 
+                [columns]="headers"
+                [value]="bussinessType" 
+                [paginator]="true" 
+                [rows]="10" 
+                [responsive]="true" 
+                [resizableColumns]="true" 
+                [columnResizeMode]="'expand'" 
+                [autoLayout]="true"
+                [rowsPerPageOptions]="[10,25,50,100]"
+                >
+                <ng-template  pTemplate="header" let-headers>
+                  <tr><th *ngFor="let th of headers">{{th.header}}</th></tr>
+                  <!-- <tr>
+                    <th *ngFor="let col of headers"  [ngSwitch]="col.field">
+                    <input *ngSwitchCase="'type'" pInputText type="text" style="width: 100px;" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                   </th>
+                  </tr> -->
+                </ng-template>
+            
+                <ng-template pTemplate="body" let-bussinessType let-rowIndex="rowIndex">
+                    <tr>
+                      <td>{{ rowIndex+1}}</td>
+                      <td>{{ bussinessType.type}}</td>                      
+                      <td align="center"><i class="material-icons mi-delete" style="cursor: pointer;" (click)="deleteBusinessType(bussinessType)"> &#xE872; </i></td>                             
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="emptymessage" let-headers>
+                        <tr>
+                            <td [attr.colspan]="headers.length">
+                                <p class="text-center"><b>No records found</b></p>
+                            </td>
+                        </tr>
+                    </ng-template>
+              </p-table>
+           
+
+            </div>
+
+         </section>
+       </section>
+     </div>
+
+      <!-- <app-footer-navbar></app-footer-navbar>
+      <app-settings-navbar></app-settings-navbar>
+</div> -->
+
+<!-- this modal will open when click the add bussiness Type  button -->  
+<ng-template #addTemplate>
+  <div class="modal-header">
+      <h4 class="modal-title pull-left">Bussiness Type</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef_bussinessType.hide()">
+      <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="bussinessTypeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group col-lg-6">
+            <input class="form-control col-lg-4 " formControlName="type"  placeholder="Enter Name" type="text">
+            <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('type')" errorMsg="{{f.type.errors?.required?'Name is required.' : f.type.errors?.minlength?'Name must be at least 2 characters' : ''}}"></app-field-error-display>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</ng-template>

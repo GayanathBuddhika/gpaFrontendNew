@@ -1,0 +1,128 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+
+                        <h2 class="accessible_elem">Your notifications</h2>
+                        <hr>
+                        <div class="box-footer box-comments">
+
+                       
+
+                         
+                                <div class="box-comment" *ngFor="let notification of firebaseNotification | async; let i = index ">
+                                    <!-- User image -->
+
+                                    <!-- <div  dImg="getImage(notification.payload.doc.data().username)">{{dImg}}
+                                        <div *ngIf="dImg | async as url">     
+                                            <img [src]=" url"  class="img-circle" style="max-width: 40px"><br>
+                                        </div>
+                                    </div>  -->
+
+                                   
+                                  
+
+                                    <div class="comment-text">
+                                            <span class="pull-left">{{i +1}}</span>
+                                        <span *ngIf="username == notification.payload.doc.data().username">
+                                            <span class="username">
+                                                You 
+                                                <span class="text-muted pull-right">{{notification.payload.doc.data().dateTime | timeSince}}</span>
+                                            </span><!-- /.username -->
+
+                                            have {{notification.payload.doc.data().message}}
+                                        </span>
+
+                                        <span *ngIf="username !== notification.payload.doc.data().username">
+                                            <span class="username">
+                                                {{notification.payload.doc.data().fullname | titlecase }}
+                                                <span class="text-muted pull-right">{{notification.payload.doc.data().dateTime | timeSince}}</span>
+                                            </span><!-- /.username -->
+
+                                            {{notification.payload.doc.data().message}}
+                                        </span>
+
+
+                                    </div>
+                                    <!-- /.comment-text -->
+                                </div>
+
+                           
+
+                            <!-- <a class="list-group-item">
+                                {{i+1}}
+                                <p class="list-group-item-heading"
+                                    *ngIf="(username == notification.payload.doc.data().username)">
+                                    <b>You have </b>
+                                    {{notification.payload.doc.data().message}}</p>
+                                <p class="list-group-item-heading"
+                                    *ngIf="(username !== notification.payload.doc.data().username)">
+                                    <b>{{notification.payload.doc.data().fullname | titlecase }}
+                                    </b> has {{notification.payload.doc.data().message}}</p>
+
+                                <h4 class="list-group-item-text">
+                                    <small><i class="fa fa-clock-o"></i> {{timeList[in]}}</small>
+                                </h4>
+                            </a> -->
+
+                            <!-- {{n.payload.doc.data() | json}} -->
+                            <!-- <a class="list-group-item">
+                                {{in}}
+                                <p class="list-group-item-heading" *ngIf="(username == n.username)"> <b>You have </b>
+                                    {{n.message}}</p>
+                                <p class="list-group-item-heading" *ngIf="(username !== n.username)">
+                                    <b>{{n.fullname | titlecase }}
+                                    </b> has {{n.message}}</p>
+
+                                <h4 class="list-group-item-text">
+                                    <small><i class="fa fa-clock-o"></i> {{timeList[in]}}</small>
+                                </h4>
+                            </a> -->
+
+                        </div>
+
+                        <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+                            (scrolled)="onScroll()">
+                        </div>
+
+                        <div *ngIf="!finished">
+                            Loading more notifications...
+                        </div>
+
+
+                        <div *ngIf="finished">
+                            End of database... That's all folks!
+                        </div>
+                 
+                </div>
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- <div *ngFor="let n of notification | async">
+
+
+  <h2>{{ n.fullname }}</h2>
+  <p>Released in {{ n.message }}</p>
+
+</div> -->
+
+<!-- <div
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="1000"
+(scrolled)="onScroll()">
+</div>
+
+<div *ngIf="!finished">
+Loading more movies...
+</div>
+
+
+<div *ngIf="finished">
+End of database... That's all folks!
+</div> -->

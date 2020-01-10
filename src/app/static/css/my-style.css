@@ -1,0 +1,214 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+body .container.body .right_col{background:#fff !important;}
+
+.amcharts-chart-div>a
+{
+display:none !important;
+}
+/*glyphicon for validation ok and remove*/
+.glyphicon-ok
+{
+	color:green !important;
+}
+.glyphicon-remove
+{
+	color:red !important;
+}
+
+/* page loader */
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../img/loader.gif') center no-repeat #fff;
+}
+
+td.details-control {
+	background: url('../img/plus.png') no-repeat center center !important;
+	cursor: pointer;
+	width:10px !important;
+	height:10px !important;
+   
+}
+
+tr.details td.details-control {
+	background: url('../img/minus.png') no-repeat center center !important;
+	max-width:10px;
+	max-height:10px;
+  
+}
+
+.font-white{
+	color:white;
+}
+
+
+.text-3d{
+   
+   color: #091b3a;
+   font-family: Arial Black, Gadget, sans-serif;
+   text-shadow: 0px 0px 0 rgb(226,-29,-29),1px 1px 0 rgb(196,-59,-59),2px 2px 0 rgb(167,-88,-88),3px 3px 0 rgb(138,-117,-117),4px 4px 0 rgb(108,-147,-147),5px 5px 0 rgb(79,-176,-176),
+6px 6px  0 rgb(50,-205,-205),7px 7px 6px rgba(0,0,0,0.42),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2)
+}
+
+.text-red{
+	color:red;
+}
+
+.bg-red{
+	background-color:red;
+}
+
+.bg-orange{
+	background-color:orange;
+}
+.bg-blue{
+	background-color:#0a426d;
+}
+
+
+
+
+/* ------------------------ button ------------------------------ */
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden; 
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px #154c86;
+  background-color: #247edd;
+  background-clip: padding-box;
+  border: 1px solid;
+  border-color: #1c65b2 #18589c #18589c;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+}
+
+.btn:before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  bottom: -25%;
+  left: -20%;
+  right: -20%;
+  border-radius: 50%;
+  background: transparent;
+  -webkit-box-shadow: inset 0 0 38px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 38px rgba(255, 255, 255, 0.5);
+}
+
+.btn:hover { background-color: #1a74d3; }
+
+.btn:active {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 -1px #154c86;
+  background: #1f71c8;
+  border-color: #113f70 #154c86 #1c65b2;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.4);
+  background-image: -webkit-linear-gradient(top, #1a5da5, #3a8be0);
+  background-image: -moz-linear-gradient(top, #1a5da5, #3a8be0);
+  background-image: -o-linear-gradient(top, #1a5da5, #3a8be0);
+  background-image: linear-gradient(to bottom, #1a5da5, #3a8be0);
+}
+
+.btn:active:before {
+  top: -50%;
+  bottom: -125%;
+  left: -15%;
+  right: -15%;
+  -webkit-box-shadow: inset 0 0 96px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 96px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success, {
+  text-shadow: 0 1px #0d4d09;
+  background-color: #1ca913 !important;
+  border-color: #147b0e #11640b #11640b;
+}
+
+.btn-success:hover { background-color: #159b0d; }
+
+.btn-success:active {
+  text-shadow: 0 -1px #0d4d09;
+  background: #189210;
+  border-color: #093606 #0d4d09 #147b0e;
+  background-image: -webkit-linear-gradient(top, #126d0c, #20c016);
+  background-image: -moz-linear-gradient(top, #126d0c, #20c016);
+  background-image: -o-linear-gradient(top, #126d0c, #20c016);
+  background-image: linear-gradient(to bottom, #126d0c, #20c016);
+}
+
+.btn-danger {
+  text-shadow: 0 1px #72100d;
+  background-color: #cd1d18;
+  border-color: #9f1713 #891310 #891310;
+}
+
+.btn-danger:hover { background-color: #c01511; }
+
+.btn-danger:active {
+  text-shadow: 0 -1px #72100d;
+  background: #b61a15;
+  border-color: #5b0d0b #72100d #9f1713;
+  background-image: -webkit-linear-gradient(top, #921511, #e4201b);
+  background-image: -moz-linear-gradient(top, #921511, #e4201b);
+  background-image: -o-linear-gradient(top, #921511, #e4201b);
+  background-image: linear-gradient(to bottom, #921511, #e4201b);
+}
+
+
+.text-bold{
+	font-weight: 700;
+}
+
+
+/*Imgae circle */
+img.circle-avatar{
+	 /* make it responsive */
+    max-width: 100%;
+    width:100%;
+    height:auto;
+    display:block;
+    /* div height to be the same as width*/
+    padding-top:100%;
+    
+    /* make it a cirkle */
+    border-radius:50%;
+    
+    /* Centering on image`s center*/
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    
+    /* it makes the clue thing, takes smaller dimention to fill div */
+    background-size: cover;
+
+    /* it is optional, for making this div centered in parent*/
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.select2{
+	width:100%!important;
+}
+

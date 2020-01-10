@@ -1,0 +1,161 @@
+
+ 
+
+
+  <!--for get DublicateEmployee get button -->
+
+
+
+  <div style="text-align: right" class="clearfix custom-form">
+        <button type="button" class="btn btn-custom btn-dark-red" data-toggle="modal" (click)="onClickDublicate()">Get duplicate records</button>
+        <input class="form-control pull-right" type="text" pInputText size="50" placeholder="Search"
+            (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+    </div>
+        <br>
+
+
+
+    <p-table #dt 
+    [columns]="headers"
+    [value]="employeeList" 
+    [paginator]="true" 
+    [rows]="10" 
+    [responsive]="true" 
+    [resizableColumns]="true" 
+    [columnResizeMode]="'expand'" 
+    [autoLayout]="true"
+    [rowsPerPageOptions]="[10,25,50,100]"
+    >
+
+          <ng-template  pTemplate="header" let-headers>
+            <!-- this is for table headers -->
+            <tr>
+              <th *ngFor="let th of headers">
+                {{th.header}}
+
+              </th>
+            </tr>
+            <!-- this is for table input field -->
+            <!-- using that you can search nay data in the table in paticuler field -->
+            <!-- <tr>
+              <th *ngFor="let col of headers"  [ngSwitch]="col.field">
+                <input *ngSwitchCase="'firstname'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'lastname'" pInputText  type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'email'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'phone'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'branch'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'department'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                
+              </th>
+            </tr> -->
+          </ng-template>
+          <!-- this is for table body -->
+          <ng-template pTemplate="body" let-employee let-rowIndex="rowIndex">
+              <tr>
+                <td>{{ rowIndex+1}}</td>
+                <td>{{ employee.firstname}}</td>
+                <td>{{ employee.lastname}}</td>
+                <td>{{ employee.email}}</td>
+                <td>{{ employee.phone}}</td>
+                <td>{{ employee.assignDeptToBranch.branch.name}}</td>
+                <td>{{ employee.assignDeptToBranch.department.name}}</td>
+                <td align="center"><i class="fa fa-edit fa-2x text-blue" style="cursor: pointer;" (click)="update(employee,edit)"></i></td>
+                <td align="center"><i class="fa fa-trash fa-2x text-red" style="cursor: pointer;" (click)="delete(employee)"></i></td>                     
+              </tr>    
+          </ng-template>
+          <ng-template pTemplate="emptymessage" let-headers>
+                <tr>
+                    <td [attr.colspan]="headers.length">
+                        <p class="text-center"><b>No records found</b></p>
+                    </td>
+                </tr>
+            </ng-template>
+
+    </p-table>
+
+
+
+<!-- for Dublicate employee table -->
+<div *ngIf="clickDuplicateButton">
+    <hr>
+
+        <div class="box-header with-border">
+                <div class="text-left componet-heading">Employee duplicate records</div>
+            </div>
+            <br>
+
+  <p-table #dt 
+  [columns]="headersD"
+  [value]="dublicateEmployee" 
+  [paginator]="true" 
+  [rows]="10" 
+  [responsive]="true" 
+  [resizableColumns]="true" 
+  [columnResizeMode]="expand" 
+  [autoLayout]="true"
+  [rowsPerPageOptions]="[10,25,50,100]"
+  >
+
+        <ng-template  pTemplate="header" let-headersDuplicate>
+          <!-- this is for table headers -->
+          <tr>
+            <th *ngFor="let th of headersDuplicate">
+              {{th.header}}
+
+            </th>
+          </tr>
+          <!-- this is for table input field -->
+          <!-- using that you can search nay data in the table in paticuler field -->
+          <!-- <tr>
+            <th *ngFor="let col of headers"  [ngSwitch]="col.field">
+              <input *ngSwitchCase="'firstname'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+              <input *ngSwitchCase="'lastname'" pInputText  type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+              <input *ngSwitchCase="'email'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+              <input *ngSwitchCase="'phone'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+              <input *ngSwitchCase="'branch'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+              <input *ngSwitchCase="'department'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+              <div *ngSwitchCase="'edit'">
+                  <input #forAllcheckboxes type="checkbox" (change)='onChangeAllcheckboxes($event)'>
+                  <i class="fa fa-trash fa-2x text-red" style="cursor: pointer;" (click)="deleteChecked()"></i>
+                </div>
+            </th>
+          </tr> -->
+        </ng-template>
+        <!-- this is for table body -->
+        <ng-template pTemplate="body" let-employee let-rowIndex="rowIndex">
+            <tr>
+              <td>{{ rowIndex+1}}</td>
+              <td>{{ employee.firstname}}</td>
+              <td>{{ employee.lastname}}</td>
+              <td>{{ employee.email}}</td>
+              <td>{{ employee.phone}}</td>
+              <td>{{ employee.assignDeptToBranch.branch.name}}</td>
+              <td>{{ employee.assignDeptToBranch.department.name}}</td>
+              <td align="center"><input #checkboxes type="checkbox" (change)='onChange($event,employee)'></td>
+              <td align="center"><i class="fa fa-trash fa-2x text-red" style="cursor: pointer;" (click)="delete(employee)"></i></td>                     
+            </tr>    
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage" let-headersDuplicate>
+                <tr>
+                    <td [attr.colspan]="headers.length">
+                        <p class="text-center"><b>No duplicate records found</b></p>
+                    </td>
+                </tr>
+            </ng-template>
+
+  </p-table>
+</div>
+
+<!-- for edit button -->
+<ng-template #edit>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add new User</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-employee-add  [setEditEmployee]="editEmployee" [edit]="true"></app-employee-add>
+    </div>
+</ng-template>

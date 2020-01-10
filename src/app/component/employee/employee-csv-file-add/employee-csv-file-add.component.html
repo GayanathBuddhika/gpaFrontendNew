@@ -1,0 +1,115 @@
+
+    <form [formGroup]="employeeCsvFileForm" (ngSubmit)="onsubmit()" enctype="multipart/form-data" class="custom-form">
+   
+      
+      <div class="box box-primary">
+          <div class="col-lg-offset-11 col-md-offset-11 col-sm-offset-11">
+              <span><b> required</b></span><span style="color: red">*</span>
+          </div>
+
+        <div class="row">
+              <!-- for company list --> 
+              <div class="form-group col-lg-4">
+                <label class="control-label">Company</label><span style="color: red">*</span>           
+                <p-dropdown   formControlName="company" #com  (onChange)="onSelectedCompnay($event.value)"  [options]="filterCompany" [filter]="true" optionLabel="name" placeholder="Select a company" [style]="{'width':'100%'}"></p-dropdown>          
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('company')" errorMsg="Company is required"></app-field-error-display>
+              </div>
+        
+        
+              <!-- for branch list -->
+              <div class="form-group col-lg-4">
+                <label class="control-label">Branch</label><span style="color: red">*</span>           
+                <p-dropdown  formControlName="branch" #branchAdd  (onChange)="onSelectBranch($event.value)"[options]="filterBranchs" [disabled]="!com.value"  [filter]="true" optionLabel="name"   placeholder="Select a brach"  [style]="{'width':'100%'}"></p-dropdown>          
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('branch')" errorMsg="Company is required"></app-field-error-display>
+              </div>
+        
+              <!-- for department list -->
+              <div class="form-group col-lg-4">
+                <label class="control-label">Department</label><span style="color: red">*</span>            
+                <p-dropdown formControlName="department" [options]="filterdepartments"  [filter]="true" optionLabel="name"  [disabled]="!branchAdd.value" placeholder="Select a department" [style]="{'width':'100%'}"></p-dropdown>          
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('department')" errorMsg="Company is required"></app-field-error-display>
+              </div>
+        </div>
+    
+        <div class="row">
+              <div class="form-group col-lg-4">
+                <label class="control-label">Upload CSV file</label><span style="color: red">*</span>
+                <input #csvUploadFile type="file" id="company_image" class="form-control" formControlName="csvFile" name="file">
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('csvFile')" errorMsg="{{f.csvFile.errors?.required?'csv file required':f.csvFile.errors?.pattern?'upload only CSV file':''}}"></app-field-error-display>
+                  <!-- for download empty csv file -->
+                <button type="button" pButton icon="fa-file" iconPos="left" label="Download empty CSV file" (click)="dt.exportCSV({selectionOnly:true})" style="float:right"></button>
+              </div>  
+              
+        </div>
+          
+        
+        <div class="box-footer">
+
+          
+                <div class="text-center">
+                    <button type="submit" class="btn-lg btn-custom btn-success" >Submit</button>
+                    <button type="button" (click)="onReset()" class="btn-lg  btn-custom btn-dark-red" >Reset</button>
+                </div>
+            </div>
+    
+      </div>        
+    </form>
+    
+
+
+
+<h2>Error employee details</h2>
+  <div class="table-responsive">
+      <p-table #dt 
+      [columns]="headers"
+      [value]="employeeList" 
+      [paginator]="true" 
+      [rows]="10" 
+      [responsive]="true" 
+      [resizableColumns]="true" 
+      [columnResizeMode]="'expand'" 
+      [autoLayout]="true"
+      [rowsPerPageOptions]="[10,25,50,100]"
+      selectionMode="multiple"
+      [(selection)]="selectedEmployee"
+      >
+
+        <ng-template pTemplate="caption">
+          <div class="ui-helper-clearfix">
+              <button type="button" [disabled]="disableAllDataButton" pButton icon="fa-file-o" iconPos="left" label="All Data via CSV file" (click)="dt.exportCSV()" style="float:left"></button>
+              <button type="button" [disabled]="disableAllDataButton"  pButton icon="fa-file" iconPos="left" label="Download empty CSV file" (click)="dt.exportCSV({selectionOnly:true})" style="float:right"></button>
+          </div>
+        </ng-template>
+  
+        <ng-template  pTemplate="header" let-headers>
+            <!-- this is for table headers -->
+            <tr>
+              <th *ngFor="let th of headers">
+                {{th.header | uppercase}}
+
+              </th>
+            </tr>
+            <!-- this is for table input field -->
+            <!-- using that you can search nay data in the table in paticuler field -->
+            <tr>
+              <th *ngFor="let col of headers"  [ngSwitch]="col.field">
+                <input *ngSwitchCase="'firstname'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'lastname'" pInputText  type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'email'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                <input *ngSwitchCase="'phone'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                
+              </th>
+            </tr>
+        </ng-template>
+        <!-- this is for table body -->
+        <ng-template pTemplate="body" let-employee let-rowIndex="rowIndex">
+              <tr [pSelectableRow]="employee">
+                <td>{{ employee.firstname}}</td>
+                <td>{{ employee.lastname}}</td>
+                <td>{{ employee.email}}</td>
+                <td>{{ employee.phone}}</td>
+              </tr>    
+        </ng-template>  
+      </p-table>
+  </div>  
+

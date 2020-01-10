@@ -1,0 +1,258 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+
+                            <div class="box-header with-border">
+                                    <div class="text-left componet-heading">Customer Report</div>
+                                </div>
+                                <br>
+
+
+                        <div class="col-lg-5 form-group ">
+                            <label class="control-label col-md-4">REPORT TYPE</label>
+                            <div class="col-md-8">
+                                <p-dropdown appendTo="body" placeholder="Select a report type" #customerType
+                                    (onChange)="getCustomerType()" [(ngModel)]="getReportType" [options]="reportType"
+                                    optionLabel="name" [style]="{'width':'100%'}">
+                                </p-dropdown>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+
+
+                        <div class="col-lg-5 form-group">
+                            <label class="control-label col-md-4">START DATE</label>
+                            <div class="col-md-8">
+                                <input type="text" #dp="bsDatepicker" bsDatepicker [(ngModel)]="startDate"
+                                    class="form-control" [maxDate]="today" #stdate [disabled]="!customerType.value">
+                                <div class="custom-content" *ngIf="dp.isOpen">
+                                    <a>{{myDateValue | date:'short'}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 form-group">
+                            <label class="control-label col-md-4">END DATE</label>
+                            <div class="col-md-8">
+                                <input type="text" #dp="bsDatepicker" bsDatepicker #enddate [(ngModel)]="endDate"
+                                    class="form-control" [minDate]="startDate" [maxDate]="today"
+                                    [disabled]="!stdate.value">
+                                <div class="custom-content" *ngIf="dp.isOpen">
+                                    <a>{{myDateValue | date:'short'}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2">
+                                <button type="button" (click)=getTimePeriod() class="btn btn-custom btn-dark-blue" [disabled]="!enddate.value">Check</button>
+                        </div>
+
+
+
+                        <!-- <div class="row">
+                                    <div class="form-group col-sm-5">
+                                        <label class="control-label col-md-7">Minimum Number of Visits :</label>
+                                        <input class="form-control col-md-4" [(ngModel)]="minVisit" type="number">
+                                    </div>
+                                    <div class="form-group col-sm-5">
+                                        <label class="control-label col-md-7">Maximum Number of Visits :</label>
+                                        <input class="form-control col-md-4" [(ngModel)]="maxVisit" type="number">
+                                    </div>
+                                </div> -->
+                        <br>
+
+
+                        <div class="col-lg-5 form-group">
+                            <label class="control-label col-md-4">Minimum Visits</label>
+                            <div class="col-md-8">
+                                <input class="form-control" [(ngModel)]="minVisit" type="number">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 form-group">
+                            <label class="control-label col-md-4">Maximum Visits</label>
+                            <div class="col-md-8">
+                                <input class="form-control" [(ngModel)]="maxVisit" type="number">
+                            </div>
+                        </div>
+
+                        
+                        <div class="clearfix"></div>
+                            
+                        <br>
+                        <!-- <hr>
+
+                            <div class="row">
+
+                                <div class="col-sm-5">
+                                    <div class="row form-group">
+                                        <label class="control-label col-md-4">start Date and time</label>
+                                        <div class="col-md-7">
+                                            <input type="text" #dp="bsDatepicker" bsDatepicker [(ngModel)]="startDate"
+                                                [maxDate]="today" #stdate [disabled]="!customerType.value">
+                                            <div class="custom-content" *ngIf="dp.isOpen">
+                                                <a>{{myDateValue | date:'short'}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <div class="row form-group">
+                                        <label class="control-label col-md-4">end Date and time</label>
+                                        <div class="col-md-7">
+                                            <input type="text" #dp="bsDatepicker" bsDatepicker #enddate
+                                                [(ngModel)]="endDate" [minDate]="startDate" [maxDate]="today"
+                                                [disabled]="!stdate.value">
+                                            <div class="custom-content" *ngIf="dp.isOpen">
+                                                <a>{{myDateValue | date:'short'}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <button type="button" (click)=getTimePeriod() class="btn btn-primary"
+                                        [disabled]="!enddate.value">Check
+                                    </button>
+                                </div>
+                            </div> -->
+
+                            <div style="text-align: right" class="clearfix custome-form">
+        
+                                    <input class="form-control pull-right" type="text" pInputText size="50" placeholder="Search"
+                                        (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+                                </div>
+                                    <br>
+
+
+                        <p-table #dt [columns]="headers"
+                            [value]="frequencyCustomerList | filterMinMax:minVisit:maxVisit" [paginator]="true"
+                            [rows]="10" [responsive]="true" [resizableColumns]="true" [columnResizeMode]="'expand'"
+                            [autoLayout]="true" [rowsPerPageOptions]="[10,25,50,100]">
+                            <ng-template pTemplate="header" let-headers>
+                                <tr>
+                                    <th *ngFor="let th of headers"
+                                        style="text-transform: uppercase; background-color:#5893d4; color: white;">
+                                        {{th.header}}</th>
+                                </tr>
+                                <tr>
+                                    <th *ngFor="let col of headers" [ngSwitch]="col.field">
+                                        <input *ngSwitchCase="'title'" pInputText type="text" style="width: 100px;"
+                                            (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                                    </th>
+                                </tr>
+                            </ng-template>
+
+                            <ng-template pTemplate="body" let-frequencyCustomer let-rowIndex="rowIndex">
+                                <tr>
+                                    <td>{{ rowIndex+1}}</td>
+                                    <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                        {{ frequencyCustomer.name}}</td>
+                                    <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                        {{ frequencyCustomer.phone}}</td>
+                                    <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                        {{ frequencyCustomer.email}}</td>
+                                    <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                        {{ frequencyCustomer.visit}}</td>
+                                    <td><button type="button" class="cus btn btn-success"
+                                            (click)="viewSurveys(frequencyCustomer,actionTemplate)">View
+                                            Surveys</button></td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="emptymessage" let-headers>
+                                    <tr>
+                                        <td [attr.colspan]="headers.length">
+                                            <p class="text-center"><b>No records found</b></p>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                        </p-table>
+
+
+
+
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<!-- this modal will open when click the action  button -->
+<ng-template #actionTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Submitted Survey Values</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef_action.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="table-responsive">
+                <p-table #dt2 [columns]="headers" [value]="frequencyCustomerViewSurveysList" [paginator]="true"
+                    [rows]="10" [responsive]="true" [resizableColumns]="true" [columnResizeMode]="expand"
+                    [autoLayout]="true" [rowsPerPageOptions]="[10,25,50,100]">
+                    <ng-template pTemplate="header" let-headers>
+                        <tr>
+                            <th *ngFor="let th of headers2"
+                                style="text-transform: uppercase; background-color:#5893d4; color: white;">{{th.field}}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th *ngFor="let col of headers2" [ngSwitch]="col.field">
+
+                                <input *ngSwitchCase="'surveyname'" pInputText type="text" style="width: 100px;"
+                                    (input)="dt2.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                                <input *ngSwitchCase="'surveytype'" pInputText type="text" style="width: 100px;"
+                                    (input)="dt2.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                                <input *ngSwitchCase="'branchname'" pInputText type="text" style="width: 100px;"
+                                    (input)="dt2.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                                <input *ngSwitchCase="'departmentname'" pInputText type="text" style="width: 100px;"
+                                    (input)="dt2.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+
+                            </th>
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="body" let-frequencyCustomerviewSurvey let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{ rowIndex+1}}</td>
+                            <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                {{frequencyCustomerviewSurvey.survey.name}}</td>
+                            <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                {{frequencyCustomerviewSurvey.survey.surveyType.name}}</td>
+                            <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                {{frequencyCustomerviewSurvey.assignDeptToBranch.branch.name}}</td>
+                            <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                {{frequencyCustomerviewSurvey.assignDeptToBranch.department.name}}</td>
+                            <td><button type="button" class="cus btn btn-success"
+                                    (click)="getWeightedAvg(frequencyCustomerviewSurvey,weightedAvg)">Action</button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+
+
+    </div>
+</ng-template>
+
+<ng-template #weightedAvg>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Survey Values</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef_weightedAvg.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p-chart type="line" [data]="chartData" [options]="options" width="400px" height="400px" [responsive]="true">
+        </p-chart>
+    </div>
+</ng-template>

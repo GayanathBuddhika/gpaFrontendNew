@@ -1,0 +1,161 @@
+
+
+.gradient {
+    background: #27abf0;
+    color: white;
+    text-align: left;
+    
+}
+.welcome {
+  
+    border-left: 10px solid white;
+    font-size: 34px;
+    padding-left: 10px;
+    font-weight: 100;
+    
+}
+
+.find-title {
+    color: #ffd34e;
+}
+.feedbacks{
+    width: 100% !important;
+    outline: 0 !important;
+    border-width: 0 0 2px !important;
+    border-color: white !important;
+    background-color: transparent !important;
+    color: white;
+    font-family: HelveticaNeueLTStd-LtEx;
+    font-size: 17px;
+}
+
+.feedbacks:focus {
+    border-color: white;
+}
+
+.feedbacks, .feedbacks:focus {
+    width: 100% !important;
+    padding: 15px !important;
+}
+
+.gauge-steps, .gauge-table,.summary-table {
+    min-height: 530px; 
+}
+.vertical-align {
+    height: 80px;
+    align-items: top;
+    font-size: 20px;
+    font-family: 'Russo One', sans-serif;
+}
+.col-sm-12{
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+.pointer-level {
+    font-size: 24px;
+    color: black;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    text-transform: capitalize;
+    }
+img {
+    vertical-align: middle;
+}
+.col-sm-12.vertical-align {
+    margin-left: 20px;
+}
+
+.ui-slider{
+    /* background: linear-gradient(to bottom, #c500db 0%, #ff1180 100%) !important; */
+    border-radius: 50px !important;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3) !important;
+    height: 340px !important;
+}
+
+.ui-slider:before {
+    content: '';
+    position: absolute;
+    left: 70%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    transform: rotate(1deg);
+    z-index: 10;
+    box-sizing: border-box;
+}
+.ui-slider:after {
+    content: '';
+    position: absolute;
+    right: 70%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    transform: rotate(-1deg);
+    z-index: 10;
+    box-sizing: border-box;
+}
+ 
+.ui-slider-handle {
+    left: 50% !important;
+    margin-left: -0.9715em !important;
+    height: 2.143em  !important;
+    width: 2.150em  !important;
+    border: 1px solid #ccc !important;
+    /* left: -1px !important; */
+    z-index: 100000 !important;
+    background: white;
+    position: absolute;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    
+    
+}
+ 
+.ui-slider-handle::after{
+    content: "" !important;
+    display: block !important;
+    width: 13px !important;
+    height: 13px !important;
+    margin: auto !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    background: purple  !important;
+    border-radius: 50%;
+ 
+}
+
+body .ui-slider .ui-slider-range {
+    background: linear-gradient(to bottom, #c500db 0%, #ff1180 100%) !important;
+}
+
+   .gauge-table {
+       background-color: white;
+   }
+   
+   .border-right {
+       border-radius: 0px 25px 25px 0px;
+       background-color: white;
+   }
+   
+   .border-left {
+       border-radius: 25px 0px 0px 25px;
+       /* background-color: white; */
+       padding: 40px
+   }
+ 
+   .main-table {
+       width: 1000px
+   }
+   
+
+   
+   
+   
+   
+
+   
+  

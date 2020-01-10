@@ -1,0 +1,490 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+
+                        <div class="box-header with-border">
+                            <div class="text-left componet-heading">Reward Type</div>
+                        </div>
+                        <br>
+
+                        <form [formGroup]="addRewardForm" class="custom-form form-horizontal">
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="control-label col-md-4">Branch</label>
+                                    <div class="col-md-8">
+                                        <p-multiSelect formControlName="branch" [options]="branchList"
+                                            optionLabel="name" #branches [style]="{'width':'100%'}">
+                                        </p-multiSelect>
+                                        <app-field-error-display [errorIcon]="false"
+                                            [displayError]="isFieldValid('branch')"
+                                            errorMsg="{{f.branch.errors?.required?' Select the branches' : ''}}">
+                                        </app-field-error-display>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="control-label col-md-4">Type</label>
+                                    <div class="col-md-8">
+                                        <p-dropdown appendTo="body" placeholder="Select Reward Type"
+                                            [options]="rewardType" optionLabel="name" [disabled]="!branches.value"
+                                            formControlName="type" (onChange)="onChangeRewardType($event.value)"
+                                            [style]="{'width':'100%'}" #type>
+                                        </p-dropdown>
+                                        <app-field-error-display [errorIcon]="false"
+                                            [displayError]="isFieldValid('type')"
+                                            errorMsg="{{f.type.errors?.required?' required' : ''}}">
+                                        </app-field-error-display>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="selectedType">
+                                <div class="form-group col-md-6">
+                                    <label class="control-label col-md-4">Start date</label>
+                                    <div class="col-md-8">
+                                        <input type="text" #dp="bsDatepicker" bsDatepicker [maxDate]="today"
+                                            class="form-control" [disabled]="!type.value" formControlName="startDate"
+                                            #stdate>
+                                        <div class="custom-content" *ngIf="dp.isOpen">
+                                            <a>{{myDateValue | date:'short'}}</a>
+                                        </div>
+                                        <app-field-error-display [errorIcon]="false"
+                                            [displayError]="isFieldValid('startDate')"
+                                            errorMsg="{{f.startDate.errors?.required?' required' : ''}}">
+                                        </app-field-error-display>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="control-label col-md-4">End date</label>
+                                    <div class="col-md-8">
+                                        <input type="text" #dp="bsDatepicker" bsDatepicker [maxDate]="today"
+                                            [minDate]="addRewardForm.get('startDate').value" class="form-control"
+                                            formControlName="endtDate" [disabled]="!stdate.value">
+                                        <div class="custom-content" *ngIf="dp.isOpen">
+                                            <a>{{myDateValue | date:'short'}}</a>
+                                        </div>
+                                        <app-field-error-display [errorIcon]="false"
+                                            [displayError]="isFieldValid('endtDate')"
+                                            errorMsg="{{f.endtDate.errors?.required?' required' : ''}}">
+                                        </app-field-error-display>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-group col-md-2">
+                                    <label class="control-label">Minimum Reward Sentiments</label>
+                                </div>
+                                <div class="col-md-2">
+                                        <p-dropdown appendTo="body" (onChange)="existCustomer()" placeholder="Select Operation" [options]="symbols"
+                                            [style]="{'width':'!00%'}" optionLabel="name" [disabled]="!type.value"
+                                            formControlName="symbol" #sym>
+                                        </p-dropdown>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="custom-content" #snum type="number" min="1" class="form-control"
+                                        formControlName="visitedTime" [disabled]="!sym.value">
+                                    <app-field-error-display [errorIcon]="false"
+                                        [displayError]="isFieldValid('visitedTime')"
+                                        errorMsg="{{f.visitedTime.errors?.required?' required' : ''}}">
+                                    </app-field-error-display>
+                                </div>
+                               
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-custom btn-dark-blue"
+                                        (click)="showCustomerList(showCustomerTemplate)"  [disabled]="(!snum.value)"
+                                        #check>+ Show Customer
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- <div class="form-group">
+                                <label class="control-label col-md-2">Branch</label>
+                                <div class="col-md-4">
+                                        <p-multiSelect formControlName="branch" [options]="branchList"
+                                        [panelStyle]="{minWidth:'12em'}" optionLabel="name" #branches [style]="{'width':'100%'}">
+                                    </p-multiSelect>
+                                </div>
+                            </div>
+
+
+                        
+
+                            <div class="row">
+
+                                <div class="col-sm-5">
+                                    <div class="row form-group" [ngClass]="displayFieldCss('branch')">
+                                        <label class="control-label col-md-4">Branch</label>
+                                        <div class="col-md-8">
+                                            <p-multiSelect formControlName="branch" [options]="branchList"
+                                                [panelStyle]="{minWidth:'12em'}" optionLabel="name" #branches>
+                                            </p-multiSelect>
+                                            <app-field-error-display [errorIcon]="false"
+                                                [displayError]="isFieldValid('branch')"
+                                                errorMsg="{{f.branch.errors?.required?' required' : ''}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <div class="row form-group" [ngClass]="displayFieldCss('type')">
+                                        <label class="control-label col-md-4">Type</label>
+                                        <div class="col-md-8">
+                                            <p-dropdown appendTo="body" placeholder="Select Reward Type"
+                                                [options]="rewardType" optionLabel="name" [disabled]="!branches.value"
+                                                formControlName="type" (onChange)="onChangeRewardType($event.value)"
+                                                #type>
+                                            </p-dropdown>
+                                            <app-field-error-display [errorIcon]="false"
+                                                [displayError]="isFieldValid('type')"
+                                                errorMsg="{{f.type.errors?.required?' required' : ''}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> -->
+
+
+
+                            <!-- <div class="row" *ngIf="selectedType">
+
+                                    <div class="col-sm-5">
+                                        <div class="row form-group" [ngClass]="displayFieldCss('startDate')">
+                                            <label class="control-label col-md-4">Start Date and Time</label>
+                                            <div class="col-md-7">
+                                                <input type="text" #dp="bsDatepicker" bsDatepicker [maxDate]="today"
+                                                    [disabled]="!type.value" formControlName="startDate" #stdate>
+                                                <div class="custom-content" *ngIf="dp.isOpen">
+                                                    <a>{{myDateValue | date:'short'}}</a>
+                                                </div>
+                                                <app-field-error-display [errorIcon]="false"
+                                                    [displayError]="isFieldValid('startDate')"
+                                                    errorMsg="{{f.startDate.errors?.required?' required' : ''}}">
+                                                </app-field-error-display>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <div class="row form-group" [ngClass]="displayFieldCss('endtDate')">
+                                            <label class="control-label col-md-4">End Date and Time</label>
+                                            <div class="col-md-7">
+                                                <input type="text" #dp="bsDatepicker" bsDatepicker [maxDate]="today"
+                                                    [minDate]="addRewardForm.get('startDate').value"
+                                                    formControlName="endtDate" [disabled]="!stdate.value">
+                                                <div class="custom-content" *ngIf="dp.isOpen">
+                                                    <a>{{myDateValue | date:'short'}}</a>
+                                                </div>
+                                                <app-field-error-display [errorIcon]="false"
+                                                    [displayError]="isFieldValid('endtDate')"
+                                                    errorMsg="{{f.endtDate.errors?.required?' required' : ''}}">
+                                                </app-field-error-display>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div> -->
+
+
+
+                            <!-- <div class="row">
+
+                                    <div class="form-group col-sm-5" [ngClass]="displayFieldCss('visitedTime')">
+                                        <label class="control-label col-md-4">Minimum Reward Sentiments :</label>
+                                        <input class="custom-content col-md-7" #snum type="number" min="1"
+                                            formControlName="visitedTime" [disabled]="!type.value">
+                                        <app-field-error-display [errorIcon]="false"
+                                            [displayError]="isFieldValid('visitedTime')"
+                                            errorMsg="{{f.visitedTime.errors?.required?' required' : ''}}">
+                                        </app-field-error-display>
+                                    </div>
+
+                                    <div class="form-group col-sm-5" [ngClass]="displayFieldCss('symbol')">
+                                        <p-dropdown appendTo="body" placeholder="Select Operation" [options]="symbols"
+                                            optionLabel="name" [disabled]="!snum.value" formControlName="symbol" #sym>
+                                        </p-dropdown>
+                                        <app-field-error-display [errorIcon]="false"
+                                            [displayError]="isFieldValid('symbol')"
+                                            errorMsg="{{f.symbol.errors?.required?' required' : ''}}">
+                                        </app-field-error-display>
+                                    </div>
+
+                                    <div class="form-group col-sm-2">
+                                        <button type="button" class="btn btn-primary"
+                                            (click)="showCustomerList(showCustomerTemplate)" [disabled]="!sym.value"
+                                            #check>Show Customer
+                                        </button>
+                                    </div>
+
+                                </div> -->
+
+
+
+                            <div *ngIf="removedCustomer != 0" class="row form-group">
+                                <label class="control-label col-md-3 ">You have removed {{removedCustomer}}
+                                    customers</label>
+                            </div>
+
+                            <div *ngIf="customerList.length != 0" class="row form-group">
+                                <label class="control-label col-md-3 ">Available customers
+                                    {{customerList.length}}</label>
+                            </div>
+
+                            <hr>
+
+
+                            <div class="box-header with-border">
+                                <div class="text-left componet-heading">Reward Details</div>
+                            </div>
+                            <br>
+
+
+
+                            <div class="row form-group">
+                                <label class="control-label col-md-3 ">No. Of Customers :</label>
+                                <div class="col-md-6 ">
+                                    <input class="form-control col-md-7" value="{{customerList.length }}" type="number"
+                                        [disabled]="!check.value">
+                                </div>
+                            </div>
+
+                            <div class="row form-group" [ngClass]="displayFieldCss('title')">
+                                <label class="control-label col-md-3 ">Reward Title</label>
+                                <div class="col-md-6 ">
+                                    <input formControlName="title" l class="form-control col-md-7 " type="text">
+                                    <app-field-error-display 
+                                        [errorIcon]="false" 
+                                        [displayError]="isFieldValid('title')"
+                                        errorMsg="{{f.title.errors?.required?'Title is required.': f.title.errors?.maxlength?'Character should be grater than 50': ''}}">
+                                    </app-field-error-display>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <label class="control-label col-md-3 ">Totle Claims</label>
+
+                                <div class="col-md-6" [ngClass]="displayFieldCss('noOfClaims')">
+
+                                    <label class="radio-inline">
+                                        <input type="radio" formControlName="noOfClaimsValue" name="noOfClaimsValue"
+                                           value="unlimited"> Unlimited
+                                    </label>
+
+                                    <label class="radio-inline">
+                                        <input type="radio" formControlName="noOfClaimsValue" name="noOfClaimsValue"
+                                            value="limited"> Limited<br>
+                                    </label>
+
+                                    <div class="radio-inline" [ngClass]="displayFieldCss('noOfClaims')"
+                                    *ngIf="addRewardForm.get('noOfClaimsValue').value == 'limited'">
+
+                                        <input class="form-control" type="number" formControlName="noOfClaims" placeholder="Type no of claims" class="form-control"
+                                            min="1">
+                                        <app-field-error-display
+                                            *ngIf="addRewardForm.get('noOfClaimsValue').value == 'limited'"
+                                            [errorIcon]="false" [displayError]="isFieldValid('noOfClaims')"
+                                            errorMsg="{{f.noOfClaims.errors?.required?' No Of Claims is required.' :f.noOfClaims.errors?.pattern?' No Of Claims must be positive value' :''}}">
+                                        </app-field-error-display>
+                                    </div>
+
+                                    <app-field-error-display [errorIcon]="false"
+                                        [displayError]="isFieldValid('noOfClaimsValue')"
+                                        errorMsg="{{f.noOfClaimsValue.errors?.required?' required' : ''}}">
+                                    </app-field-error-display>
+                                </div>
+
+
+                                <!-- <div class="col-md-3 " [ngClass]="displayFieldCss('noOfClaims')"
+                                    *ngIf="addRewardForm.get('noOfClaimsValue').value == 'limited'">
+
+                                    <input class="form-control col-md-7 " type="number" formControlName="noOfClaims" placeholder="Type limits" class="form-control"
+                                        min="1">
+                                    <app-field-error-display
+                                        *ngIf="addRewardForm.get('noOfClaimsValue').value == 'limited'"
+                                        [errorIcon]="false" [displayError]="isFieldValid('noOfClaims')"
+                                        errorMsg="{{f.noOfClaims.errors?.required?' No Of Claims is required.' :f.noOfClaims.errors?.pattern?' No Of Claims must be positive value' :''}}">
+                                    </app-field-error-display>
+                                </div> -->
+                            </div>
+
+                            <div class="row form-group">
+                                <label class="control-label col-md-3 ">Claim limits per customer</label>
+
+                                <div class="col-md-6" [ngClass]="displayFieldCss('claimLimit')">
+
+                                        <label class="radio-inline">
+                                    <input type="radio" formControlName="claimLimitsValue" name="claimLimitsValue"
+                                        value="unlimited"> unlimited</label>
+                                        <label class="radio-inline">
+                                    <input type="radio" formControlName="claimLimitsValue" name="claimLimitsValue"
+                                        value="limited"> Limited
+                                    </label>
+                             
+                                            <div class="radio-inline" [ngClass]="displayFieldCss('claimLimit')"
+                                            *ngIf="addRewardForm.get('claimLimitsValue').value == 'limited'">
+                                            <input class="form-control col-md-7 " type="number" formControlName="claimLimit" placeholder="Type clime limit per person"
+                                                min="1">
+                                            <app-field-error-display [errorIcon]="false"
+                                                *ngIf="addRewardForm.get('claimLimitsValue').value == 'limited'"
+                                                [displayError]="isFieldValid('claimLimit')"
+                                                errorMsg="{{f.claimLimit.errors?.required?' Claim limits is required.':f.claimLimit.errors?.pattern?' Claim limits be positive value.' :''}}">
+                                            </app-field-error-display>
+                                        </div>
+
+
+
+
+                                    <app-field-error-display [errorIcon]="false"
+                                        [displayError]="isFieldValid('claimLimitsValue')"
+                                        errorMsg="{{f.claimLimitsValue.errors?.required?' required' : ''}}">
+                                    </app-field-error-display>
+                                </div>
+
+                               
+                            </div>
+
+                            
+
+                            <div class="row form-group" [ngClass]="displayFieldCss('rewardStartDate')">
+                                <label class="control-label col-md-3 ">Start Date
+                                </label>
+                                <div class="col-md-6">
+                                    <input type="text" #dp="bsDatepicker" bsDatepicker [minDate]="today" class="form-control"
+                                        formControlName="rewardStartDate">
+                                    <div class="custom-content" *ngIf="dp.isOpen">
+                                        <a>{{myDateValue | date:'short'}}</a>
+                                    </div>
+
+                                    <app-field-error-display [errorIcon]="false"
+                                        [displayError]="isFieldValid('rewardStartDate')"
+                                        errorMsg="{{f.rewardStartDate.errors?.required?' Start Date is required.' : ''}}">
+                                    </app-field-error-display>
+                                </div>
+                            </div>
+
+
+                            
+
+                            <div class="row form-group" [ngClass]="displayFieldCss('rewardEndDate')">
+                                <label class="control-label col-md-3 ">End Date
+                                </label>
+                                <div class="col-md-6">
+                                    <input type="text" #dp="bsDatepicker" bsDatepicker [minDate]="addRewardForm.get('rewardStartDate')" class="form-control"
+                                        (bsValueChange)="createMessage($event)" formControlName="rewardEndDate"
+                                        >
+                                    <div class="custom-content" *ngIf="dp.isOpen">
+                                        <a>{{myDateValue | date:'short'}}</a>
+                                    </div>
+
+                                    <app-field-error-display [errorIcon]="false"
+                                        [displayError]="isFieldValid('rewardEndDate')"
+                                        errorMsg="{{f.rewardEndDate.errors?.required?' End Date is required.' : ''}}">
+                                    </app-field-error-display>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <label class="control-label col-md-3 ">Message</label>
+                                <div class="col-md-6 ">
+                                    <textarea maxlength="160" formControlName="message" class="form-control col-md-7 "
+                                        rows="5" value="{{finalMessage}}">
+                          <!-- CONGRATS! <br>You have earned {{addRewardForm.get('noOfClaims').value}} rewards,Valid till
+                          {{datePipe.transform(this.addRewardForm.get('rewardEndDate').value, "yyyy-MM-dd ")}} -->
+                        </textarea>
+
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="box-footer">
+
+          
+                                    <div class="text-center">
+                                        <button type="button" class="btn-lg btn-custom btn-success" (click)="createReward()">Submit</button>
+                                        <button type="button" (click)="onReset()" class="btn-lg  btn-custom btn-dark-red" >Reset</button>
+                                    </div>
+                                </div>
+<!-- 
+                            <div>
+                                <button type="button" class="btn btn-success btn-block submit"
+                                    (click)="createReward()">Send SMS</button>
+                            </div> -->
+
+
+                        </form>
+
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #showCustomerTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Customer</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef_action.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="table-responsive">
+                <p-table #dt2 [columns]="headers" [value]="customerList" [paginator]="true" [rows]="10"
+                    [responsive]="true" [resizableColumns]="true" [columnResizeMode]="expand" [autoLayout]="true"
+                    [rowsPerPageOptions]="[10,25,50,100]">
+                    <ng-template pTemplate="header" let-headers>
+                        <tr>
+                            <th *ngFor="let th of headers"
+                                style="text-transform: uppercase; background-color:#5893d4; color: white;">{{th.field}}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th *ngFor="let col of headers" [ngSwitch]="col.field">
+
+                                <input *ngSwitchCase="'name'" pInputText type="text" style="width: 100px;"
+                                    (input)="dt2.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                                <input *ngSwitchCase="'phone'" pInputText type="text" style="width: 100px;"
+                                    (input)="dt2.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+
+                            </th>
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="body" let-customer let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{ rowIndex+1}}</td>
+                            <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                {{customer.name}}</td>
+                            <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                {{customer.phone}}</td>
+                            <td style="font-family: Segoe UI;  text-transform: uppercase; color:#959399;">
+                                {{customer.visit}}</td>
+                            <td><button type="button" class="cus btn btn-danger"
+                                    (click)="removeCustomer(customer)">Delete</button></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <label class="control-label col-md-3 ">You have removed {{removedCustomer}} customers</label>
+            <button type="button" class="cus btn btn-success" (click)="resetCustomer()">Reset</button>
+            <button type="button" class="cus btn btn-primary" (click)="modalRef_action.hide()">Ok</button>
+        </div>
+
+    </div>
+</ng-template>

@@ -1,0 +1,117 @@
+<div class="form-group">
+    <div class="col-md-12 questionInAnswer">
+        {{summary.summaryReportQAList.question}}
+
+    </div>
+
+    <div *ngIf="summary" class="col-md-12 row answer">
+
+        <span [ngSwitch]="summary.summaryReportQAList.answerType">
+
+            <div *ngSwitchCase="'radio'">
+                <div class="chart-container">
+
+                    <!-- <p-chart type="bar" [data]="summary.chartData" [options]="options" width="400px" height="270px"
+                        [responsive]="true"></p-chart> -->
+
+                     
+                        <p-chart type="bar" [data]="summary.chartData" [options]="options" height="270px"
+                        [responsive]="true"></p-chart>
+
+                
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Answers</th>
+                            <th>Responses (Total = {{summary.summaryReportQAList.totalSubmission}} )
+                            </th>
+                        </tr>
+                        <tr *ngFor="let qusAndAns of summary.summaryReportQAList.answers">
+                            <td>{{qusAndAns.answer}}</td>
+                            <td>{{qusAndAns.count}}</td>
+                        </tr>
+                    </table>
+                </div>
+                
+
+            </div>
+
+            <div *ngSwitchCase="'checkBox'">
+                <p-chart type="bar" [data]="summary.chartData" [options]="options" height="270px"
+                    [responsive]="true"></p-chart>
+
+                <table class="table table-striped">
+                    <tr>
+                        <th>Answers</th>
+                        <th>Responses (Total = {{summary.summaryReportQAList.totalSubmission}} )
+                        </th>
+                    </tr>
+                    <tr *ngFor="let qusAndAns of summary.summaryReportQAList.answers">
+                        <td>{{qusAndAns.answer}}</td>
+                        <td>{{qusAndAns.count}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div *ngSwitchCase="'inputBox'">
+
+                <table class="table table-striped table-input">
+                    <tbody>                       
+                        <tr *ngFor="let qusAndAns of summary.summaryReportQAList.answers; let i=index">
+                            <td style="width: 15px;">{{i+1 +'. '}}</td>
+                            <td >{{qusAndAns.innerAnswer}}</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+
+
+              
+            </div>
+            <div *ngSwitchCase="'textArea'">              
+
+                <table class="table table-striped table-input">
+                        <tbody>                       
+                            <tr *ngFor="let qusAndAns of summary.summaryReportQAList.answers; let i=index">
+                                <td style="width: 15px;">{{i+1 +'. '}}</td>
+                                <td >{{qusAndAns.innerAnswer}}</td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+    
+
+            </div>
+            <div *ngSwitchCase="'singalDate'">    
+                
+                <table class="table table-striped table-input">
+                        <tbody>                       
+                            <tr *ngFor="let qusAndAns of summary.summaryReportQAList.answers; let i=index">
+                                <td style="width: 15px;">{{i+1 +'. '}}</td>
+                                <td >{{qusAndAns.innerAnswer}}</td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+    
+            </div>
+            <div *ngSwitchCase="'rating'">
+                
+                    <table class="table table-striped table-input">
+                            <tbody>                       
+                                <tr *ngFor="let qusAndAns of summary.summaryReportQAList.answers; let i=index">
+                                    <td style="width: 15px;">{{i+1 +'. '}}</td>
+                                    <td >{{qusAndAns.innerAnswer}}</td>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+            </div>
+            <div *ngSwitchDefault>
+                Reporting coming soon
+            </div>
+        </span>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="col-md-12 question" [ngStyle]="{'background': viewErrorMsg?'#fce8e6':''}">
+
+    <div style=" margin-right: 10px; color: #234484">{{qNumber}}.&nbsp;<span
+            [class.requiredasterisk]="question.required">{{Oderbyquestion[0].question.question}}</span> </div>
+
+    <div *ngFor="let answer of Oderbyquestion" class="col-md-12 answer">
+
+        <app-input-component [answerObject]="answer" [question]="answer.question" [finalQA]="true"
+            [type]="answer.question.answersType.type" [viewQuestion]="true" [modified]="modified"
+            [modifiedAnswer]="modifiedAnswer" [inputDisable]="disableInputComponent"></app-input-component>
+
+    </div>
+
+    <small *ngIf="viewErrorMsg" class="text-red" >This question is required</small>
+</div>
+
+<!--  
+ <div class="alert alert-warning" *ngIf="viewErrorMsg">
+    <strong>Error!</strong>Field is required -->
+<!-- </div> -->
+<!-- *ngIf="!viewErrorMsg && question.required" -->

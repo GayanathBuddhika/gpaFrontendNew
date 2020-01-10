@@ -1,0 +1,24 @@
+
+/* Sidebar bg color */
+.wrapper, .main-sidebar,.left-side, .main-header .logo{
+    /* background-color: #3462dc !important; */
+    background-color: #071025 !important;
+
+}
+
+/* Hover of menu, dropdown selection lable bg */
+.sidebar-menu>li:hover>a, .sidebar-menu>li.active>a,  .sidebar-menu>li.menu-open>a {
+    color: #fff;
+    background: #0747a6;
+}
+
+/* Dropdown menu */
+.sidebar-menu>li>.treeview-menu {
+    margin: 0 1px;
+    background: #06429a;
+}
+
+/* Menu text color */
+.treeview a span, ul.sidebar-menu.tree li a {
+    color: white;
+}

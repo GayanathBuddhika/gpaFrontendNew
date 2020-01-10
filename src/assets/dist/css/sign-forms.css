@@ -1,0 +1,182 @@
+
+
+/* bootstrap class modified */
+
+.sign-forms .input-group-addon {
+	background: white;
+}
+
+.sign-forms .form-control {
+	height: 40px;
+ outline: none;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-color: #d2d6de;
+}
+
+.sign-forms .input-group{
+    width: 100%;
+}
+
+/* own style starts */
+.sign-forms .wrapper{       
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #316aff !important;
+}
+
+.sign-forms .login-wrapper {
+    /* margin: 40px auto; */
+    padding: 12px 46px;
+    
+}
+
+.sign-forms .section{
+  
+    background-color: white;
+}
+
+.sign-forms .title {
+	margin-bottom: 50px;
+}
+
+.sign-forms .title:after {
+	background: #316aff none repeat scroll 0 0;
+	content: "";
+	display: block;
+	height: 4px;
+	margin-top: 20px;
+	position: relative;
+	width: 70px;
+}
+
+
+/* Blue color */
+
+.sign-forms .theme-color {
+	color: #316aff;
+}
+
+
+/* Blue color button */
+
+.sign-forms .btn-theme {
+	background: #2a7dfe;
+	color: white;
+	width: 160px;
+	height: 45px;
+}
+
+
+
+.sign-forms #wrap-email {
+	border-radius: 5px 0 0 0;
+	border-bottom: 0;
+	border-right: 0;
+}
+
+.sign-forms #wrap-password {
+	border-radius: 0 0 0 5px;
+	border-right: 0;
+}
+
+.sign-forms #email {
+	border-radius: 0 5px 0 0;
+	border-bottom: 0;
+	border-left: 0;
+}
+
+.sign-forms #password, .sign-forms .no-left-border-input {
+	border-radius: 0 0 5px 0;
+	border-left: 0;
+}
+
+
+/* check box remember me */
+
+.sign-forms .checkbox {
+	padding-left: 20px;
+}
+
+.sign-forms .checkbox label {
+	display: inline-block;
+	position: relative;
+	padding-left: 5px;
+}
+
+.sign-forms .checkbox label::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	left: 0;
+	margin-left: -20px;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	background-color: #fff;
+	-webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+	-o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+	transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.sign-forms .checkbox label::after {
+	display: inline-block;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: 0;
+	top: 0;
+	margin-left: -20px;
+	padding-left: 3px;
+	padding-top: 1px;
+	font-size: 11px;
+	color: #555555;
+}
+
+.sign-forms .checkbox input[type="checkbox"] {
+	opacity: 0;
+}
+
+.sign-forms .checkbox input[type="checkbox"]:focus+label::before {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+.sign-forms .checkbox input[type="checkbox"]:checked+label::after {
+	font-family: 'FontAwesome';
+	content: "\f00c";
+}
+
+.sign-forms .checkbox input[type="checkbox"]:disabled+label {
+	opacity: 0.65;
+}
+
+.sign-forms .checkbox input[type="checkbox"]:disabled+label::before {
+	background-color: #eeeeee;
+	cursor: not-allowed;
+}
+
+.sign-forms .checkbox-primary input[type="checkbox"]:checked+label::before {
+	background-color: #428bca;
+	border-color: #428bca;
+}
+
+.sign-forms .checkbox-primary input[type="checkbox"]:checked+label::after {
+	color: #fff;
+}
+
+@media screen and (min-width:1366px){
+    .sign-forms .wrapper{
+        margin: 20px 100px;
+    }
+}
+
+@media screen and (min-width:1200px) and (max-width:1365px){
+    .sign-forms .wrapper{
+        margin: 25px;
+    }
+}

@@ -1,0 +1,25 @@
+<form [formGroup]="customerAddOrEditForm" (ngSubmit)="onSubmit()">
+    <div class="form-group col-lg-12">
+        <label class="col-lg-2">Name</label>
+        <input class="form-control col-lg-4 " formControlName="name"  placeholder="Enter Name" type="text">
+        <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('name')" errorMsg="Name is required"></app-field-error-display>
+        <!-- <div *ngIf="customerAddOrEditForm.get('name').invalid && customerAddOrEditForm.get('name').touched" class="invalid-feedback">                        
+            <div *ngIf="customerAddOrEditForm.get('name').errors?.required">Name is required</div>
+        </div> -->
+    </div>
+    <div class="form-group col-lg-12">
+        <label class="col-lg-2">Phone No</label>
+        <international-phone-number formControlName="phone" placeholder="Enter phone number" [maxlength]="20" [defaultCountry]="'lk'" [required]="true" name="phone_number" #phoneNumber></international-phone-number>
+        <div *ngIf="f.phone.touched && f.phone.errors" class="invalid-feedback">                        
+            <div *ngIf="f.phone.errors.required">phone number is required</div>
+            <div *ngIf="!phoneNumber.valid && phoneNumber.value">phone number is in correct</div>
+        </div>
+    </div>
+    <div class="form-group col-lg-12">
+        <label class="col-lg-2">Email</label>
+        <input class="form-control col-lg-4 " formControlName="email"  placeholder="Enter Email" type="email" >
+        <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('email')" errorMsg="Please check your email"></app-field-error-display>
+        
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

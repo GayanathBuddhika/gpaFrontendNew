@@ -1,0 +1,262 @@
+<div class="box box-primary">
+  <div class="col-lg-offset-11 col-md-offset-11 col-sm-offset-11">
+    <span><b> required</b></span><span style="color: red">*</span>
+  </div>
+  <!-- company form start -->
+  <form [formGroup]="companyForm" (ngSubmit)="saveCompany()">
+    <div class="box-body">
+
+      <div class="row">
+
+        <div class="form-group col-lg-4">
+          <label class="control-label" [class.requiredasterisk]="true">Business type</label><span
+            style="color: red">*</span>
+          <p-dropdown formControlName="businessType" [options]="bussinessTypeList" [filter]="true" optionLabel="type"
+            placeholder="Select a business type" [style]="{'width':'100%'}"></p-dropdown>
+          <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('businessType')"
+            errorMsg="Bussiness type is required"></app-field-error-display>
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label class="control-label" [class.requiredasterisk]="true">Name</label><span style="color: red">*</span>
+          <input type="text" class="form-control" formControlName="name" placeholder="Enter name">
+          <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('name')" errorMsg="{{f.name.errors?.required?'name is required.':f.name.errors?.minlength?'name should be mor than ONE charactors':''}}">
+          </app-field-error-display>
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label class="control-label" [class.requiredasterisk]="true">Email</label><span style="color: red">*</span>
+          <input type="email" class="form-control" id="Company-email" formControlName="email" placeholder="Enter email">
+          <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('email')"
+            errorMsg="Email is required"></app-field-error-display>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="form-group col-lg-4">
+          <label class="control-label" [class.requiredasterisk]="true">Phone</label><span style="color: red">*</span>
+          <international-phone-number formControlName="phone" placeholder="Enter phone number" [maxlength]="20"
+            [defaultCountry]="'lk'" [required]="true" name="phone_number" #phoneNumber></international-phone-number>
+          <div *ngIf="f.phone.touched && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required">Phone number is required</div>
+            <div *ngIf="!phoneNumber.valid && phoneNumber.value">Phone number is incorrect</div>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label class="control-label">Website</label>
+          <input type="text" class="form-control" id="company_website" placeholder="Enter website"
+            formControlName="website">
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label class="control-label" [class.requiredasterisk]="true">Enabled</label><span style="color: red">*</span>
+          <select class="form-control" formControlName="isEnabled">
+            <option value="1">True</option>
+            <option value="0">False</option>
+          </select>
+          <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('isEnabled')"
+            errorMsg="Enabled is required"></app-field-error-display>
+        </div>
+
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group col-lg-6">
+            <label class="control-label" [class.requiredasterisk]="true">Address</label><span
+              style="color: red">*</span>
+            <textarea class="form-control" rows="5" id="company_address" placeholder="Enter Address"
+              formControlName="address"></textarea>
+            <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('address')"
+              errorMsg="Address is required"></app-field-error-display>
+          </div>
+
+          <div class="form-group col-lg-6">
+            <label class="control-label">Description</label>
+            <textarea class="form-control" rows="5" id="company_description" placeholder="Enter Description"
+              formControlName="description"></textarea>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dropzone" dropZone (hovered)="toggleHover($event)" (dropped)="onImageChange($event)"
+            [class.hovering]="isHovering">
+            <h3>Drop an image</h3>
+            <div class="row">
+              <div class="col-xs-12 clearfix">
+                <label class="btn btn-success btn-file ">
+                  Browse <input type="file" class="custom-file-input" #file accept='image/*'
+                    (change)="onImagePreview(file.files)" [style]="{'display':'none'}">
+                </label>
+              </div>
+              <hr>
+            </div>
+
+          </div>
+          <div class="col-xs-12">
+            <img [src]="imgURL" *ngIf="imgURL" class="img-thumbnail img-responsive userImage">
+          </div>
+          <div *ngIf="downloadURL | async as url">
+            <img [src]="url" class="img-thumbnail img-responsive userImage"><br>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="row">        
+                    <div class="col-lg-4">
+                        <div class="dropzone" dropZone (hovered)="toggleHover($event)" (dropped)="onImageChange($event)" [class.hovering]="isHovering">
+                            <h3>Drop an image</h3>
+                            <div class="row">
+                                <div class="col-xs-12 clearfix">
+                                    <label class="btn btn-success btn-file ">
+                                        Browse  <input type="file" class="custom-file-input" #file accept='image/*' (change)="onImagePreview(file.files)" [style]="{'display':'none'}">
+                                    </label>
+                                </div>
+                                <hr>                       
+                             </div>
+        
+                        </div>
+                        <div class="col-xs-12">
+                            <img [src]="imgURL" *ngIf="imgURL" class="img-thumbnail img-responsive userImage"> 
+                        </div>
+                        <div *ngIf="downloadURL | async as url">                      
+                                <img [src]="url"  class="img-thumbnail img-responsive userImage"><br>
+                        </div>
+                    </div>
+                  </div> -->
+      <!-- Image  preview ends -->
+
+    </div>
+    <!-- /.box-body -->
+
+    <hr>
+    <div class="row" *ngIf="!edit">
+
+      <div class="form-group col-lg-6">
+        <label class="control-label" [class.requiredasterisk]="true">Enter Branch</label><span
+          style="color: red">*</span>
+        <input type="text" id="company_branch" class="form-control" formControlName="branchName" name="bname"
+          placeholder="Select branch">
+        <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('branchName')"
+          errorMsg="Branch is required"></app-field-error-display>
+      </div>
+
+      <div class="form-group col-lg-6">
+        <label class="control-label">Department</label>
+        <input type="text" id="company_department" class="form-control" formControlName="departmentName" name="dname">
+        <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('departmentName')"
+          errorMsg="Department is required"></app-field-error-display>
+      </div>
+
+
+
+
+      <div class="row">
+
+          <div class="form-group col-lg-4">
+            <label class="control-label" [class.requiredasterisk]="true">Subscription</label><span
+              style="color: red">*</span>
+            <p-dropdown formControlName="subscriptionType" [options]="subscriptionPlanList" [filter]="true"
+              optionLabel="subWithSurvey" (onChange)="onSelectedSubscription($event.value)"
+              placeholder="Select a Subscription" [style]="{'width':'100%'}"></p-dropdown>
+
+            <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('subscriptionType')"
+              errorMsg="Subscription is required"></app-field-error-display>
+
+          </div>
+
+          <div class="form-group col-lg-4">
+            <label class="control-label" [class.requiredasterisk]="true">Start Date</label><span
+              style="color: red">*</span>
+            <input class="form-control" bsDatepicker [isDisabled]="viewStartDate" (ngModelChange)="onSelectedDate()"
+              formControlName="startDate" [bsConfig]="datePickerConfig" [isDisabled]="dateDisable" placement="top">
+            <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('startDate')"
+              errorMsg="Start date is required"></app-field-error-display>
+          </div>
+
+          <!-- surveyType selection -->
+          <div class="form-group col-lg-4">
+            <label class="control-label" [class.requiredasterisk]="true">Select SurveyType(s)</label><span
+              style="color: red">*</span>
+            <p-multiSelect #multiSelect [disabled]="planTable" [options]="surveyTypeItems"
+              formControlName="selectedSurveyType" [style]="{'width':'100%'}"
+              [selectionLimit]="maxLengthCheckedSurveyTypes"></p-multiSelect>
+
+            <div class="invalid-feedback">
+              <div *ngIf="f.selectedSurveyType.touched && f.selectedSurveyType.errors">
+                <div *ngIf="f.selectedSurveyType.errors.required">Survey Type is required</div>
+              </div>
+              <div *ngIf="multiSelect.value && multiSelect.value.length !== maxLengthCheckedSurveyTypes">Please select
+                {{maxLengthCheckedSurveyTypes}} item/s</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      
+    </div>
+
+        <hr>
+
+
+
+       
+
+
+        <div class="row">
+          <div *ngIf="!planTable">
+            <div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subscription</th>
+                    <th scope="col">Start Day</th>
+                    <th scope="col">End Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>{{ plan.subscription.planName}}</td>
+                    <td>{{ plan.startDate}}</td>
+                    <td>{{ plan.endDate}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="box-footer">
+          <div class="text-center">
+            <button type="submit" class="btn-lg btn-custom btn-success">Submit</button>
+            <button type="button" (click)="onReset()" class="btn-lg  btn-custom btn-dark-red">Reset</button>
+          </div>
+        </div>
+
+  </form>
+
+
+
+  <!-- /.company from -->
+
+
+
+
+
+  <!-- /.plan from -->
+</div>

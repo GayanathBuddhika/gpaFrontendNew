@@ -1,0 +1,1534 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pulsebeat-v2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">pulsebeat-v2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CompanyAddComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/component/company/company-add/company-add.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-company-add</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./company-add.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./company-add.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bname">bname</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#branch">branch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#businessTypes">businessTypes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#company">company</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#department">department</a>
+                            </li>
+                            <li>
+                                <a href="#depToBranch">depToBranch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#depToBranchObjet">depToBranchObjet</a>
+                            </li>
+                            <li>
+                                <a href="#dname">dname</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#plan">plan</a>
+                            </li>
+                            <li>
+                                <a href="#savedbranch">savedbranch</a>
+                            </li>
+                            <li>
+                                <a href="#savedCompany">savedCompany</a>
+                            </li>
+                            <li>
+                                <a href="#savedDepartment">savedDepartment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                            <li>
+                                <a href="#subscriptionList">subscriptionList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toster">toster</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getBusinessTypes">getBusinessTypes</a>
+                            </li>
+                            <li>
+                                <a href="#getSubscription">getSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#saveCompany">saveCompany</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#edit">edit</a>
+                            </li>
+                            <li>
+                                <a href="#selectcompany">selectcompany</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(companyService: <a href="../injectables/CompanyService.html">CompanyService</a>, bussinessTypeService: <a href="../injectables/BussinessTypeService.html">BussinessTypeService</a>, subscriptionService: <a href="../injectables/SubscriptionService.html">SubscriptionService</a>, planService: <a href="../injectables/PlanService.html">PlanService</a>, modalservice: BsModalService, toster: ToastrManager, departmentService: <a href="../injectables/DepartmentService.html">DepartmentService</a>, branchService: <a href="../injectables/BranchService.html">BranchService</a>, depToBranchService: <a href="../injectables/DepartmentAssingToBranchService.html">DepartmentAssingToBranchService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>companyService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CompanyService.html" target="_self" >CompanyService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>bussinessTypeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BussinessTypeService.html" target="_self" >BussinessTypeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>subscriptionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SubscriptionService.html" target="_self" >SubscriptionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>planService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PlanService.html" target="_self" >PlanService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalservice</td>
+                                                  
+                                                        <td>
+                                                                    <code>BsModalService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toster</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrManager</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>departmentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DepartmentService.html" target="_self" >DepartmentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>branchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BranchService.html" target="_self" >BranchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>depToBranchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DepartmentAssingToBranchService.html" target="_self" >DepartmentAssingToBranchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edit"></a>
+                        <b>edit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:67</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectcompany"></a>
+                        <b>selectcompany</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:70</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBusinessTypes"></a>
+                    <span class="name">
+                        <b>
+                            getBusinessTypes
+                        </b>
+                        <a href="#getBusinessTypes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBusinessTypes()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubscription"></a>
+                    <span class="name">
+                        <b>
+                            getSubscription
+                        </b>
+                        <a href="#getSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSubscription()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveCompany"></a>
+                    <span class="name">
+                        <b>
+                            saveCompany
+                        </b>
+                        <a href="#saveCompany"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveCompany(form: <a href="https://angular.io/api/forms/NgForm" target="_blank">NgForm</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgForm" target="_blank" >NgForm</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bname"></a>
+                        <span class="name">
+                            <b>
+                            bname</b>
+                            <a href="#bname"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="branch"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            branch</b>
+                            <a href="#branch"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Branch.html" target="_self" >Branch</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Branch()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="businessTypes"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            businessTypes</b>
+                            <a href="#businessTypes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/BussinessType.html" target="_self" >BussinessType</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="company"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            company</b>
+                            <a href="#company"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="department"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            department</b>
+                            <a href="#department"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Department.html" target="_self" >Department</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Department()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="depToBranch"></a>
+                        <span class="name">
+                            <b>
+                            depToBranch</b>
+                            <a href="#depToBranch"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>DepToBranch[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="depToBranchObjet"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            depToBranchObjet</b>
+                            <a href="#depToBranchObjet"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/DepToBranch.html" target="_self" >DepToBranch</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new DepToBranch()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dname"></a>
+                        <span class="name">
+                            <b>
+                            dname</b>
+                            <a href="#dname"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;Administration&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="plan"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            plan</b>
+                            <a href="#plan"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Plan.html" target="_self" >Plan</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="savedbranch"></a>
+                        <span class="name">
+                            <b>
+                            savedbranch</b>
+                            <a href="#savedbranch"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Branch.html" target="_self" >Branch</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="savedCompany"></a>
+                        <span class="name">
+                            <b>
+                            savedCompany</b>
+                            <a href="#savedCompany"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="savedDepartment"></a>
+                        <span class="name">
+                            <b>
+                            savedDepartment</b>
+                            <a href="#savedDepartment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Department.html" target="_self" >Department</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:56</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscription</b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subscription()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscriptionList"></a>
+                        <span class="name">
+                            <b>
+                            subscriptionList</b>
+                            <a href="#subscriptionList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/SubscriptionsDetails.html" target="_self" >SubscriptionsDetails[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toster"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toster</b>
+                            <a href="#toster"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ToastrManager</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/component/company/company-add/company-add.component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DepartmentAssingToBranchService } from &#x27;./../../../service/department-assing-to-branch.service&#x27;;
+import { DepartmentService } from &#x27;./../../../service/department.service&#x27;;
+import { BranchService } from &#x27;./../../../service/branch.service&#x27;;
+import { Department } from &#x27;./../../../model/department&#x27;;
+import { Branch } from &#x27;./../../../model/branch&#x27;;
+import { ToastrManager } from &#x27;ng6-toastr-notifications&#x27;;
+import { BsModalRef, BsModalService } from &#x27;ngx-bootstrap/modal&#x27;;
+import { PlanService } from &#x27;./../../../service/plan.service&#x27;;
+import { Plan } from &#x27;./../../../model/plan&#x27;;
+import { SubscriptionsDetails } from &#x27;./../../../model/subscriptions&#x27;;
+import { SubscriptionService } from &#x27;./../../../service/subscription.service&#x27;;
+import { BussinessType } from &#x27;./../../../model/bussinessType&#x27;;
+import { BussinessTypeService } from &#x27;../../../service/bussiness-type.service&#x27;;
+
+import { Company } from &#x27;../../../model/company&#x27;;
+import { CompanyService } from &#x27;../../../service/company.service&#x27;;
+import { Component, OnInit, OnDestroy, Input, TemplateRef } from &#x27;@angular/core&#x27;;
+import { NgForm } from &#x27;@angular/forms&#x27;;
+import { DepToBranch } from &#x27;src/app/model/DeptToBranch&#x27;;
+import { Observable, Subscription } from &#x27;rxjs&#x27;;
+
+
+@Component({
+  selector: &#x27;app-company-add&#x27;,
+  templateUrl: &#x27;./company-add.component.html&#x27;,
+  styleUrls: [&#x27;./company-add.component.css&#x27;]
+})
+export class CompanyAddComponent implements OnInit, OnDestroy {
+  private businessTypes: BussinessType;
+
+  // --- Subscription 
+  private subscription: Subscription &#x3D; new Subscription();
+
+  private company: Company;
+
+  // --- this create for assing company object after create the new company
+  savedCompany: Company;
+
+  private plan: Plan;
+
+  subscriptionList: SubscriptionsDetails[];
+
+  // ---  for add the defolt value for the department input field
+  dname: string &#x3D; &quot;Administration&quot;;
+
+  // ---  for add the defolt value for the branch input field
+  bname: string;
+
+  // --- for default branch
+  private branch: Branch &#x3D; new Branch();
+
+  // --- for get the saved default branch
+  savedbranch: Branch;
+
+  // --- for get the saved default department
+  savedDepartment: Department;
+
+  // --- for default department
+  private department: Department &#x3D; new Department();
+
+  // --- for create the deptobranch list
+  depToBranch: DepToBranch[] &#x3D; [];
+
+  private depToBranchObjet: DepToBranch &#x3D; new DepToBranch();
+
+  // ---  get value from parent componentcompanyLlist.component.html   
+  @Input() edit &#x3D; false;
+
+  // ---  get value from parent componentcompanyLlist.component.html   
+  @Input() selectcompany: Company;
+
+  constructor(
+    private companyService: CompanyService,
+    private bussinessTypeService: BussinessTypeService,
+    private subscriptionService: SubscriptionService,
+    private planService: PlanService,
+    private modalservice: BsModalService,
+    public toster: ToastrManager,
+    private departmentService: DepartmentService,
+    private branchService: BranchService,
+    private depToBranchService: DepartmentAssingToBranchService
+  ) { }
+
+  ngOnInit() {
+    this.getBusinessTypes();
+
+  }
+
+  ngOnDestroy() {
+    // --- unsubscribe all subscribe methode 
+    this.subscription.unsubscribe();
+  }
+
+
+
+  // --- get bussiness type
+  getBusinessTypes() {
+    this.bussinessTypeService.getBusinessType().subscribe(data &#x3D;&gt; {
+      console.log(data);
+      this.businessTypes &#x3D; data;
+
+    }, err &#x3D;&gt; {
+      console.log(err);
+    })
+  }
+
+
+  // --- get subscriptionList
+  getSubscription() {
+    // --- add subscribe methode to the subscription object
+    this.subscription.add(
+
+      this.subscriptionService.listSubscription().subscribe(data &#x3D;&gt; {
+        this.subscriptionList &#x3D; data;
+      })
+
+    );
+   
+  }
+
+
+
+  // --- save and edit company methode
+  saveCompany(form: NgForm) {
+
+    this.company &#x3D; form.value;
+    console.log(this.bname);
+    console.log(this.dname);
+
+    // --- if user edit Company, this.edit&#x3D;&#x3D;true and assing selected company id and ai to company id and ai
+    if (this.edit) {
+      this.company.id &#x3D; this.selectcompany.id;
+      this.company.ai &#x3D; this.selectcompany.ai;
+      this.company.edit &#x3D; this.edit;
+
+    }
+
+     // --- add subscribe methode to the subscription object
+     this.subscription.add(
+       
+    // pass the branch name , department name, and edit value with the company object to create the default comany and branch 
+    this.companyService.addCompany(this.company, this.bname, this.dname).subscribe(data &#x3D;&gt; {
+      // --- assing saved company to savedComp
+      // --- this saved company object return from the back end after save the copany
+      this.savedCompany &#x3D; data.company;
+      console.log(&#x27;saved company&#x27;, this.savedCompany);
+
+      // --- for identyfy create new company or edit object by front end
+      if (this.edit !&#x3D;&#x3D; true) {
+        // --- for identyfy create new company by back end
+        if (data.action &#x3D;&#x3D;&#x3D; &#x27;saved&#x27;) {
+          this.toster.successToastr(&quot;Success&quot;, &quot;Successfully saved&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+          this.companyService._set_ngxModal_add(true);
+          this.companyService._addCompanyToList.next(this.savedCompany);
+
+        } else {
+
+          this.toster.errorToastr(&quot;Error&quot;, &quot;company already exists add&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+
+        }
+
+      } else {
+        // --- for identyfy editd company by back end
+        if (data.action &#x3D;&#x3D;&#x3D; &#x27;edited&#x27;) {
+          this.toster.successToastr(&quot;Success&quot;, &quot;Successfully edited&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+          this.companyService._set_ngxModal_edit(true);
+          this.companyService._editCompanyToList.next(this.savedCompany);
+        } else {
+          console.log(&quot;edit company&quot;, data.action);
+          this.toster.errorToastr(&quot;Error&quot;, &quot;company already exists edit&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+        }
+
+      }
+    }, err &#x3D;&gt; {
+
+      if (this.edit !&#x3D;&#x3D; true) {
+        this.companyService._set_ngxModal_add(true);
+      } else {
+        this.companyService._set_ngxModal_edit(false);
+      }
+
+      this.toster.errorToastr(err, &quot;Error&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+    })
+
+     );
+
+
+
+  }
+
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;box box-primary&quot;&gt;
+
+  &lt;!-- company form start --&gt;
+  &lt;form #frm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;saveCompany(frm)&quot;&gt;
+    &lt;div class&#x3D;&quot;box-body&quot;&gt;
+
+       &lt;div class&#x3D;&quot;row&quot;&gt;
+
+          &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+              &lt;label class&#x3D;&quot;control-label&quot;&gt;Business type&lt;/label&gt;
+              &lt;select class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;businessType&quot; name&#x3D;&quot;businessType&quot;&gt;
+                &lt;option *ngFor&#x3D;&quot;let business of businessTypes&quot; [ngValue]&#x3D;&quot;business&quot;&gt;{{business.type}}&lt;/option&gt;
+              &lt;/select&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+            &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Name&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control col-lg-4&quot; id&#x3D;&quot;company_name&quot; placeholder&#x3D;&quot;Enter Name&quot; [(ngModel)]&#x3D;&quot;edit?selectcompany.name:name&quot;
+              name&#x3D;&quot;name&quot;&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+            &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Email&lt;/label&gt;
+            &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control col-lg-4&quot; id&#x3D;&quot;Company-email&quot; emailValidation placeholder&#x3D;&quot;Enter email&quot;
+              [(ngModel)]&#x3D;&quot;edit?selectcompany.email:email&quot; name&#x3D;&quot;email&quot;&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+
+
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        
+          &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+              &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Phone&lt;/label&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control col-lg-4&quot; id&#x3D;&quot;company_phone&quot; placeholder&#x3D;&quot;Enter Phone number&quot;
+                [(ngModel)]&#x3D;&quot;edit?selectcompany.phone:phone&quot; name&#x3D;&quot;phone&quot;&gt;
+            &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+            &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Website&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control col-lg-4&quot; id&#x3D;&quot;company_website&quot; placeholder&#x3D;&quot;Enter website&quot; [(ngModel)]&#x3D;&quot;edit?selectcompany.website:website&quot;
+              name&#x3D;&quot;website&quot;&gt;
+          &lt;/div&gt;
+
+        
+          &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+              &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Image&lt;/label&gt;
+              &lt;input type&#x3D;&quot;file&quot; id&#x3D;&quot;company_image&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;edit?selectcompany.image:image&quot; name&#x3D;&quot;image&quot;&gt;
+          &lt;/div&gt;
+
+
+      &lt;/div&gt;
+
+
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+
+          &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+            &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Address&lt;/label&gt;
+            &lt;textarea class&#x3D;&quot;form-control col-lg-4&quot; rows&#x3D;&quot;5&quot; id&#x3D;&quot;company_address&quot; placeholder&#x3D;&quot;Enter Address&quot; [(ngModel)]&#x3D;&quot;edit?selectcompany.address:address&quot;
+              name&#x3D;&quot;address&quot;&gt;&lt;/textarea&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+            &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Description&lt;/label&gt;
+            &lt;textarea class&#x3D;&quot;form-control col-lg-4&quot; rows&#x3D;&quot;5&quot; id&#x3D;&quot;company_description&quot; placeholder&#x3D;&quot;Enter Description&quot;
+              [(ngModel)]&#x3D;&quot;edit?selectcompany.description:description&quot; name&#x3D;&quot;description&quot;&gt;&lt;/textarea&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+
+
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+
+          &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+            &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Enebled&lt;/label&gt;
+            &lt;select class&#x3D;&quot;form-control col-lg-4&quot; [(ngModel)]&#x3D;&quot;edit?selectcompany.isEnabled:isEnabled&quot; name&#x3D;&quot;isEnabled&quot;&gt;
+              &lt;option value&#x3D;&quot;1&quot;&gt;True&lt;/option&gt;
+              &lt;option value&#x3D;&quot;0&quot;&gt;False&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+                
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;!-- /.box-body --&gt;
+
+    &lt;hr&gt;
+
+    &lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;!edit&quot;&gt;
+
+      &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+        &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Branch&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;company_branch&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;bname&quot; name&#x3D;&quot;bname&quot;&gt;          
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+        &lt;label class&#x3D;&quot;col-lg-2&quot;&gt;Department&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;company_department&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;dname&quot; name&#x3D;&quot;dname&quot;&gt;   
+      &lt;/div&gt;
+
+  &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;box-footer&quot;&gt;
+      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+
+  &lt;/form&gt; 
+  &lt;!-- /.company from --&gt;
+
+&lt;!-- /.plan from --&gt;
+&lt;/div&gt;
+
+
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./company-add.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="box box-primary">  <!-- company form start -->  <form #frm="ngForm" (ngSubmit)="saveCompany(frm)">    <div class="box-body">       <div class="row">          <div class="form-group col-lg-4">              <label class="control-label">Business type</label>              <select class="form-control" [(ngModel)]="businessType" name="businessType">                <option *ngFor="let business of businessTypes" [ngValue]="business">{{business.type}}</option>              </select>          </div>          <div class="form-group col-lg-4">            <label class="col-lg-2">Name</label>            <input type="text" class="form-control col-lg-4" id="company_name" placeholder="Enter Name" [(ngModel)]="edit?selectcompany.name:name"              name="name">          </div>          <div class="form-group col-lg-4">            <label class="col-lg-2">Email</label>            <input type="email" class="form-control col-lg-4" id="Company-email" emailValidation placeholder="Enter email"              [(ngModel)]="edit?selectcompany.email:email" name="email">          </div>      </div>      <div class="row">                  <div class="form-group col-lg-4">              <label class="col-lg-2">Phone</label>              <input type="text" class="form-control col-lg-4" id="company_phone" placeholder="Enter Phone number"                [(ngModel)]="edit?selectcompany.phone:phone" name="phone">            </div>          <div class="form-group col-lg-4">            <label class="col-lg-2">Website</label>            <input type="text" class="form-control col-lg-4" id="company_website" placeholder="Enter website" [(ngModel)]="edit?selectcompany.website:website"              name="website">          </div>                  <div class="form-group col-lg-4">              <label class="col-lg-2">Image</label>              <input type="file" id="company_image" class="form-control" [(ngModel)]="edit?selectcompany.image:image" name="image">          </div>      </div>      <div class="row">          <div class="form-group col-lg-6">            <label class="col-lg-2">Address</label>            <textarea class="form-control col-lg-4" rows="5" id="company_address" placeholder="Enter Address" [(ngModel)]="edit?selectcompany.address:address"              name="address"></textarea>          </div>          <div class="form-group col-lg-6">            <label class="col-lg-2">Description</label>            <textarea class="form-control col-lg-4" rows="5" id="company_description" placeholder="Enter Description"              [(ngModel)]="edit?selectcompany.description:description" name="description"></textarea>          </div>      </div>      <div class="row">          <div class="form-group col-lg-6">            <label class="col-lg-2">Enebled</label>            <select class="form-control col-lg-4" [(ngModel)]="edit?selectcompany.isEnabled:isEnabled" name="isEnabled">              <option value="1">True</option>              <option value="0">False</option>            </select>          </div>                      </div>    </div>    <!-- /.box-body -->    <hr>    <div class="row" *ngIf="!edit">      <div class="form-group col-lg-6">        <label class="col-lg-2">Branch</label>        <input type="text" id="company_branch" class="form-control" [(ngModel)]="bname" name="bname">                </div>      <div class="form-group col-lg-6">        <label class="col-lg-2">Department</label>        <input type="text" id="company_department" class="form-control" [(ngModel)]="dname" name="dname">         </div>  </div>    <div class="box-footer">      <button type="submit" class="btn btn-primary">Submit</button>    </div>  </form>   <!-- /.company from --><!-- /.plan from --></div>  </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AsideNavbarComponent', 'selector': 'app-aside-navbar'},{'name': 'BranchAddComponent', 'selector': 'app-branch-add'},{'name': 'BranchComponent', 'selector': 'app-branch'},{'name': 'BranchDepartFormationComponent', 'selector': 'app-branch-depart-formation'},{'name': 'BranchListComponent', 'selector': 'app-branch-list'},{'name': 'CompanyAddComponent', 'selector': 'app-company-add'},{'name': 'CompanyComponent', 'selector': 'app-company'},{'name': 'CompanyListComponent', 'selector': 'app-company-list'},{'name': 'CompanyListDropdownComponent', 'selector': 'app-company-list-dropdown'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DepartmentAddComponent', 'selector': 'app-department-add'},{'name': 'DepartmentAssignToBranchComponent', 'selector': 'app-department-assign-to-branch'},{'name': 'DepartmentComponent', 'selector': 'app-department'},{'name': 'DepartmentListComponent', 'selector': 'app-department-list'},{'name': 'EmployeeAddComponent', 'selector': 'app-employee-add'},{'name': 'EmployeeComponent', 'selector': 'app-employee'},{'name': 'EmployeeListComponent', 'selector': 'app-employee-list'},{'name': 'FieldErrorDisplayComponent', 'selector': 'app-field-error-display'},{'name': 'FooterNavbarComponent', 'selector': 'app-footer-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'SettingsNavbarComponent', 'selector': 'app-settings-navbar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SubscriptionAddComponent', 'selector': 'app-subscription-add'},{'name': 'SubscriptionComponent', 'selector': 'app-subscription'},{'name': 'SubscriptionListComponent', 'selector': 'app-subscription-list'},{'name': 'SubscriptionPlanComponent', 'selector': 'app-subscription-plan'},{'name': 'SubscriptionPlanListComponent', 'selector': 'app-subscription-plan-list'},{'name': 'TopNavbarComponent', 'selector': 'app-top-navbar'},{'name': 'UserAddComponent', 'selector': 'app-user-add'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserListComponent', 'selector': 'app-user-list'}];
+    var DIRECTIVES = [{'name': 'DropzoneDirective', 'selector': '[dropZone]'}];
+    var ACTUAL_COMPONENT = {'name': 'CompanyAddComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CompanyAddComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

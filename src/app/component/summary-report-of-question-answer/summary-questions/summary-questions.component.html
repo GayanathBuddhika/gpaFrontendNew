@@ -1,0 +1,21 @@
+<!-- <p-scrollPanel [style]="{height: '590px'}" styleClass="custom"> -->
+
+<div class="box-comments">
+
+    <input type="text"  class="form-control" (input)="onFilterQuestion($event.target.value)" placeholder="Search Question...">
+
+    <div class="box-comment" (click)="onClickQuestion(summary)" *ngFor="let summary of duplicateSummaryDataList; index as i;"
+        [appOnClickHighlight]="'white'">
+
+        <div class="comment-text">
+            <span class="username">
+                QUESTION {{i+1}}
+            </span><!-- /.username -->
+            <span class="question"> {{summary.summaryReportQAList.question}} </span>
+        </div>
+        <!-- /.comment-text -->
+    </div>  
+
+
+</div>
+<!-- </p-scrollPanel> -->

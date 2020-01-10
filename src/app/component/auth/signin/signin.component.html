@@ -1,0 +1,139 @@
+<!-- <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b>Admin</b>LTE</a>
+    </div>
+  
+    <div class="login-box-body">
+      <p class="login-box-msg">Sign in to start your session</p>
+  
+      <form action="../../index2.html" method="post">
+        <div class="form-group has-feedback">
+          <input type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="email">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="password">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="checkbox icheck">
+              <label class="">
+                <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Remember Me
+              </label>
+            </div>
+          </div>
+        
+          <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat" (click)="signin()" [disabled]="!email || !password">Sign In</button>
+          </div>
+         
+        </div>
+      </form>
+      <div class="text-danger">{{errorMessage}}</div>
+  
+      <div class="social-auth-links text-center">
+        <p>- OR -</p>
+        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+          Facebook</a>
+        <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+          Google+</a>
+      </div>
+     
+  
+      
+      <a [routerLink]="['/forgot-password']">I forgot my password</a><br>
+      <a [routerLink]="['/registration']" class="text-center">Register a new membership</a>
+  
+    </div>
+    
+  </div> -->
+<div class="sign-forms">
+    <div class="wrapper ">
+        <div class="container">
+            <div class="col-lg-12 row">
+                <div class="col-lg-6 col-md-12 visible-lg">
+                    <img [src]="backgroundImg" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-md-12 section">
+                    <div class="login-wrapper">
+                        <div class="title">
+                            <h2>
+                                Welcome to <span class="theme-color">PulseBeat</span>
+                            </h2>
+                            <h6>
+                                Welcome to a world of Data Driven Consumer and Employee insights
+                            </h6>
+                        </div>
+                        <form  autocomplete="off" >
+                        <div class="form-input">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="wrap-email">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                </span>
+                                <input type="text" name="email" class="form-control" [(ngModel)]="email"
+                                    placeholder="Your Email" id="email">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="wrap-password">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                </span>
+                                <input type="password" name="password" class="form-control" [(ngModel)]="password"
+                                    placeholder="Your Password" id="password">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="checkbox checkbox-primary">
+                                <input id="checkbox2" type="checkbox" checked="">
+                                <label for="checkbox2">
+                                    Remember Me
+                                </label>
+                                <span class="pull-right theme-color">
+                                        <a [routerLink]="['/forgot-password']">Forgot Password?</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="text-danger">{{errorMessage}}</div>
+                        </div>
+                        <br><br>
+                        <div class="form-group">
+                            <button class="btn btn-info btn-theme" (click)="signin()" [disabled]="!email || !password">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                        <br>
+                        <p>Don't you have an account? <a [routerLink]="['/registration']" >Register me</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- 
+  <button (click)="Change()">Click here</button>
+  
+  <h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
+  
+  <div *ngIf="!(authService.user | async)">
+    <input type="text" [(ngModel)]="email" placeholder="email">
+    <input type="password" [(ngModel)]="password" placeholder="email">
+  
+    <button (click)="signup()" [disabled]="!email || !password">
+      Signup
+    </button>
+  
+    <button (click)="login()" [disabled]="!email || !password">
+      Login
+      <br>
+      {{ errorMessage }}
+    </button>
+  </div>
+  
+  <button (click)="logout()" *ngIf="authService.user | async">
+    Logout
+  </button>
+  
+  <button (click)="checkAuth()">Check auth</button> -->

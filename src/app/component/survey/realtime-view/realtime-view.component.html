@@ -1,0 +1,29 @@
+
+<h1>Real time Surveys</h1>
+<!-- <div *ngFor="let rtsMap of realtimeSurveyMap | keyvalue">
+    Company : {{rtsMap.value[0].companyName}}
+   <div *ngFor="let rst of rtsMap.value | keyvalue">
+       {{rst.value.surveyname}} <hr>
+   </div>
+</div> -->
+
+<!-- <p-accordion *ngFor="let rtsMap of realtimeSurveyMap | keyvalue;">
+        Company : {{rtsMap.value[0].companyName}}
+    <p-accordionTab *ngFor="let rst of rtsMap.value | keyvalue" header="{{rst.value.surveyName}}">
+       <input type="text" #key>
+       <button type="button" class="btn btn-success" (click)="onMatchClick(key.value,rst.value.surveyId,rst.value.purl)">Add</button>
+    </p-accordionTab>
+    
+</p-accordion> -->
+
+<accordion [closeOthers]="true">
+        <accordion-group *ngFor="let rtsMap of realtimeSurveyMap | keyvalue;" heading="{{rtsMap.value[0].companyName}}" >
+            <ul>
+                <li *ngFor="let rst of rtsMap.value | keyvalue">
+                        <a  [routerLink]="['../rt/',rst.value.purl]" routerLinkActive="active" > {{rst.value.surveyName}}</a>
+                </li>
+            </ul>
+          
+        </accordion-group>
+        
+      </accordion>

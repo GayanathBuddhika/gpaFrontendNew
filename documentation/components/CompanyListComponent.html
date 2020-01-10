@@ -1,0 +1,1270 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pulsebeat-v2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">pulsebeat-v2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CompanyListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/component/company/company-list/company-list.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-company-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./company-list.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./company-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#companyList">companyList</a>
+                            </li>
+                            <li>
+                                <a href="#headers">headers</a>
+                            </li>
+                            <li>
+                                <a href="#modalRef">modalRef</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectedCompany">onSelectedCompany</a>
+                            </li>
+                            <li>
+                                <a href="#selectedComIdForPlan">selectedComIdForPlan</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toster">toster</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#delete">delete</a>
+                            </li>
+                            <li>
+                                <a href="#getCompanyList">getCompanyList</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openModal">openModal</a>
+                            </li>
+                            <li>
+                                <a href="#subscriptionx">subscriptionx</a>
+                            </li>
+                            <li>
+                                <a href="#update">update</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(companyService: <a href="../injectables/CompanyService.html">CompanyService</a>, modalService: BsModalService, confirmationService: ConfirmationService, toster: ToastrManager)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>companyService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CompanyService.html" target="_self" >CompanyService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>BsModalService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toster</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrManager</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <b>
+                            delete
+                        </b>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete(company: <a href="../classes/Company.html">Company</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>company</td>
+                                    <td>
+                                                <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCompanyList"></a>
+                    <span class="name">
+                        <b>
+                            getCompanyList
+                        </b>
+                        <a href="#getCompanyList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCompanyList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModal"></a>
+                    <span class="name">
+                        <b>
+                            openModal
+                        </b>
+                        <a href="#openModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModal(template: TemplateRef<any>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>template</td>
+                                    <td>
+                                            <code>TemplateRef&lt;any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscriptionx"></a>
+                    <span class="name">
+                        <b>
+                            subscriptionx
+                        </b>
+                        <a href="#subscriptionx"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subscriptionx(company: <a href="../classes/Company.html">Company</a>, subscriptionListTemplate)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>company</td>
+                                    <td>
+                                                <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>subscriptionListTemplate</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <b>
+                            update
+                        </b>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>update(company: <a href="../classes/Company.html">Company</a>, upadateTemplate)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>company</td>
+                                    <td>
+                                                <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>upadateTemplate</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="companyList"></a>
+                        <span class="name">
+                            <b>
+                            companyList</b>
+                            <a href="#companyList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Company.html" target="_self" >Company[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="headers"></a>
+                        <span class="name">
+                            <b>
+                            headers</b>
+                            <a href="#headers"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modalRef"></a>
+                        <span class="name">
+                            <b>
+                            modalRef</b>
+                            <a href="#modalRef"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BsModalRef</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSelectedCompany"></a>
+                        <span class="name">
+                            <b>
+                            onSelectedCompany</b>
+                            <a href="#onSelectedCompany"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedComIdForPlan"></a>
+                        <span class="name">
+                            <b>
+                            selectedComIdForPlan</b>
+                            <a href="#selectedComIdForPlan"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscription</b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subscription()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toster"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toster</b>
+                            <a href="#toster"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ToastrManager</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/component/company/company-list/company-list.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ToastrManager } from &#x27;ng6-toastr-notifications&#x27;;
+import { ConfirmationService } from &#x27;primeng/api&#x27;;
+
+import { Company } from &#x27;./../../../model/company&#x27;;
+import { CompanyService } from &#x27;./../../../service/company.service&#x27;;
+import { Component, OnInit, TemplateRef, OnDestroy} from &#x27;@angular/core&#x27;;
+
+import { BsModalService, BsModalRef } from &#x27;ngx-bootstrap/modal&#x27;;
+import { DataTableDirective } from &#x27;angular-datatables&#x27;;
+import { Observable, Subscription } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-company-list&#x27;,
+  templateUrl: &#x27;./company-list.component.html&#x27;,
+  styleUrls: [&#x27;./company-list.component.css&#x27;]
+})
+export class CompanyListComponent implements OnInit {
+
+  // --- Subscription 
+  private subscription: Subscription &#x3D; new Subscription();
+
+  companyList: Company[] &#x3D; [];
+
+  headers: any[];
+
+  selectedComIdForPlan : string;
+
+  // --- this variable define for get company object after click the edit button
+  // --- this is bind  with [selectcompany] property in the #companyEditTemplate in the companyList.component.html
+  onSelectedCompany: Company;
+
+  // --- for modal
+  modalRef: BsModalRef;
+
+  constructor(
+    private companyService: CompanyService,
+    private modalService: BsModalService,
+    private confirmationService: ConfirmationService,
+    public toster: ToastrManager
+
+  ) { }
+
+  ngOnInit() {
+
+    this.getCompanyList();
+    // -- for primeNG table
+    this.headers &#x3D;
+      [
+        { field: &#x27;no&#x27;, header: &#x27;No&#x27; },
+        { field: &#x27;name&#x27;, header: &#x27;Name&#x27; },
+        { field: &#x27;address&#x27;, header: &#x27;Address&#x27; },
+        { field: &#x27;email&#x27;, header: &#x27;Email&#x27; },
+        { field: &#x27;businessType&#x27;, header: &#x27;BusinessType&#x27; },
+        { field: &#x27;edit&#x27;, header: &#x27;Edit&#x27; },
+        { field: &#x27;delete&#x27;, header: &#x27;Delete&#x27; },
+        { field: &#x27;subscriptionPlan&#x27;, header: &#x27;Subscription&#x27; }
+      ];
+
+      this.companyService.get_ngxModal_edit_$().subscribe(data &#x3D;&gt;{
+
+        if(data &#x3D;&#x3D;&#x3D; true){
+          this.modalRef.hide();
+        }
+      })
+// --- add subscribe methode to the subscription object
+this.subscription.add(
+  this.companyService._addCompanyToList.subscribe(data &#x3D;&gt;{ 
+    let comList &#x3D; [...this.companyList];
+    comList.unshift(data);
+    this.companyList &#x3D; comList;
+  })
+);
+     
+// --- add subscribe methode to the subscription object
+this.subscription.add(
+  this.companyService._editCompanyToList.subscribe(data &#x3D;&gt;{
+    let index &#x3D; this.companyList.findIndex(company &#x3D;&gt; company.id &#x3D;&#x3D;&#x3D; data.id);
+    this.companyList[index] &#x3D; data;
+  })
+);
+      
+
+  }
+
+  ngOnDestroy() {
+    // --- unsubscribe all subscribe methode 
+    this.subscription.unsubscribe();
+   } 
+
+  // --- for delete company
+  delete(company: Company) {
+   
+    this.confirmationService.confirm({
+      message: &#x27;Are you sure that you want to proceed?&#x27;,
+      header: &#x27;Confirmation&#x27;,
+      icon: &#x27;pi pi-exclamation-triangle&#x27;,
+      accept: () &#x3D;&gt; {
+
+    // --- add subscribe methode to the subscription object
+    this.subscription.add(
+      this.companyService.deleteCompany(company.id).subscribe(data&#x3D;&gt;{
+        let index&#x3D;this.companyList.indexOf(company)
+        this.companyList.splice(index,0);      
+        this.companyList &#x3D; this.companyList.filter((val,i) &#x3D;&gt; i!&#x3D;index); 
+        this.toster.successToastr(&quot;Success&quot;,&quot;Data is deleted&quot;,{position:&quot;bottom-right&quot;,animate:&quot;slideFromBottom&quot;}) 
+       },err&#x3D;&gt;{
+        this.toster.errorToastr(JSON.parse(JSON.stringify(err)).error.message,&quot;Error&quot;,{position:&quot;bottom-right&quot;,animate:&quot;slideFromBottom&quot;})
+       })
+    );
+          
+      },
+      reject: () &#x3D;&gt; {
+
+      }
+  });
+  }
+
+  update(company: Company, upadateTemplate) {
+    this.onSelectedCompany &#x3D; company;
+    // --- pass the reference template to openModal methode
+    this.openModal(upadateTemplate);
+  }
+
+  subscriptionx(company: Company,subscriptionListTemplate){
+    this.selectedComIdForPlan &#x3D;company.id;
+    this.companyService._selectCompanyForPlan.next(company);
+    this.openModal(subscriptionListTemplate);
+  }
+
+  // --- for popup the modal
+  openModal(template: TemplateRef&lt;any&gt;) {
+    this.modalRef &#x3D; this.modalService.show(template,{class: &#x27;modal-lg&#x27;});
+  }
+
+
+  getCompanyList() {
+    this.companyService.listCompany().subscribe(data &#x3D;&gt; {
+      console.log(data);
+      this.companyList &#x3D; data;
+    }, err &#x3D;&gt; {
+      console.log(err);
+    })
+
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+&lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+          &lt;p-table #dt 
+          [columns]&#x3D;&quot;headers&quot;
+          [value]&#x3D;&quot;companyList&quot; 
+          [paginator]&#x3D;&quot;true&quot; 
+          [rows]&#x3D;&quot;10&quot; 
+          [responsive]&#x3D;&quot;true&quot; 
+          [resizableColumns]&#x3D;&quot;true&quot; 
+          [columnResizeMode]&#x3D;&quot;expand&quot; 
+          [autoLayout]&#x3D;&quot;true&quot;
+          [rowsPerPageOptions]&#x3D;&quot;[10,25,50,100]&quot;
+          &gt;
+      
+                &lt;ng-template  pTemplate&#x3D;&quot;header&quot; let-headers&gt;
+                  &lt;!-- this is for table headers --&gt;
+                    &lt;tr&gt;
+                      &lt;th *ngFor&#x3D;&quot;let th of headers&quot;&gt;
+                        {{th.header}}
+              
+                      &lt;/th&gt;
+                    &lt;/tr&gt;
+                  &lt;!-- this is for table input field --&gt;
+                  &lt;!-- using that you can search nay data in the table in paticuler field --&gt;
+                    &lt;tr&gt;
+                      &lt;th *ngFor&#x3D;&quot;let col of headers&quot;  [ngSwitch]&#x3D;&quot;col.field&quot;&gt;
+                        &lt;input *ngSwitchCase&#x3D;&quot;&#x27;name&#x27;&quot; pInputText type&#x3D;&quot;text&quot; (input)&#x3D;&quot;dt.filter($event.target.value, col.field, col.filterMatchMode&#x3D;&#x27;contains&#x27;)&quot;&gt;
+                        &lt;input *ngSwitchCase&#x3D;&quot;&#x27;address&#x27;&quot; pInputText  type&#x3D;&quot;text&quot; (input)&#x3D;&quot;dt.filter($event.target.value, col.field, col.filterMatchMode&#x3D;&#x27;contains&#x27;)&quot;&gt;
+                        &lt;input *ngSwitchCase&#x3D;&quot;&#x27;email&#x27;&quot; pInputText type&#x3D;&quot;text&quot; (input)&#x3D;&quot;dt.filter($event.target.value, col.field, col.filterMatchMode&#x3D;&#x27;contains&#x27;)&quot;&gt;
+                        &lt;input *ngSwitchCase&#x3D;&quot;&#x27;businessType&#x27;&quot; pInputText type&#x3D;&quot;text&quot; (input)&#x3D;&quot;dt.filter($event.target.value, col.field, col.filterMatchMode&#x3D;&#x27;contains&#x27;)&quot;&gt;                
+                      &lt;/th&gt;
+                    &lt;/tr&gt;
+
+                &lt;/ng-template&gt;
+                &lt;!-- this is for table body --&gt;
+                &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-company let-rowIndex&#x3D;&quot;rowIndex&quot;&gt;
+                    &lt;tr&gt;
+                            &lt;td&gt;{{ rowIndex+1}}&lt;/td&gt;
+                            &lt;td&gt;{{ company.name}}&lt;/td&gt;
+                            &lt;td&gt;{{ company.address}}&lt;/td&gt;
+                            &lt;td&gt;{{ company.email}}&lt;/td&gt;
+                            &lt;td&gt;{{ company.businessType.type}}&lt;/td&gt;
+                            &lt;td align&#x3D;&quot;center&quot;&gt;&lt;i class&#x3D;&quot;fa fa-edit fa-2x text-blue&quot; style&#x3D;&quot;cursor: pointer;&quot; (click)&#x3D;&quot;update(company,companyEditTemplate)&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                            &lt;td align&#x3D;&quot;center&quot;&gt;&lt;i class&#x3D;&quot;fa fa-trash fa-2x text-red&quot; style&#x3D;&quot;cursor: pointer;&quot; (click)&#x3D;&quot;delete(company)&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                            &lt;td align&#x3D;&quot;center&quot;&gt;&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;subscriptionx(company,subscriptionListTemplate)&quot;&gt;plans&lt;/button&gt;&lt;/td&gt;
+                          
+                    &lt;/tr&gt;
+                &lt;/ng-template&gt;
+      
+          &lt;/p-table&gt;
+&lt;/div&gt;
+  
+
+&lt;!-- for edit button --&gt;
+&lt;ng-template #companyEditTemplate&gt;
+  &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+    &lt;h4 class&#x3D;&quot;modal-title pull-left&quot;&gt;Status&lt;/h4&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close pull-right&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
+      &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+    &lt;app-company-add [selectcompany]&#x3D;&quot;onSelectedCompany&quot; [edit]&#x3D;&quot;true&quot;&gt;&lt;/app-company-add&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+
+
+&lt;!-- for subscription list--&gt;
+&lt;ng-template #subscriptionListTemplate&gt;
+    &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+      &lt;h4 class&#x3D;&quot;modal-title pull-left&quot;&gt;Status&lt;/h4&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close pull-right&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+      &lt;!-- &lt;app-company-add [selectcompany]&#x3D;&quot;onSelectedCompany&quot; [edit]&#x3D;&quot;true&quot;&gt;&lt;/app-company-add&gt; --&gt;
+      &lt;!-- &lt;app-subscription-list&gt;&lt;/app-subscription-list&gt; --&gt;
+      &lt;app-subscription-plan-list [selectedComId]&#x3D;&quot;selectedComIdForPlan&quot;&gt;&lt;/app-subscription-plan-list&gt;
+    &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./company-list.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.control-label{
+    margin-left: 70px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="table-responsive">          <p-table #dt           [columns]="headers"          [value]="companyList"           [paginator]="true"           [rows]="10"           [responsive]="true"           [resizableColumns]="true"           [columnResizeMode]="expand"           [autoLayout]="true"          [rowsPerPageOptions]="[10,25,50,100]"          >                      <ng-template  pTemplate="header" let-headers>                  <!-- this is for table headers -->                    <tr>                      <th *ngFor="let th of headers">                        {{th.header}}                                    </th>                    </tr>                  <!-- this is for table input field -->                  <!-- using that you can search nay data in the table in paticuler field -->                    <tr>                      <th *ngFor="let col of headers"  [ngSwitch]="col.field">                        <input *ngSwitchCase="\'name\'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode=\'contains\')">                        <input *ngSwitchCase="\'address\'" pInputText  type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode=\'contains\')">                        <input *ngSwitchCase="\'email\'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode=\'contains\')">                        <input *ngSwitchCase="\'businessType\'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode=\'contains\')">                                      </th>                    </tr>                </ng-template>                <!-- this is for table body -->                <ng-template pTemplate="body" let-company let-rowIndex="rowIndex">                    <tr>                            <td>{{ rowIndex+1}}</td>                            <td>{{ company.name}}</td>                            <td>{{ company.address}}</td>                            <td>{{ company.email}}</td>                            <td>{{ company.businessType.type}}</td>                            <td align="center"><i class="fa fa-edit fa-2x text-blue" style="cursor: pointer;" (click)="update(company,companyEditTemplate)"></i></td>                            <td align="center"><i class="fa fa-trash fa-2x text-red" style="cursor: pointer;" (click)="delete(company)"></i></td>                            <td align="center"><button type="button" class="btn btn-success" (click)="subscriptionx(company,subscriptionListTemplate)">plans</button></td>                                              </tr>                </ng-template>                </p-table></div>  <!-- for edit button --><ng-template #companyEditTemplate>  <div class="modal-header">    <h4 class="modal-title pull-left">Status</h4>    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">      <span aria-hidden="true">&times;</span>    </button>  </div>  <div class="modal-body">    <app-company-add [selectcompany]="onSelectedCompany" [edit]="true"></app-company-add>  </div></ng-template><!-- for subscription list--><ng-template #subscriptionListTemplate>    <div class="modal-dialog modal-lg">        <div class="modal-content">    <div class="modal-header">      <h4 class="modal-title pull-left">Status</h4>      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">        <span aria-hidden="true">&times;</span>      </button>    </div>    <div class="modal-body">      <!-- <app-company-add [selectcompany]="onSelectedCompany" [edit]="true"></app-company-add> -->      <!-- <app-subscription-list></app-subscription-list> -->      <app-subscription-plan-list [selectedComId]="selectedComIdForPlan"></app-subscription-plan-list>    </div>        </div>    </div>  </ng-template></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AsideNavbarComponent', 'selector': 'app-aside-navbar'},{'name': 'BranchAddComponent', 'selector': 'app-branch-add'},{'name': 'BranchComponent', 'selector': 'app-branch'},{'name': 'BranchDepartFormationComponent', 'selector': 'app-branch-depart-formation'},{'name': 'BranchListComponent', 'selector': 'app-branch-list'},{'name': 'CompanyAddComponent', 'selector': 'app-company-add'},{'name': 'CompanyComponent', 'selector': 'app-company'},{'name': 'CompanyListComponent', 'selector': 'app-company-list'},{'name': 'CompanyListDropdownComponent', 'selector': 'app-company-list-dropdown'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DepartmentAddComponent', 'selector': 'app-department-add'},{'name': 'DepartmentAssignToBranchComponent', 'selector': 'app-department-assign-to-branch'},{'name': 'DepartmentComponent', 'selector': 'app-department'},{'name': 'DepartmentListComponent', 'selector': 'app-department-list'},{'name': 'EmployeeAddComponent', 'selector': 'app-employee-add'},{'name': 'EmployeeComponent', 'selector': 'app-employee'},{'name': 'EmployeeListComponent', 'selector': 'app-employee-list'},{'name': 'FieldErrorDisplayComponent', 'selector': 'app-field-error-display'},{'name': 'FooterNavbarComponent', 'selector': 'app-footer-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'SettingsNavbarComponent', 'selector': 'app-settings-navbar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SubscriptionAddComponent', 'selector': 'app-subscription-add'},{'name': 'SubscriptionComponent', 'selector': 'app-subscription'},{'name': 'SubscriptionListComponent', 'selector': 'app-subscription-list'},{'name': 'SubscriptionPlanComponent', 'selector': 'app-subscription-plan'},{'name': 'SubscriptionPlanListComponent', 'selector': 'app-subscription-plan-list'},{'name': 'TopNavbarComponent', 'selector': 'app-top-navbar'},{'name': 'UserAddComponent', 'selector': 'app-user-add'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserListComponent', 'selector': 'app-user-list'}];
+    var DIRECTIVES = [{'name': 'DropzoneDirective', 'selector': '[dropZone]'}];
+    var ACTUAL_COMPONENT = {'name': 'CompanyListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CompanyListComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<div class="jumbotron">
+    <div class="myContainer">
+        <div class="form-group heading">
+            <h2> {{surveyName}}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="myContainer">
+
+    <form autocomplete="off" #surForm="ngForm" class="form-inline custom-form question-form">
+        <div class="form-group">
+            <app-final-question *ngFor="let question of pagedItems;let i = index" [Oderbyquestion]="question.value"
+                [qNumber]="question.indexNum" [question]="question.value[0].question" [modified]="question.modified"
+                [modifiedAnswer]="question.modified?question.createdAnswer:'[]'" [disableInputComponent]="disableInputComponent"> </app-final-question>
+        </div>
+
+
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1,false)">Previous</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1,true)">Next</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="form-group pull-right">
+            <ul class="pagination">
+                <li>
+                        <button class="btn btn-custom btn-dark-blue" *ngIf="viewButton" type="button"
+                        (click)="onSubmit()">Submit</button>
+
+                </li>
+                <li>
+                    <button class="btn btn-custom btn-dark-blue" *ngIf="reSubmitButton" type="button"
+                    (click)="onReSubmit()">Re Submition</button>
+
+                </li>
+
+            </ul>
+          
+        </div>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="col-md-12 topBackground"></div>
+<div class="container">
+    <div class="myContainer">
+        <div class="row surveyName">
+
+           
+
+
+        </div>
+
+        <div class="row qaBody">
+
+            <div class="col-md-12">
+
+          
+
+                <form #surForm="ngForm">
+
+                    <div class="col-md-12">
+
+                        <app-final-question *ngFor="let question of pagedItems;let i = index"
+                            [Oderbyquestion]="question.value" [qNumber]="question.indexNum"
+                            [question]="question.value[0].question" [modified]="question.modified"
+                            [modifiedAnswer]="question.modified?question.createdAnswer:'[]'"> </app-final-question>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-primary qaButton" *ngIf="viewButton" type="button"
+                            (click)="onSubmit()">submit</button>
+                    </div>
+
+
+                    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                        <li [ngClass]="{disabled:pager.currentPage === 1}">
+                            <a (click)="setPage(pager.currentPage - 1,false)">Previous</a>
+                        </li>
+                        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                            <a (click)="setPage(pager.currentPage + 1,true)">Next</a>
+                        </li>
+
+                    </ul>
+
+                </form>
+
+            
+
+            </div>
+
+
+        </div>
+     
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.totalPages)">Last</a>
+            </li>
+        </ul>
+    </div>
+</div> -->
+
+
+
+
+
+<ng-template #realtimeSurvey>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Enter the key</h4>
+    </div>
+    <div class="modal-body custom-form">
+        <div class="form-group">
+        <input type="text" #key class="form-control">
+
+       
+    </div>
+
+    <div class="form-group">
+            <button class="btn btn-custom btn-success" (click)="onGetSurvey(key.value)">Get the Survey!</button>
+            <button class="btn btn-custom btn-danger" (click)="cancelModel()">Cancel</button>
+    </div>
+    </div>
+    
+
+</ng-template>

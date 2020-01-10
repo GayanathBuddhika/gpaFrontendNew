@@ -1,0 +1,22 @@
+.requiredasterisk:after {
+    content:"*";
+    color:red;
+  }
+  
+  .question{
+    color: #000;
+    font-size: 20px;
+    line-height: 135%;
+    width: 100%;
+    word-break: break-word;
+    padding: 10px;
+    font-weight: 500;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+
+  }
+  .answer{
+    font-size: 16px;
+    line-height: 100%;
+    width: 100%;
+  }
+ 

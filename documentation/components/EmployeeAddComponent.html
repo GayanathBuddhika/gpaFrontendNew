@@ -1,0 +1,1698 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pulsebeat-v2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">pulsebeat-v2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>EmployeeAddComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/component/employee/employee-add/employee-add.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-employee-add</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./employee-add.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./employee-add.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#depToBranchs">depToBranchs</a>
+                            </li>
+                            <li>
+                                <a href="#employee">employee</a>
+                            </li>
+                            <li>
+                                <a href="#employeeForm">employeeForm</a>
+                            </li>
+                            <li>
+                                <a href="#filerDeptoBranch">filerDeptoBranch</a>
+                            </li>
+                            <li>
+                                <a href="#filterBranchs">filterBranchs</a>
+                            </li>
+                            <li>
+                                <a href="#filterdepartments">filterdepartments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toster">toster</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#comapareBranch">comapareBranch</a>
+                            </li>
+                            <li>
+                                <a href="#comapareDepartment">comapareDepartment</a>
+                            </li>
+                            <li>
+                                <a href="#compareCompany">compareCompany</a>
+                            </li>
+                            <li>
+                                <a href="#getDepToBranchs">getDepToBranchs</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectBranch">onSelectBranch</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectedCompnay">onSelectedCompnay</a>
+                            </li>
+                            <li>
+                                <a href="#onsubmit">onsubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#edit">edit</a>
+                            </li>
+                            <li>
+                                <a href="#setEditEmployee">setEditEmployee</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f">f</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(frm: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, depToBranchService: <a href="../injectables/DepartmentAssingToBranchService.html">DepartmentAssingToBranchService</a>, employeeService: <a href="../injectables/EmployeeService.html">EmployeeService</a>, toster: ToastrManager)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>frm</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>depToBranchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DepartmentAssingToBranchService.html" target="_self" >DepartmentAssingToBranchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>employeeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EmployeeService.html" target="_self" >EmployeeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toster</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrManager</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edit"></a>
+                        <b>edit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:42</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setEditEmployee"></a>
+                        <b>setEditEmployee</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:39</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comapareBranch"></a>
+                    <span class="name">
+                        <b>
+                            comapareBranch
+                        </b>
+                        <a href="#comapareBranch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>comapareBranch(b1: <a href="../classes/Branch.html">Branch</a>, b2: <a href="../classes/Branch.html">Branch</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="217"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:217</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>b1</td>
+                                    <td>
+                                                <code><a href="../classes/Branch.html" target="_self" >Branch</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>b2</td>
+                                    <td>
+                                                <code><a href="../classes/Branch.html" target="_self" >Branch</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comapareDepartment"></a>
+                    <span class="name">
+                        <b>
+                            comapareDepartment
+                        </b>
+                        <a href="#comapareDepartment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>comapareDepartment(d1: <a href="../classes/Department.html">Department</a>, d2: <a href="../classes/Department.html">Department</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="221"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:221</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d1</td>
+                                    <td>
+                                                <code><a href="../classes/Department.html" target="_self" >Department</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>d2</td>
+                                    <td>
+                                                <code><a href="../classes/Department.html" target="_self" >Department</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compareCompany"></a>
+                    <span class="name">
+                        <b>
+                            compareCompany
+                        </b>
+                        <a href="#compareCompany"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>compareCompany(c1: <a href="../classes/Company.html">Company</a>, c2: <a href="../classes/Company.html">Company</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:213</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>c1</td>
+                                    <td>
+                                                <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>c2</td>
+                                    <td>
+                                                <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDepToBranchs"></a>
+                    <span class="name">
+                        <b>
+                            getDepToBranchs
+                        </b>
+                        <a href="#getDepToBranchs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDepToBranchs()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectBranch"></a>
+                    <span class="name">
+                        <b>
+                            onSelectBranch
+                        </b>
+                        <a href="#onSelectBranch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectBranch(branch: <a href="../classes/Branch.html">Branch</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>branch</td>
+                                    <td>
+                                                <code><a href="../classes/Branch.html" target="_self" >Branch</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectedCompnay"></a>
+                    <span class="name">
+                        <b>
+                            onSelectedCompnay
+                        </b>
+                        <a href="#onSelectedCompnay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectedCompnay(company: <a href="../classes/Company.html">Company</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>company</td>
+                                    <td>
+                                                <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onsubmit"></a>
+                    <span class="name">
+                        <b>
+                            onsubmit
+                        </b>
+                        <a href="#onsubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onsubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="depToBranchs"></a>
+                        <span class="name">
+                            <b>
+                            depToBranchs</b>
+                            <a href="#depToBranchs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>DepToBranch[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="employee"></a>
+                        <span class="name">
+                            <b>
+                            employee</b>
+                            <a href="#employee"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Employee.html" target="_self" >Employee</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="employeeForm"></a>
+                        <span class="name">
+                            <b>
+                            employeeForm</b>
+                            <a href="#employeeForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filerDeptoBranch"></a>
+                        <span class="name">
+                            <b>
+                            filerDeptoBranch</b>
+                            <a href="#filerDeptoBranch"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>DepToBranch[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filterBranchs"></a>
+                        <span class="name">
+                            <b>
+                            filterBranchs</b>
+                            <a href="#filterBranchs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>DepToBranch[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filterdepartments"></a>
+                        <span class="name">
+                            <b>
+                            filterdepartments</b>
+                            <a href="#filterdepartments"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscription</b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subscription()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toster"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toster</b>
+                            <a href="#toster"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ToastrManager</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f"></a>
+                        <span class="name"><b>f</b><a href="#f"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/component/employee/employee-add/employee-add.component.ts:98</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Observable, Subscription } from &#x27;rxjs&#x27;;
+import { Department } from &#x27;./../../../model/department&#x27;;
+import { Company } from &#x27;src/app/model/company&#x27;;
+import { EmployeeService } from &#x27;./../../../service/employee.service&#x27;;
+import { Employee } from &#x27;./../../../model/employee&#x27;;
+import { DepToBranch } from &#x27;./../../../model/DeptToBranch&#x27;;
+import { Branch } from &#x27;./../../../model/branch&#x27;;
+import { DepartmentAssingToBranchService } from &#x27;./../../../service/department-assing-to-branch.service&#x27;;
+import { FormGroup, FormBuilder, Validators, FormControl } from &#x27;@angular/forms&#x27;;
+import { Component, OnInit, Input, AfterViewInit,OnDestroy, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
+import { ToastrManager } from &#x27;ng6-toastr-notifications&#x27;;
+
+
+
+@Component({
+  selector: &#x27;app-employee-add&#x27;,
+  templateUrl: &#x27;./employee-add.component.html&#x27;,
+  styleUrls: [&#x27;./employee-add.component.css&#x27;]
+})
+export class EmployeeAddComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  // --- Subscription 
+  private subscription: Subscription &#x3D; new Subscription();
+
+  // --- for employee reactive from
+  employeeForm: FormGroup;
+  // --- for get assingDepartmentToBranch object to select the company
+  depToBranchs: DepToBranch[];
+  // --- for get the branches to paticuler selected company
+  filerDeptoBranch: DepToBranch[];
+   // --- for get the branches to paticuler selected company
+  filterBranchs: DepToBranch[];
+  // --- for get the branches to paticuler selected company
+  filterdepartments: any[];
+
+  employee: Employee;
+   // ---  get value from parent component employeeLlist.component.html 
+  @Input() setEditEmployee: Employee;
+  // ---  get value from parent component employeeLlist.component.html 
+  // --- this is come to true when selecthe employee to edit
+  @Input() edit: boolean &#x3D; false;
+
+
+
+
+
+  constructor(
+    private frm: FormBuilder,
+    private depToBranchService: DepartmentAssingToBranchService,
+    private employeeService: EmployeeService,
+    public toster: ToastrManager
+
+  ) { }
+
+  ngOnInit() {
+    this.getDepToBranchs();
+
+    this.employeeForm &#x3D; this.frm.group({
+      firstname: [&quot;&quot;, Validators.required],
+      lastname: [&quot;&quot;, Validators.required],
+      email: [&quot;&quot;, [Validators.required, Validators.email]],
+      phone: [&quot;&quot;, [Validators.required,Validators.pattern]],
+      company: [&quot;&quot;, Validators.required],
+      branch: [&quot;&quot;, Validators.required],
+      department: [&quot;&quot;, Validators.required]
+   //   Validators.minLength(10), Validators.maxLength(10),
+
+    });
+
+  }
+
+
+
+// --- set the selected employee value to the form input when edit value is true
+  ngAfterViewInit() {
+    if (this.edit) {
+      this.employeeForm.get(&#x27;firstname&#x27;).patchValue(this.setEditEmployee.firstname);
+      this.employeeForm.get(&#x27;lastname&#x27;).patchValue(this.setEditEmployee.lastname);
+      this.employeeForm.get(&#x27;email&#x27;).patchValue(this.setEditEmployee.email);
+      this.employeeForm.get(&#x27;phone&#x27;).patchValue(this.setEditEmployee.phone);
+      this.employeeForm.get(&#x27;company&#x27;).patchValue(this.setEditEmployee.assignDeptToBranch.company);
+      this.employeeForm.get(&#x27;branch&#x27;).patchValue(this.setEditEmployee.assignDeptToBranch.branch);
+      this.employeeForm.get(&#x27;department&#x27;).patchValue(this.setEditEmployee.assignDeptToBranch.department);
+
+
+    }
+
+  }
+
+
+  ngOnDestroy() {
+    // --- unsubscribe all subscribe methode 
+    this.subscription.unsubscribe();
+}
+
+   // --- convenience getter for easy access to form fields
+   get f() {
+    return this.employeeForm.controls; 
+   }
+
+
+  // this method for get all depToBranch object
+  getDepToBranchs() {
+    this.depToBranchService.getAllCompany().subscribe(
+      data &#x3D;&gt; { this.depToBranchs &#x3D; data; console.log(this.depToBranchs); },
+      err &#x3D;&gt; { console.log(err); });
+
+  }
+
+
+
+
+  // this method start when select the company 
+  onSelectedCompnay(company: Company) {
+    // --- add subscribe methode to the subscription object
+    this.subscription.add(
+      this.depToBranchService.getBranch(company.id).subscribe(data &#x3D;&gt; {
+        this.filterBranchs &#x3D; data;
+      }, err &#x3D;&gt; {
+        console.log(err);
+      })
+    );
+   
+
+  }
+
+
+  // --- this method start when select the branch 
+  onSelectBranch(branch: Branch) {
+    // --- add subscribe methode to the subscription object
+    this.subscription.add(
+      this.depToBranchService.getDepartment(branch.id).subscribe(data &#x3D;&gt; {
+        this.filterdepartments &#x3D; data;
+      }, err &#x3D;&gt; {
+        console.log(err);
+      })
+    );
+    
+  }
+
+
+  // this methode start when click the submit buttom in the form
+  onsubmit() {
+
+    // if(!this.employeeForm.valid){
+    //   return;
+    // }
+    // --- set the save company object to company 
+    const company &#x3D; this.employeeForm.get(&#x27;company&#x27;).value;
+    // --- set the save branch object to branch
+    const branch &#x3D; this.employeeForm.get(&#x27;branch&#x27;).value;
+     // --- set the save branch object to branch
+    const department &#x3D; this.employeeForm.get(&#x27;department&#x27;).value;
+    // --- get the employee from object to employee
+    this.employee &#x3D; this.employeeForm.value;
+    if(this.edit){
+    this.employee.id &#x3D; this.setEditEmployee.id;
+    this.employee.ai &#x3D; this.setEditEmployee.ai;
+    this.employee.edit &#x3D; this.edit;
+    }
+    console.log(&quot;on employee submit&quot;,this.employee);
+    console.log(&quot;after submit &quot;,this.edit);
+    console.log(&quot;phone number validation &quot;,this.employeeForm);
+    // --- add subscribe methode to the subscription object
+    this.subscription.add(
+  
+      // this.employeeService.saveEmployee(this.employee, company, branch, department).subscribe(data &#x3D;&gt; {
+      //   console.log(data,&quot;guyguygu&quot;, company);
+      //    this.employee &#x3D; data.employee;
+      //    console.log(&quot;after submit &quot;,this.employee);
+         
+  
+      //   if(this.edit !&#x3D;&#x3D; true){
+      //     if(data.action &#x3D;&#x3D;&#x3D; &#x27;saved&#x27;){
+      //       this.employeeService._addUserToList.next(this.employee);
+      //       this.employeeService._set_ngxModal_add(true);
+      //       this.toster.successToastr(&quot;Success&quot;, &quot;Successfully saved&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+  
+      //     }else{
+      //       this.toster.errorToastr(&quot;Error&quot;, &quot;employee already exists add&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+      //     }
+         
+      //   }else{
+      //     if(data.action &#x3D;&#x3D;&#x3D; &#x27;edited&#x27;){
+      //       this.employeeService._editUserToList.next(this.employee);
+      //     this.employeeService._set_ngxmodal_edit(true);
+      //     this.toster.successToastr(&quot;Success&quot;, &quot;Successfully edited&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+  
+      //     }else{
+      //       this.toster.errorToastr(&quot;Error&quot;, &quot;employee already exists edit&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; });
+      //     }
+          
+      //   }
+       
+      // }, err &#x3D;&gt; {
+      //   if(this.edit !&#x3D;&#x3D; true){
+      //     this.employeeService._set_ngxModal_add(false);
+      //   }else{
+      //     this.employeeService._set_ngxmodal_edit(true);
+      //   }
+      //   this.toster.errorToastr(err, &quot;Error&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; })
+      //   //this.toster.errorToastr(JSON.parse(JSON.stringify(err)).error.message, &quot;Error&quot;, { position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot; })
+      // })
+
+    );
+   
+
+  }
+
+
+// --- remove the dubpicate company
+  compareCompany(c1: Company, c2: Company): boolean {
+    return c1 &amp;&amp; c2 &amp;&amp; c1.id &#x3D;&#x3D;&#x3D; c2.id;
+  }
+// --- remove the dubpicate branch
+  comapareBranch(b1: Branch, b2: Branch): boolean {
+    return b1 &amp;&amp; b2 &amp;&amp; b1.id &#x3D;&#x3D;&#x3D; b2.id;
+  }
+// --- remove the dubpicate department
+  comapareDepartment(d1: Department, d2: Department): boolean {
+    return d1 &amp;&amp; d2 &amp;&amp; d1.id &#x3D;&#x3D;&#x3D; d2.id;
+  }
+
+}
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;box box-primary&quot;&gt;
+  
+  &lt;!-- employeefrom start --&gt;
+  &lt;form [formGroup]&#x3D;&quot;employeeForm&quot; (ngSubmit)&#x3D;&quot;onsubmit()&quot;&gt;
+    &lt;div class&#x3D;&quot;box box-primary&quot;&gt;
+
+
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;!-- for company list --&gt; 
+              &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+                &lt;label class&#x3D;&quot;control-label&quot;&gt;company&lt;/label&gt;
+                &lt;select class&#x3D;&quot;form-control&quot; (ngModelChange)&#x3D;&quot;onSelectedCompnay($event)&quot; formControlName&#x3D;&quot;company&quot; [compareWith]&#x3D;&quot;compareCompany&quot; [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: f.company.touched &amp;&amp; f.company.errors }&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let depToBranch of depToBranchs&quot; [ngValue]&#x3D;&quot;depToBranch.company&quot; &gt;{{depToBranch.company.name}}&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;!-- fro validation --&gt;
+                &lt;!-- &lt;span *ngIf&#x3D;&quot;!employeeForm.get(&#x27;company&#x27;).valid &amp;&amp; employeeForm.get(&#x27;company&#x27;).touched&quot; class&#x3D;&quot;text-danger&quot;&gt;plese
+                  select company &lt;/span&gt;
+              &lt;/div&gt; --&gt;
+              &lt;div *ngIf&#x3D;&quot;f.company.touched &amp;&amp; f.company.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;                        
+                &lt;div *ngIf&#x3D;&quot;f.company.errors.required&quot;&gt;company is required&lt;/div&gt;
+             &lt;/div&gt;
+              &lt;/div&gt;
+
+
+              &lt;!-- for branch list --&gt;
+              &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+                &lt;label class&#x3D;&quot;control-label&quot;&gt;Branch&lt;/label&gt;
+                &lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;branch&quot; (ngModelChange)&#x3D;&quot;onSelectBranch($event)&quot; [compareWith]&#x3D;&quot;comapareBranch&quot; [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: f.company.touched &amp;&amp; f.company.errors }&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let filterBranch of filterBranchs&quot;
+                    [ngValue]&#x3D;&quot;filterBranch.branch&quot;&gt;{{filterBranch.branch.name}}&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;!-- fro validation --&gt;
+                &lt;!-- &lt;span *ngIf&#x3D;&quot;!employeeForm.get(&#x27;branch&#x27;).valid &amp;&amp; employeeForm.get(&#x27;branch&#x27;).touched&quot; class&#x3D;&quot;text-danger&quot;&gt;plese
+                  select branch &lt;/span&gt; --&gt;
+                  &lt;div *ngIf&#x3D;&quot;f.branch.touched &amp;&amp; f.branch.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;                        
+                    &lt;div *ngIf&#x3D;&quot;f.branch.errors.required&quot;&gt;branch is required&lt;/div&gt;
+                 &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;!-- for department list --&gt;
+              &lt;div class&#x3D;&quot;form-group col-lg-4&quot;&gt;
+                &lt;label class&#x3D;&quot;control-label&quot;&gt;department&lt;/label&gt;
+                &lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;department&quot; [compareWith]&#x3D;&quot;comapareDepartment&quot; [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: f.department.touched &amp;&amp; f.department.errors }&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let filterdepartment of filterdepartments&quot; [ngValue]&#x3D;&quot;filterdepartment.department&quot;&gt;{{filterdepartment.department.name}}&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;!-- fro validation --&gt;
+                &lt;!-- &lt;span *ngIf&#x3D;&quot;!employeeForm.get(&#x27;department&#x27;).valid &amp;&amp; employeeForm.get(&#x27;department&#x27;).touched&quot; class&#x3D;&quot;text-danger&quot;&gt;plese
+                  select department &lt;/span&gt;   --&gt;
+                  &lt;div *ngIf&#x3D;&quot;f.department.touched &amp;&amp; f.department.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;                        
+                    &lt;div *ngIf&#x3D;&quot;f.department.errors.required&quot;&gt;department is required&lt;/div&gt;
+                 &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+
+
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;!-- for first name --&gt;
+              &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+                &lt;label class&#x3D;&quot;control-label&quot;&gt;First name&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;firstname&quot; formControlName&#x3D;&quot;firstname&quot; placeholder&#x3D;&quot;enter first name&quot; /&gt;
+                &lt;!-- fro validation --&gt;
+                &lt;!-- &lt;span *ngIf&#x3D;&quot;!employeeForm.get(&#x27;firstname&#x27;).valid &amp;&amp; employeeForm.get(&#x27;firstname&#x27;).touched&quot; class&#x3D;&quot;text-danger&quot;&gt;plese
+                  enter first name &lt;/span&gt; --&gt;
+                  &lt;div *ngIf&#x3D;&quot;f.firstname.touched &amp;&amp; f.firstname.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;                        
+                    &lt;div *ngIf&#x3D;&quot;f.firstname.errors.required&quot;&gt;firstname is required&lt;/div&gt;
+                 &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;!-- for last name --&gt;
+              &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+                &lt;label class&#x3D;&quot;control-label&quot;&gt;Last name&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;lastname&quot; formControlName&#x3D;&quot;lastname&quot; placeholder&#x3D;&quot;enter last name&quot; /&gt;
+                &lt;!-- fro validation --&gt;
+                &lt;!-- &lt;span *ngIf&#x3D;&quot;!employeeForm.get(&#x27;lastname&#x27;).valid &amp;&amp; employeeForm.get(&#x27;lastname&#x27;).touched&quot; class&#x3D;&quot;text-danger&quot;&gt;plese
+                  enter last name &lt;/span&gt;   --&gt;
+                  &lt;div *ngIf&#x3D;&quot;f.lastname.touched &amp;&amp; f.lastname.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;                        
+                    &lt;div *ngIf&#x3D;&quot;f.lastname.errors.required&quot;&gt;lastname is required&lt;/div&gt;
+                 &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+
+
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;!-- for email --&gt;
+              &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+                &lt;label class&#x3D;&quot;control-label&quot;&gt;Email&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;email&quot; placeholder&#x3D;&quot;enter email&quot; /&gt;
+                &lt;!-- fro validation --&gt;
+                &lt;!-- &lt;span *ngIf&#x3D;&quot;!employeeForm.get(&#x27;email&#x27;).valid &amp;&amp; employeeForm.get(&#x27;email&#x27;).touched&quot; class&#x3D;&quot;text-danger&quot;&gt;plese
+                  enter valid email &lt;/span&gt;  --&gt;
+                  &lt;div *ngIf&#x3D;&quot;f.email.touched &amp;&amp; f.email.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;                        
+                    &lt;div *ngIf&#x3D;&quot;f.email.errors.required&quot;&gt;email is required&lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;f.email.errors.email&quot;&gt;email is invalid&lt;/div&gt;
+                 &lt;/div&gt; 
+              &lt;/div&gt;
+
+              &lt;!-- for pgone --&gt;
+              &lt;div class&#x3D;&quot;form-group col-lg-6&quot;&gt;
+                &lt;label class&#x3D;&quot;control-label&quot;&gt;Phone&lt;/label&gt;
+                &lt;!-- &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;phone&quot; formControlName&#x3D;&quot;phone&quot; placeholder&#x3D;&quot;enter phone number&quot; /&gt; --&gt;
+                &lt;!-- fro validation --&gt;
+                &lt;!-- &lt;span *ngIf&#x3D;&quot;!employeeForm.get(&#x27;phone&#x27;).valid &amp;&amp; employeeForm.get(&#x27;phone&#x27;).touched&quot; class&#x3D;&quot;text-danger&quot;&gt;plese
+                  enter phone number with 10 number &lt;/span&gt;  --&gt;
+                  &lt;international-phone-number formControlName&#x3D;&quot;phone&quot; placeholder&#x3D;&quot;Enter phone number&quot; [maxlength]&#x3D;&quot;20&quot; [defaultCountry]&#x3D;&quot;&#x27;lk&#x27;&quot; [required]&#x3D;&quot;true&quot; name&#x3D;&quot;phone_number&quot; #phoneNumber&gt;&lt;/international-phone-number&gt;
+                  &lt;div *ngIf&#x3D;&quot;f.phone.touched &amp;&amp; f.phone.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;                        
+                    &lt;div *ngIf&#x3D;&quot;f.phone.errors.required&quot;&gt;phone number is required&lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;!phoneNumber.valid&quot;&gt;phone number is in correct&lt;/div&gt;
+                 &lt;/div&gt; 
+                &lt;/div&gt;
+
+          &lt;/div&gt;
+
+
+                    &lt;div class&#x3D;&quot;box-footer&quot;&gt;
+                      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
+                    &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+
+  &lt;/form&gt;
+&lt;/div&gt;
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./employee-add.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.invalid-feedback{
+    color:red;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="box box-primary">    <!-- employeefrom start -->  <form [formGroup]="employeeForm" (ngSubmit)="onsubmit()">    <div class="box box-primary">          <div class="row">              <!-- for company list -->               <div class="form-group col-lg-4">                <label class="control-label">company</label>                <select class="form-control" (ngModelChange)="onSelectedCompnay($event)" formControlName="company" [compareWith]="compareCompany" [ngClass]="{\'is-invalid\': f.company.touched && f.company.errors }">                  <option *ngFor="let depToBranch of depToBranchs" [ngValue]="depToBranch.company" >{{depToBranch.company.name}}</option>                </select>                <!-- fro validation -->                <!-- <span *ngIf="!employeeForm.get(\'company\').valid && employeeForm.get(\'company\').touched" class="text-danger">plese                  select company </span>              </div> -->              <div *ngIf="f.company.touched && f.company.errors" class="invalid-feedback">                                        <div *ngIf="f.company.errors.required">company is required</div>             </div>              </div>              <!-- for branch list -->              <div class="form-group col-lg-4">                <label class="control-label">Branch</label>                <select class="form-control" formControlName="branch" (ngModelChange)="onSelectBranch($event)" [compareWith]="comapareBranch" [ngClass]="{\'is-invalid\': f.company.touched && f.company.errors }">                  <option *ngFor="let filterBranch of filterBranchs"                    [ngValue]="filterBranch.branch">{{filterBranch.branch.name}}</option>                </select>              <!-- fro validation -->                <!-- <span *ngIf="!employeeForm.get(\'branch\').valid && employeeForm.get(\'branch\').touched" class="text-danger">plese                  select branch </span> -->                  <div *ngIf="f.branch.touched && f.branch.errors" class="invalid-feedback">                                            <div *ngIf="f.branch.errors.required">branch is required</div>                 </div>              </div>              <!-- for department list -->              <div class="form-group col-lg-4">                <label class="control-label">department</label>                <select class="form-control" formControlName="department" [compareWith]="comapareDepartment" [ngClass]="{\'is-invalid\': f.department.touched && f.department.errors }">                  <option *ngFor="let filterdepartment of filterdepartments" [ngValue]="filterdepartment.department">{{filterdepartment.department.name}}</option>                </select>              <!-- fro validation -->                <!-- <span *ngIf="!employeeForm.get(\'department\').valid && employeeForm.get(\'department\').touched" class="text-danger">plese                  select department </span>   -->                  <div *ngIf="f.department.touched && f.department.errors" class="invalid-feedback">                                            <div *ngIf="f.department.errors.required">department is required</div>                 </div>              </div>          </div>          <div class="row">              <!-- for first name -->              <div class="form-group col-lg-6">                <label class="control-label">First name</label>                <input type="text" class="form-control" id="firstname" formControlName="firstname" placeholder="enter first name" />                <!-- fro validation -->                <!-- <span *ngIf="!employeeForm.get(\'firstname\').valid && employeeForm.get(\'firstname\').touched" class="text-danger">plese                  enter first name </span> -->                  <div *ngIf="f.firstname.touched && f.firstname.errors" class="invalid-feedback">                                            <div *ngIf="f.firstname.errors.required">firstname is required</div>                 </div>              </div>              <!-- for last name -->              <div class="form-group col-lg-6">                <label class="control-label">Last name</label>                <input type="text" class="form-control" id="lastname" formControlName="lastname" placeholder="enter last name" />                <!-- fro validation -->                <!-- <span *ngIf="!employeeForm.get(\'lastname\').valid && employeeForm.get(\'lastname\').touched" class="text-danger">plese                  enter last name </span>   -->                  <div *ngIf="f.lastname.touched && f.lastname.errors" class="invalid-feedback">                                            <div *ngIf="f.lastname.errors.required">lastname is required</div>                 </div>              </div>          </div>          <div class="row">              <!-- for email -->              <div class="form-group col-lg-6">                <label class="control-label">Email</label>                <input type="text" class="form-control" formControlName="email" placeholder="enter email" />                <!-- fro validation -->                <!-- <span *ngIf="!employeeForm.get(\'email\').valid && employeeForm.get(\'email\').touched" class="text-danger">plese                  enter valid email </span>  -->                  <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">                                            <div *ngIf="f.email.errors.required">email is required</div>                    <div *ngIf="f.email.errors.email">email is invalid</div>                 </div>               </div>              <!-- for pgone -->              <div class="form-group col-lg-6">                <label class="control-label">Phone</label>                <!-- <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="enter phone number" /> -->                <!-- fro validation -->                <!-- <span *ngIf="!employeeForm.get(\'phone\').valid && employeeForm.get(\'phone\').touched" class="text-danger">plese                  enter phone number with 10 number </span>  -->                  <international-phone-number formControlName="phone" placeholder="Enter phone number" [maxlength]="20" [defaultCountry]="\'lk\'" [required]="true" name="phone_number" #phoneNumber></international-phone-number>                  <div *ngIf="f.phone.touched && f.phone.errors" class="invalid-feedback">                                            <div *ngIf="f.phone.errors.required">phone number is required</div>                    <div *ngIf="!phoneNumber.valid">phone number is in correct</div>                 </div>                 </div>          </div>                    <div class="box-footer">                      <button type="submit" class="btn btn-primary">Submit</button>                    </div>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AsideNavbarComponent', 'selector': 'app-aside-navbar'},{'name': 'BranchAddComponent', 'selector': 'app-branch-add'},{'name': 'BranchComponent', 'selector': 'app-branch'},{'name': 'BranchDepartFormationComponent', 'selector': 'app-branch-depart-formation'},{'name': 'BranchListComponent', 'selector': 'app-branch-list'},{'name': 'CompanyAddComponent', 'selector': 'app-company-add'},{'name': 'CompanyComponent', 'selector': 'app-company'},{'name': 'CompanyListComponent', 'selector': 'app-company-list'},{'name': 'CompanyListDropdownComponent', 'selector': 'app-company-list-dropdown'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DepartmentAddComponent', 'selector': 'app-department-add'},{'name': 'DepartmentAssignToBranchComponent', 'selector': 'app-department-assign-to-branch'},{'name': 'DepartmentComponent', 'selector': 'app-department'},{'name': 'DepartmentListComponent', 'selector': 'app-department-list'},{'name': 'EmployeeAddComponent', 'selector': 'app-employee-add'},{'name': 'EmployeeComponent', 'selector': 'app-employee'},{'name': 'EmployeeListComponent', 'selector': 'app-employee-list'},{'name': 'FieldErrorDisplayComponent', 'selector': 'app-field-error-display'},{'name': 'FooterNavbarComponent', 'selector': 'app-footer-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'SettingsNavbarComponent', 'selector': 'app-settings-navbar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SubscriptionAddComponent', 'selector': 'app-subscription-add'},{'name': 'SubscriptionComponent', 'selector': 'app-subscription'},{'name': 'SubscriptionListComponent', 'selector': 'app-subscription-list'},{'name': 'SubscriptionPlanComponent', 'selector': 'app-subscription-plan'},{'name': 'SubscriptionPlanListComponent', 'selector': 'app-subscription-plan-list'},{'name': 'TopNavbarComponent', 'selector': 'app-top-navbar'},{'name': 'UserAddComponent', 'selector': 'app-user-add'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserListComponent', 'selector': 'app-user-list'}];
+    var DIRECTIVES = [{'name': 'DropzoneDirective', 'selector': '[dropZone]'}];
+    var ACTUAL_COMPONENT = {'name': 'EmployeeAddComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EmployeeAddComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

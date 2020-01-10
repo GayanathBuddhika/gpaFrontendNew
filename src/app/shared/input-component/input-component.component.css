@@ -1,0 +1,187 @@
+
+
+  *{
+      font-family: "Lato", Arial, sans-serif
+  }
+
+input[type="checkbox"],input[type="radio"] {
+  margin: 5px;
+}
+
+/* Disabled input and textarea */
+input[type="text"]:disabled,textarea:disabled{
+    color: #3399ff;
+    background: transparent;
+    border: none;
+}
+
+/* Answers of Checkbox and Radio */
+.check-radio-answers{
+font-weight: 200;
+
+}
+
+/* INPUT BOX AND TEXT AREA */
+:focus {
+  outline: none !important;
+}
+input:focus{
+    outline:none !important;
+  }
+
+  textarea{
+    width: 100% !important;
+  }
+.col-input {
+  
+  width: 70%;
+  margin: 10px 1%;
+  position: relative;
+} /* necessary to give position: relative to parent. */
+input[type="text"],textarea {
+  font: 15px/24px "Lato", Arial, sans-serif;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  outline: 0;
+  border: none;
+  border-bottom: 2px solid #dadce0;
+}
+
+.effect-input-text ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 99;
+}
+.effect-input-text ~ .focus-border:before,
+.effect-input-text ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #3399ff;
+  transition: 0.4s;
+}
+.effect-input-text ~ .focus-border:after {
+  left: auto;
+  right: 0;
+}
+.effect-input-text:focus ~ .focus-border:before,
+.effect-input-text:focus ~ .focus-border:after {
+  width: 50%;
+  transition: 0.4s;
+}
+
+/* RADIO BUTTON AND CHECK BOX */
+
+@-webkit-keyframes click-wave {
+    0% {
+      height: 20px;
+      width: 20px;
+      opacity: 0.35;
+      position: relative;
+    }
+    100% {
+      height: 60px;
+      width: 60px;
+      margin-left: -15px;
+      margin-top: -17px;
+      opacity: 0;
+    }
+  }
+  @-moz-keyframes click-wave {
+    0% {
+      height: 20px;
+      width: 20px;
+      opacity: 0.35;
+      position: relative;
+    }
+    100% {
+      height: 60px;
+      width: 60px;
+      margin-left: -15px;
+      margin-top: -17px;
+      opacity: 0;
+    }
+  }
+  @keyframes click-wave {
+    0% {
+      height: 20px;
+      width: 20px;
+      opacity: 0.35;
+      position: relative;
+    }
+    100% {
+     height: 60px;
+      width: 60px;
+      margin-left: -20px;
+      margin-top: -20px;
+      opacity: 0;
+    }
+  }
+  .option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+   
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    -webkit-transition: all 0.15s ease-out 0s;
+    -moz-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .option-input:hover {
+    background: #9faab7;
+  }
+  .option-input:checked {
+    background: #1f1cbfc4;
+  }
+  .option-input:checked::before {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    content: '\2713';
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    line-height: 20px;
+  }
+  .option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+  .option-input.radio {
+    border-radius: 50%;
+  }
+  .option-input.radio::after {
+    border-radius: 50%;
+  }
+  
+

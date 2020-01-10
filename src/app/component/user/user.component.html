@@ -1,0 +1,65 @@
+<!-- <div class="wrapper">
+    <app-top-navbar></app-top-navbar>
+    <app-aside-navbar></app-aside-navbar> -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+
+                        <!-- <button type="button" class="btn btn-info btn-radius"><i class="fa fa-plus"></i> Add New</button> -->
+                        <div class="box-header with-border">
+                            <div class="text-left componet-heading">User List</div>
+                        </div>
+                        <br>
+                        <div class="row pull-left" style="margin-top:12px">
+                            <div class="col-md-3 pull-left" *ngIf="currentUserRole=='SYSTEM_ADMIN'">
+                                <app-company-list-dropdown></app-company-list-dropdown>
+                            </div>
+
+                            <div class=" pull-right">
+                                <button type="button" class="btn-lg btn-custom btn-dark-blue "
+                                    (click)="openModal(addTemplate)">+ Add User</button>
+                            </div>
+                        </div>
+
+                        <br>
+                        <!-- <div class="row" *ngIf="currentUserRole=='SYSTEM_ADMIN'">
+                            <div class="drop">
+                                <app-company-list-dropdown></app-company-list-dropdown>
+                            </div>  
+                        </div>
+
+                        <button type="button" class="btn-lg btn-custom-dark-blue pull-right" (click)="openModal(addTemplate)">+ Add User</button> -->
+                       
+
+                        <app-user-list></app-user-list>
+
+                        <!-- <dual-list [source]="source"  key="id" display="name"  [(destination)]="confirmed"></dual-list> -->
+                    </div>
+
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- <app-footer-navbar></app-footer-navbar>
+    <app-settings-navbar></app-settings-navbar>
+    
+</div> -->
+
+<ng-template #addTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add new User</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef_add.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <!-- This model is using for USER ADD purpose, So edit == false-->
+        <app-user-add [edit]="false"></app-user-add>
+    </div>
+</ng-template>

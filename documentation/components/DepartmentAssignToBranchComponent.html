@@ -1,0 +1,1310 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pulsebeat-v2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">pulsebeat-v2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DepartmentAssignToBranchComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-department-assign-to-branch</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./department-assign-to-branch.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./department-assign-to-branch.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#branch">branch</a>
+                            </li>
+                            <li>
+                                <a href="#branchId">branchId</a>
+                            </li>
+                            <li>
+                                <a href="#company">company</a>
+                            </li>
+                            <li>
+                                <a href="#confirmed">confirmed</a>
+                            </li>
+                            <li>
+                                <a href="#departmrnt">departmrnt</a>
+                            </li>
+                            <li>
+                                <a href="#initialSourceArry">initialSourceArry</a>
+                            </li>
+                            <li>
+                                <a href="#initialTargetArry">initialTargetArry</a>
+                            </li>
+                            <li>
+                                <a href="#source">source</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                            <li>
+                                <a href="#target">target</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toastr">toastr</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#assignDeptToBranch">assignDeptToBranch</a>
+                            </li>
+                            <li>
+                                <a href="#comparer">comparer</a>
+                            </li>
+                            <li>
+                                <a href="#deleteAll">deleteAll</a>
+                            </li>
+                            <li>
+                                <a href="#getComAndBranch">getComAndBranch</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#saveAssignedDept">saveAssignedDept</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#assignDept">assignDept</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(departmentService: <a href="../injectables/DepartmentService.html">DepartmentService</a>, departmentAssignToBranchService: <a href="../injectables/DepartmentAssingToBranchService.html">DepartmentAssingToBranchService</a>, companyService: <a href="../injectables/CompanyService.html">CompanyService</a>, toastr: ToastrManager)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>departmentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DepartmentService.html" target="_self" >DepartmentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>departmentAssignToBranchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DepartmentAssingToBranchService.html" target="_self" >DepartmentAssingToBranchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>companyService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CompanyService.html" target="_self" >CompanyService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrManager</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="assignDept"></a>
+                        <b>assignDept</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Branch.html" target="_self" >Branch</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:28</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assignDeptToBranch"></a>
+                    <span class="name">
+                        <b>
+                            assignDeptToBranch
+                        </b>
+                        <a href="#assignDeptToBranch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>assignDeptToBranch()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:174</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comparer"></a>
+                    <span class="name">
+                        <b>
+                            comparer
+                        </b>
+                        <a href="#comparer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>comparer(otherArray)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:164</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>otherArray</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>(current: any) &#x3D;&gt; boolean</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteAll"></a>
+                    <span class="name">
+                        <b>
+                            deleteAll
+                        </b>
+                        <a href="#deleteAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteAll()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getComAndBranch"></a>
+                    <span class="name">
+                        <b>
+                            getComAndBranch
+                        </b>
+                        <a href="#getComAndBranch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getComAndBranch()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveAssignedDept"></a>
+                    <span class="name">
+                        <b>
+                            saveAssignedDept
+                        </b>
+                        <a href="#saveAssignedDept"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveAssignedDept()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="branch"></a>
+                        <span class="name">
+                            <b>
+                            branch</b>
+                            <a href="#branch"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Branch.html" target="_self" >Branch</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="branchId"></a>
+                        <span class="name">
+                            <b>
+                            branchId</b>
+                            <a href="#branchId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="company"></a>
+                        <span class="name">
+                            <b>
+                            company</b>
+                            <a href="#company"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Company.html" target="_self" >Company</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="confirmed"></a>
+                        <span class="name">
+                            <b>
+                            confirmed</b>
+                            <a href="#confirmed"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="departmrnt"></a>
+                        <span class="name">
+                            <b>
+                            departmrnt</b>
+                            <a href="#departmrnt"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Department.html" target="_self" >Department</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialSourceArry"></a>
+                        <span class="name">
+                            <b>
+                            initialSourceArry</b>
+                            <a href="#initialSourceArry"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialTargetArry"></a>
+                        <span class="name">
+                            <b>
+                            initialTargetArry</b>
+                            <a href="#initialTargetArry"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="source"></a>
+                        <span class="name">
+                            <b>
+                            source</b>
+                            <a href="#source"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscription</b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subscription()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="target"></a>
+                        <span class="name">
+                            <b>
+                            target</b>
+                            <a href="#target"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toastr"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toastr</b>
+                            <a href="#toastr"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ToastrManager</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/component/department/department-assign-to-branch/department-assign-to-branch.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Company } from &#x27;src/app/model/company&#x27;;
+import { map, switchMap, tap } from &#x27;rxjs/operators&#x27;;
+import { Branch } from &#x27;src/app/model/branch&#x27;;
+import { CompanyService } from &#x27;./../../../service/company.service&#x27;;
+import { DepartmentAssingToBranchService } from &#x27;./../../../service/department-assing-to-branch.service&#x27;;
+import { DepartmentService } from &#x27;src/app/service/department.service&#x27;;
+import { Component, OnInit, Input, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+import { DualListComponent } from &#x27;angular-dual-listbox&#x27;;
+import { Department } from &#x27;src/app/model/department&#x27;;
+import { DepToBranch } from &#x27;src/app/model/DeptToBranch&#x27;;
+import { IdName } from &#x27;src/app/model-converter/idName&#x27;;
+import { ToastrManager } from &#x27;ng6-toastr-notifications&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-department-assign-to-branch&#x27;,
+  templateUrl: &#x27;./department-assign-to-branch.component.html&#x27;,
+  styleUrls: [&#x27;./department-assign-to-branch.component.css&#x27;],
+  encapsulation: ViewEncapsulation.None
+})
+export class DepartmentAssignToBranchComponent implements OnInit{
+  
+    // --- Subscription 
+  private subscription: Subscription &#x3D; new Subscription();
+  
+    // --- get the BRANCH object from parent component when going to Assign 
+    // --- parent component is branch-list-component
+    @Input() assignDept:Branch;
+    departmrnt: Department;
+    source: any;
+    target: any;
+    confirmed &#x3D; [];
+    branchId:string;
+    initialSourceArry:any;
+    initialTargetArry:any;
+    company: Company;
+    branch: Branch;
+
+  constructor(
+    private departmentService: DepartmentService,
+    private departmentAssignToBranchService: DepartmentAssingToBranchService,
+    private companyService: CompanyService,
+    public toastr: ToastrManager){}
+
+
+  ngOnInit(){
+    
+    this.assignDeptToBranch();
+    this.getComAndBranch();
+    this.deleteAll();
+    
+  }
+
+  ngOnDestroy() {
+    // this.subscription.unsubscribe();
+}
+  
+  deleteAll() {
+  //  console.log(check);
+  }
+
+  // ---get company and branch  object by subscribing _get_branch and company_dropdown
+  getComAndBranch(){
+
+    // --- company object come when select company from dropdown list
+    // const getCompany &#x3D;this.companyService.getComId_$();
+    // --- branch object come when click assign button in branch table
+    // const getBranch &#x3D;this.departmentService.getCompanyOfBranch_$();
+
+    // --- when select company from company-list-dropdown it get by get company
+    // --- after that load all department that company have
+    // --- when click assign button related to a above branch it will load assigned and unassigned department into department-assigned-to-branch-component.
+    // --- if we select another company before loading all assinged and unassigned department into the component 
+    // --- this wii aumatically cancel the loading  befor selected comapny values and start new one
+    // getCompany.pipe(switchMap(company&#x3D;&gt;{
+    //   this.company&#x3D;company;
+    //   return getBranch.pipe(
+    //   tap(el&#x3D;&gt;console.log(&quot;switchMap&quot;,el))
+      
+    //   )})).subscribe(data&#x3D;&gt;{
+    //     this.branch&#x3D;data;
+    //     console.log(&quot;what ?&quot;,data);
+    //   },err&#x3D;&gt;{
+    //     console.log(err);
+    //   })
+
+    this.subscription.add(
+    this.companyService.getComId_$().subscribe(data&#x3D;&gt;{
+      this.company&#x3D; data;
+    },err&#x3D;&gt;{
+      this.toastr.errorToastr(JSON.parse(JSON.stringify(err)).error.message,&quot;Error&quot;,{position:&quot;bottom-right&quot;,animate:&quot;slideFromBottom&quot;})
+    }))
+
+    this.branch&#x3D; this.assignDept;
+  }
+
+  // ---get all   assign and unassignment depatment 
+  saveAssignedDept(){
+    // --- create new array to put assigned and unassigned department
+    const saveAssignDeptToBranch &#x3D;[];
+    const  deleteAssignDeptToBranch&#x3D;[];
+
+    // --- catch unassig and assigned department
+    let  commenSource&#x3D;null;
+    let  commenTarget&#x3D;null;
+
+    // --- compair currant source and target value with initial source and target value
+    commenSource &#x3D; this.initialSourceArry.filter(this.comparer(this.target));
+    commenTarget &#x3D; this.initialTargetArry.filter(this.comparer(this.source))
+
+    // --- push commen source department  in to  array if it is not null
+     if(commenSource.length !&#x3D;&#x3D; 0){
+        for(var i&#x3D;0;i&lt;commenSource.length;i++) {
+            saveAssignDeptToBranch.push( {
+              company:this.company,
+              branch:this.branch ,
+              department:commenSource[i]
+            })
+        }
+      // --- save commen source department that pushed into array
+          this.subscription.add(
+              this.departmentAssignToBranchService.saveAssignedDepartment(saveAssignDeptToBranch).subscribe(data&#x3D;&gt;{
+               
+              // ---When click assign button  set next value of _ngxmodel_assign as true
+              
+              this.toastr.successToastr(&quot;Success&quot;, &quot;Successfully Assigned&quot;, {position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot;});
+              this.departmentAssignToBranchService._set_ngxmodel_assign(true);
+              },err&#x3D;&gt;{
+                this.toastr.errorToastr(JSON.parse(JSON.stringify(err)).error.message,&quot;Error&quot;,{position:&quot;bottom-right&quot;,animate:&quot;slideFromBottom&quot;})
+          }))
+       
+       
+     }
+     // ---push commen target department into array if it is not null
+     if(commenTarget.length !&#x3D;&#x3D; 0){
+      for(var i&#x3D;0;i&lt;commenTarget.length;i++) {
+        deleteAssignDeptToBranch.push( {
+            company:this.company.id,
+            branch:this.branch.id ,
+            department:commenTarget[i].id
+            
+           
+          })
+        }
+        // --- delete commen target department that pushed into array 
+          this.subscription.add(
+            this.departmentAssignToBranchService.deleteUnassignDepartment(deleteAssignDeptToBranch).subscribe(data&#x3D;&gt;{
+            // ---When click assign button  set next value of _ngxmodel_assign as true
+            this.departmentAssignToBranchService._set_ngxmodel_assign(true);
+            this.toastr.successToastr(&quot;Success&quot;, &quot;Successfully Unassigned&quot;, {position: &quot;bottom-right&quot;, animate: &quot;slideFromBottom&quot;});
+            },err&#x3D;&gt;{
+              this.toastr.errorToastr(JSON.parse(JSON.stringify(err)).error.message,&quot;Error&quot;,{position:&quot;bottom-right&quot;,animate:&quot;slideFromBottom&quot;})
+          }))
+        
+     
+     }
+
+        // ---When click assign button  set next value of _ngxmodel_assign as true
+        this.departmentAssignToBranchService._set_ngxmodel_assign(true);
+ 
+  }
+
+  // --- compare assign and anassign department commen elemet
+  comparer(otherArray){
+    return function(current){
+      return otherArray.filter(function(other){
+        return other.id &#x3D;&#x3D; current.id
+      }).length !&#x3D; 0;
+    }
+  }
+    
+
+  // ---get assign or un assigned department
+  assignDeptToBranch(){
+  //      this.departmentService.getCompanyOfBranch_$().subscribe(
+  //    res&#x3D;&gt;{
+  //       this.branchId&#x3D;res.id;
+  //       this.departmentAssignToBranchService.assignDeptToBranch(this.branchId)
+  //     .subscribe(data&#x3D;&gt;{
+  // // ---assign change value of source and target that come from front end
+  //       this.source&#x3D;data.unassignedDept;
+  //       this.target&#x3D;data.assignedDept;
+  // // --- assigning initial value of source and target  that come from backend
+  //       this.initialSourceArry&#x3D;JSON.parse(JSON.stringify(data.unassignedDept));
+  //       this.initialTargetArry&#x3D;JSON.parse(JSON.stringify(data.assignedDept));
+  //    }, err &#x3D;&gt; {
+  //       console.log(err);
+  //    })
+  //   });
+
+    this.branchId&#x3D; this.assignDept.id;
+   // this.subscription.add(
+    this.departmentAssignToBranchService.assignDeptToBranch(this.branchId)
+      .subscribe(data&#x3D;&gt;{
+  // ---assign change value of source and target that come from front end
+        this.source&#x3D;data.unassignedDept;
+        this.target&#x3D;data.assignedDept;
+  // --- assigning initial value of source and target  that come from backend
+        this.initialSourceArry&#x3D;JSON.parse(JSON.stringify(data.unassignedDept));
+        this.initialTargetArry&#x3D;JSON.parse(JSON.stringify(data.assignedDept));
+     }, err &#x3D;&gt; {
+      this.toastr.errorToastr(JSON.parse(JSON.stringify(err)).error.message,&quot;Error&quot;,{position:&quot;bottom-right&quot;,animate:&quot;slideFromBottom&quot;})
+     })
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;space&quot;&gt;
+    &lt;p-pickList 
+    [source]&#x3D;&quot;source&quot; 
+    [target]&#x3D;&quot;target&quot; 
+    sourceHeader&#x3D;&quot;Unassign Departemnt&quot; 
+    targetHeader&#x3D;&quot;Assigned Department&quot;  
+    filterBy&#x3D;&quot;name&quot; &gt; 
+        &lt;ng-template let-DepToBranch pTemplate&#x3D;&quot;item&quot;&gt;
+            &lt;div class&#x3D;&quot;ui-helper-clearfix&quot;&gt;
+                &lt;div style&#x3D;&quot;font-size:14px;float:right;margin:15px 5px 0 0&quot;&gt;{{DepToBranch.name}}&lt;/div&gt; 
+            &lt;/div&gt;
+        &lt;/ng-template&gt;
+      &lt;/p-pickList&gt;
+            &lt;button type&#x3D;&quot;button&quot; style&#x3D;&quot;margin-top: 20px; width: 100px; margin-left: 240px;&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;saveAssignedDept()&quot; &gt;Submit&lt;/button&gt; 
+      
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./department-assign-to-branch.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.ui-picklist-source-controls {
+    display: none !important;
+  }
+  
+  .ui-picklist-target-controls {
+    display: none !important;
+  }
+
+  .ui-picklist .ui-picklist-list{
+    width: 250px;
+    height: 350px;
+    align:center;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="space">    <p-pickList     [source]="source"     [target]="target"     sourceHeader="Unassign Departemnt"     targetHeader="Assigned Department"      filterBy="name" >         <ng-template let-DepToBranch pTemplate="item">            <div class="ui-helper-clearfix">                <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{DepToBranch.name}}</div>             </div>        </ng-template>      </p-pickList>            <button type="button" style="margin-top: 20px; width: 100px; margin-left: 240px;" class="btn btn-primary" (click)="saveAssignedDept()" >Submit</button>       </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AsideNavbarComponent', 'selector': 'app-aside-navbar'},{'name': 'BranchAddComponent', 'selector': 'app-branch-add'},{'name': 'BranchComponent', 'selector': 'app-branch'},{'name': 'BranchDepartFormationComponent', 'selector': 'app-branch-depart-formation'},{'name': 'BranchListComponent', 'selector': 'app-branch-list'},{'name': 'CompanyAddComponent', 'selector': 'app-company-add'},{'name': 'CompanyComponent', 'selector': 'app-company'},{'name': 'CompanyListComponent', 'selector': 'app-company-list'},{'name': 'CompanyListDropdownComponent', 'selector': 'app-company-list-dropdown'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DepartmentAddComponent', 'selector': 'app-department-add'},{'name': 'DepartmentAssignToBranchComponent', 'selector': 'app-department-assign-to-branch'},{'name': 'DepartmentComponent', 'selector': 'app-department'},{'name': 'DepartmentListComponent', 'selector': 'app-department-list'},{'name': 'EmployeeAddComponent', 'selector': 'app-employee-add'},{'name': 'EmployeeComponent', 'selector': 'app-employee'},{'name': 'EmployeeListComponent', 'selector': 'app-employee-list'},{'name': 'FieldErrorDisplayComponent', 'selector': 'app-field-error-display'},{'name': 'FooterNavbarComponent', 'selector': 'app-footer-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'SettingsNavbarComponent', 'selector': 'app-settings-navbar'},{'name': 'SigninComponent', 'selector': 'app-signin'},{'name': 'SubscriptionAddComponent', 'selector': 'app-subscription-add'},{'name': 'SubscriptionComponent', 'selector': 'app-subscription'},{'name': 'SubscriptionListComponent', 'selector': 'app-subscription-list'},{'name': 'SubscriptionPlanComponent', 'selector': 'app-subscription-plan'},{'name': 'SubscriptionPlanListComponent', 'selector': 'app-subscription-plan-list'},{'name': 'TopNavbarComponent', 'selector': 'app-top-navbar'},{'name': 'UserAddComponent', 'selector': 'app-user-add'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserListComponent', 'selector': 'app-user-list'}];
+    var DIRECTIVES = [{'name': 'DropzoneDirective', 'selector': '[dropZone]'}];
+    var ACTUAL_COMPONENT = {'name': 'DepartmentAssignToBranchComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DepartmentAssignToBranchComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

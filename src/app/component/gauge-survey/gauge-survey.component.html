@@ -1,0 +1,145 @@
+<!-- add gauge page -->
+<div class="modal fade in" id="reward-page" style="display: block; " *ngIf="!viewGaugeTemplate">
+    <div class="modal-dialog modal-lg modal-lg-screen" style="width:1250px;">
+        <div class="modal-con tent">
+            <div class="modal-body">
+                <div class="col-md-7"></div>
+                <div class="col-md-5">
+                    <br><br><br><br><br>
+                    <h1 class="font-white rewards-sentance">
+                        <b style="color:#ffd34e;">50 SECONDS</b>
+                        is all it takes to get
+                        <b style="color:#ffd34e;"> REWARDED.</b>
+                    </h1>
+                    <br><br><br>
+
+                    <form [formGroup]="addGaugeForm" class="form-horizontal">
+                        <div class="form-group">
+
+                            <international-phone-number lkRemoveLeadingZero formControlName="phone"
+                                (ngModelChange)="getExistCustomer()" placeholder="YOUR PHONE" [maxlength]="20"
+                                [defaultCountry]="'lk'" [required]="true" name="phone_number" #phoneNumber>
+                            </international-phone-number>
+                            <div *ngIf="f.phone.touched && f.phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                                <div *ngIf="!phoneNumber.valid && phoneNumber.value">Phone number is invalid</div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input class="form-control col-lg-4" formControlName="name" placeholder="YOUR NAME"
+                                type="text">
+                            <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('name')"
+                                errorMsg="{{f.name.errors?.required?'Name is required.' : f.name.errors?.minlength?'Name must be at least 2 characters' : ''}}">
+                            </app-field-error-display>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input formControlName="email" type="text" class="form-control"
+                                placeholder="YOUR EMAIL (OPTIONAL)">
+
+                        </div>
+                        <div class="row">
+                            <button type="submit" (click)="viewGauge()" class="btn btn-white reward-next">NEXT <span
+                                    class="glyphicon glyphicon-arrow-right"></span></button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- view gauges -->
+<div id="carousel" style="margin-top: 20px;" *ngIf="viewGaugeTemplate">
+    <ul class="flip-items get-gauge">
+        <li *ngFor="let gaugeTitleWeightedAvg of gaugeTitleWeightedAvgsList; let in = index">
+            <app-gauge *ngIf="gaugeTitleIdRatedVal" [gaugeTitleWeightedAvg]="gaugeTitleWeightedAvg"
+                [gaugeTitleIdRatedVal]="gaugeTitleIdRatedVal[in]"></app-gauge>
+            <app-gauge *ngIf="!gaugeTitleIdRatedVal" [gaugeTitleWeightedAvg]="gaugeTitleWeightedAvg"></app-gauge>
+        </li>
+
+        <li >
+            <!-- summery page -->
+            <div class="flipster__item__content" style="margin-top: 20px; display: block;">
+                <table class="main-table summary-table" style="background: white; padding: 25px;">
+                    <tbody>
+                        <tr height="5%">
+                            <td colspan="6">
+                                <h3 class="text-center"><b>ANY FINAL COMMENTS TO MAKE US SERVE YOU BETTER?</b></h3>
+                            </td>
+                        </tr>
+
+                        <tr height="15%">
+                            <td colspan="6" style="padding-left:30px;"><textarea placeholder="Say Something (Optional)"
+                                    [(ngModel)]="additionalComment" class=" form-control" rows="3"
+                                    style="width: 98% !important;"></textarea></td>
+                        </tr>
+
+                        <tr height="45%" id="summary-emoji">
+                            <td>
+                                <div class="row row-eq-height">
+                                    <div class="col-md-4" *ngFor="let customerFeedback of customerFeedbacks;">
+                                        <div class="col-md-4">
+                                            <!-- *ngIf="selectedSurvayType == 'gauges'" -->
+                                            <img *ngIf="(customerFeedback.sliderVal >= 75)"
+                                                src="assets/dist/img/face-emoji/excellent.png">
+                                            <img *ngIf="((75 > customerFeedback.sliderVal) && (customerFeedback.sliderVal >=50))"
+                                                src="assets/dist/img/face-emoji/very-good.png">
+                                            <img *ngIf="((50 > customerFeedback.sliderVal) && (customerFeedback.sliderVal >=25))"
+                                                src="assets/dist/img/face-emoji/good.png">
+                                            <img *ngIf="((25 > customerFeedback.sliderVal) && (customerFeedback.sliderVal > 0))"
+                                                src="assets/dist/img/face-emoji/average.png">
+                                            <img *ngIf=" (customerFeedback.sliderVal ==0)"
+                                                src="assets/dist/img/face-emoji/bad.png">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="summary-gauge-title clearfix">
+                                                <b>{{customerFeedback.gaugeTitle}}</b>
+                                            </h4>
+                                            <span class="clearfix">{{customerFeedback.sliderVal}}</span>
+
+                                            <h6 *ngIf="customerFeedback.feedback" class="clearfix summary-feedback">
+                                                <span class="no-comments">{{customerFeedback.feedback}}</span>
+                                            </h6>
+                                            <h6 *ngIf="!customerFeedback.feedback" class="clearfix summary-feedback"
+                                                style="color: red;">
+                                                <span class="no-comments">No comments given</span>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+
+                        <tr height="15%">
+                            <td colspan="6">
+                                <div class="text-center">
+                                    <button (click)="saveCustomerFeedback()" type="text"
+                                        class="btn btn-success btn-lg submit">Finish
+                                        <span class="glyphicon glyphicon-send"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+    </ul>
+
+    <div class="text-center" style="margin-top: 10px">
+        <button class="flipster-previous flipster-buttons" *ngIf="viewPreviousBtn"
+            (click)="previous()">Previous</button> &nbsp;&nbsp;
+        <button class="flipster-next flipster-buttons" *ngIf="viewNextBtn" (click)="next()">Next</button>
+    </div>
+
+</div>

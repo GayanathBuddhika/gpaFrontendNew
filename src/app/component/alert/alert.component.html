@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+
+                        <h2 class="accessible_elem">Your alerts</h2>
+                        <hr>
+                        <div class="box-footer box-comments">
+                          <div class="box-comment" *ngFor="let alert of firebasealert | async; let i = index ">
+                              
+                              <div class="comment-text">
+                                <p class="innerCircleBlue" [ngStyle]="{'background': (alert.payload.doc.data().feedbackVal >= '75')? '#4a9115': 
+                                            (alert.payload.doc.data().feedbackVal>= '50' && '75' > alert.payload.doc.data().feedbackVal)? '#154a91':
+                                            (alert.payload.doc.data().feedbackVal >= '25' && '50' > alert.payload.doc.data().feedbackVal)? '#ed9204':'#d80a0d'}">
+                                            {{alert.feedbackVal}}</p>
+                                 
+                                  <span class="pull-left">{{i +1}}</span>
+                                  <span></span>
+                                      
+                                  <span >
+                                      <span class="username">
+                                          Customer {{alert.payload.doc.data().customerName | titlecase }} has submited a survey
+                                          
+                                          <span class="text-muted pull-right">{{alert.payload.doc.data().dateTime | timeSince}}</span>
+                                      </span><!-- /.username -->
+
+                                  </span>
+
+
+                              </div>
+                              <!-- /.comment-text -->
+                          </div>
+                        </div>
+
+                        <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+                            (scrolled)="onScroll()">
+                        </div>
+
+                        <div *ngIf="!finished">
+                            Loading more notifications...
+                        </div>
+
+
+                        <div *ngIf="finished">
+                            End of database... That's all folks!
+                        </div>
+                 
+                </div>
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
+

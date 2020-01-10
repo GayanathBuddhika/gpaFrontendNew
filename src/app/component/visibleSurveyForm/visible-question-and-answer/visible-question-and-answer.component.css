@@ -1,0 +1,62 @@
+.surveyName{
+    position: relative;
+    margin-top: 100px;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-bottom-color: mediumpurple;
+    border-top-color: darkgray;
+    padding:50px;
+    color: black;
+    z-index:1;
+    height: 300px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500px;
+    margin-top: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* .nameTopeMargin:first-of-type{
+    margin-top: 100px;
+} */
+
+.qaBody{
+    padding-left: 30px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.qaButton{
+    margin: 20px;
+}
+
+.topBackground{
+    position: absolute;
+    width: 100%;
+    height: 278px;
+    background-color: rgb(103, 58, 183);
+    z-index: -1;
+}
+
+.myContainer{
+    width: 50%;
+    margin: 10px auto;
+}
+.head{
+    margin-top: 0%
+}
+
+.question-form{
+    padding: 30px 15px;
+    -webkit-box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.11);
+-moz-box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.11);
+box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.11);
+}
+
+.jumbotron{
+    background-color: #109482;
+    color: #ffffff;
+    font-weight: 800;
+}

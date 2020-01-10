@@ -1,0 +1,18 @@
+
+<form [formGroup]="branchAddOrEditForm" (ngSubmit)="onSubmit()">
+    <div class="form-group col-lg-6">
+        <label class="col-lg-2">Name</label>
+        <input class="form-control col-lg-4 " formControlName="name"  placeholder="Enter Name" type="text">
+        <!-- <div *ngIf="branchAddOrEditForm.get('name').invalid && branchAddOrEditForm.get('name').touched">
+            <small *ngIf="branchAddOrEditForm.get('name').errors?.required" class="text-danger">Name is required</small>
+            <small *ngIf="branchAddOrEditForm.get('name').errors?.minlength" class="text-danger">Name must be at least 2 characters</small>
+        </div> -->
+        <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('name')" errorMsg="{{f.name.errors?.required?'Name is required.' : f.name.errors?.minlength?'Name must be at least 2 characters' : ''}}"></app-field-error-display>
+        
+    </div>
+    <div class="form-group col-lg-6">
+        <label class="col-lg-2">Address</label>
+        <input class="form-control col-lg-4 " formControlName="address"  placeholder="Enter Address" type="text" >
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

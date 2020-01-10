@@ -1,0 +1,17 @@
+
+<h1>matrix table</h1>
+<table>
+  <tr>
+      <th></th>
+      <th  *ngFor="let point of matrixObject.points">{{point}}</th>   
+    
+  </tr>
+  
+  <tr *ngFor="let level of matrixObject.levels">
+    <td><b>{{level}}</b></td>       
+    <td *ngFor="let point of matrixObject.points"><input type="checkbox"></td>     
+
+  </tr>
+
+ 
+</table>

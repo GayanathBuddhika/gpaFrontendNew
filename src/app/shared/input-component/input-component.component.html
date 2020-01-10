@@ -1,0 +1,89 @@
+<div [ngSwitch]="type">
+    <div *ngSwitchCase="'radio'">
+        <label >
+            <input type="radio" class="option-input radio" #radio [name]="finalQA?question.id:'x'"
+                [disabled]="inputDisable" [value]="finalQA?answerObject.answer:null">
+
+        </label>
+        <label class="check-radio-answers" *ngIf="viewQuestion">&nbsp;&nbsp;&nbsp;&nbsp;{{answerObject.answer}}</label>
+        <div *ngIf="radio.invalid">
+            Required
+        </div>
+    </div>
+
+    <div *ngSwitchCase="'checkBox'">
+        <label>
+            <input type="checkbox" class="option-input checkbox" #checkbox [value]="finalQA?answerObject.answer:null"
+                [disabled]="inputDisable">
+        </label>
+        <label class="check-radio-answers" *ngIf="viewQuestion">&nbsp;&nbsp;&nbsp;&nbsp;{{answerObject.answer}}</label>
+
+
+    </div>
+
+    <div *ngSwitchCase="'inputBox'">
+        <div class="col-input">
+            <input type="text" class="effect-input-text" #inputbox
+                [placeholder]="finalQA?answerObject.placeHolderLable:''" [disabled]="inputDisable">
+            <span class="focus-border"></span>
+        </div>
+        <!-- <div *ngIf="qalayout" class="col-input">
+            <input type="text" class="effect-input-text" #inputbox [placeholder]="answer?answer:''"
+                [disabled]="inputDisable">
+            <span class="focus-border"></span>
+        </div> -->
+
+    </div>
+
+    <div *ngSwitchCase="'textArea'">
+        <div class="col-input">
+            <textarea class="form-control effect-input-text" #textarea rows="3" id="company_address"
+                [placeholder]="finalQA?answerObject.placeHolderLable:answer" [disabled]="inputDisable"></textarea>
+            <span class="focus-border"></span>
+
+        </div>
+        <!-- <div *ngIf="qalayout" class="col-input">
+            <textarea class="form-control effect-input-text" #textarea rows="3" id="company_address"
+                [placeholder]="answer?answer:''" [disabled]="inputDisable"></textarea>
+            <span class="focus-border"></span>
+        </div> -->
+
+
+
+    </div>
+
+    <div *ngSwitchCase="'singalDate'">
+        <!-- <p-calendar appendTo="body" #singaldate [placeholder]="finalQA?answerObject.answer:answer"
+      [disabled]="finalQA||qalayout?false:true" name="startDate" showTime="true" hourFormat="12" dateFormat="dd-mm-yy">
+    </p-calendar> -->
+        <input class="form-control" #singaldate bsDatepicker [bsConfig]="datePickerConfig" [disabled]="inputDisable"
+            name="startDate">
+
+    </div>
+
+    <div *ngSwitchCase="'dateRange'">
+
+        <label *ngIf="viewQuestion">{{answerObject.startDate}}</label>
+        <p-calendar appendTo="body" #startDate [placeholder]="finalQA?answerObject.startDate:answer"
+            [disabled]="inputDisable" name="startDate" showTime="true" hourFormat="12" dateFormat="dd-mm-yy">
+        </p-calendar>
+        <input type="text" *ngIf="!viewQuestion" #start>
+
+
+
+        <label *ngIf="viewQuestion">{{answerObject.endDate}}</label>
+        <p-calendar appendTo="body" #endDate [placeholder]="finalQA?answerObject.endDate:answer"
+            [disabled]="inputDisable" name="endDate" showTime="true" hourFormat="12" dateFormat="dd-mm-yy"></p-calendar>
+        <input type="text" *ngIf="!viewQuestion" #end>
+
+    </div>
+
+    <div *ngSwitchCase="'rating'">
+
+        <p-rating [(ngModel)]="rate" [cancel]='false' [disabled]="inputDisable" stars="10"></p-rating>
+
+    </div>
+
+
+
+</div>

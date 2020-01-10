@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+
+                        <div class="x_content">
+                            <form [formGroup]="gaugeTitleForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                                <button *ngIf="!gaugeTitleEdit" class="btn btn-custom btn-dark-blue" (click)="addItem()" type="button">Add New Row</button>
+
+                                <table class="table table-stiped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th class="col-sm-2" >Title</th>
+                                            <th>Lowest</th>
+                                            <th>Lower</th>
+                                            <th>Middle</th>
+                                            <th>Higher</th>
+                                            <th>Highest</th>
+                                            <th>Image</th>
+                                            <th>URL</th>
+                                            <th>Preview</th>
+                                            <th *ngIf="!gaugeTitleEdit" >Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody formArrayName="gaugeTitles" *ngFor="let item of gaugeTitleForm.get('gaugeTitles')['controls']; let i = index;">
+                                        <tr [formGroupName]="i">
+                                            <td>
+                                                {{i+1}}
+                                            </td>
+                                            <td>
+                                                <input name="category" class="form-control" type="text" formControlName="title">
+                                                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('title',i)" errorMsg="* required"></app-field-error-display>
+                                            </td>
+                                            <td>
+                                                <input name="lowest" class="form-control" type="text" formControlName="lowest" maxlength="15">
+                                                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('lowest',i)" errorMsg="* required"></app-field-error-display>
+                                            </td>
+                                            <td>
+                                                <input name="lower" class="form-control" type="text" formControlName="lower" maxlength="15">
+                                                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('lower',i)" errorMsg="* required"></app-field-error-display>
+                                            </td>
+                                            <td>
+                                                <input name="middle" class="form-control" type="text" formControlName="middle" maxlength="15">
+                                                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('middle',i)" errorMsg="* required"></app-field-error-display>
+                                            </td>
+                                            <td>
+                                                <input name="higher" class="form-control" type="text" formControlName="higher" maxlength="15">
+                                                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('higher',i)" errorMsg="* required"></app-field-error-display>
+                                            </td>
+                                            <td><input name="highest" class="form-control" type="text" formControlName="highest" maxlength="15">
+                                                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('highest',i)" errorMsg="* required"></app-field-error-display>
+                                            </td>
+                                            <td align="center">
+
+                                                <label class="btn btn-file text-center"
+                                                    [class]="item.get('image').value?'btn btn-file btn-default text-center':'btn btn-file btn-info text-center'">
+                                                    <i class="fa fa-link"></i>
+                                                    <input type="file" #inputFile (change)=onFileChange(inputFile.files,i) [disabled]="item.get('image').value || (gaugeTitleEdit && downloadImage)?false:true">
+                                                </label>
+
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" formControlName="image">
+                                                <!-- If image is uploaded, then the index of lable gets true, So if fasle only, show the error message-->
+                                                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('image',i)" errorMsg="{{removeImageLable[i]!=true?'Invalid URL':''}}"></app-field-error-display>
+                                            </td>
+                                            <td>
+                                                <!-- ADD NEW-->
+                                                <!-- If image controls has value, it may come from url or file-->
+                                                <img *ngIf="!gaugeTitleEdit" #img style="max-height: 50px !important" [src]="item.get('image').value?item.get('image').value:''" [ngClass]="{'img-thumbnail': item.get('image').value || removeImageLable[i]==true}">
+                                               
+                                                <!-- EDIT && image stored in firebase-->
+                                                <div *ngIf="gaugeTitleEdit && downloadImage | async as url">                      
+                                                    <img [src]="url" #img  class="img-thumbnail" style="height:50px" [ngClass]="{'img-thumbnail': item.get('image').value || removeImageLable[i]==true}"><br>
+                                                </div>
+
+                                                <!-- EDIT && url exists-->
+                                                <img *ngIf="gaugeTitleEdit && !downloadImage" [src]="item.get('image').value" #img  class="img-thumbnail" style="height:50px" [ngClass]="{'img-thumbnail': item.get('image').value || removeImageLable[i]==true}"><br>
+
+                                                <!-- If image has value or file has value, show the remove url-->
+                                                <label *ngIf="item.get('image').value || removeImageLable[i]==true" class="label label-danger" (click)="onRemoveImage(i)">Remove Image</label>
+                                            </td>
+                                            <td *ngIf="!gaugeTitleEdit" align="center">
+                                                <i class="material-icons mi-delete" style="cursor: pointer;" (click)="onRemoveRow(i)"> &#xE872; </i>                                                
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+
+                                <button *ngIf="!gaugeTitleEdit" type="submit" class="btn btn-success">Submit</button>
+                                <button *ngIf="gaugeTitleEdit" type="submit" class="btn btn-success">Update</button>
+                                <button *ngIf="gaugeTitleEdit" type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+</div>

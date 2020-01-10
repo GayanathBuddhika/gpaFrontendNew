@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="content-wrapper">
+            <section class="content-header">
+                <section class="content">
+                    <div class="box box-primary">
+
+
+                        <div class="row select-survey">
+                            <div class="form-group">
+                                <div class="col-md-3">
+
+                                    <p-dropdown (onChange)="onSelectedSurvey($event.value)" [options]="surveyList"
+                                        [filter]="true" optionLabel="name" placeholder="Select a survey"
+                                        [style]="{'width':'100%'}" #pdw></p-dropdown>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-dark-blue" (click)="changeReportView(true)"
+                                        *ngIf="!viewButtonOneByOne"  [disabled]='!pdw.value'><i class="fa fa-file-text"
+                                            aria-hidden="true"></i></button>
+                                    <button type="button" class="btn  btn-light-green" (click)="changeReportView(false)"
+                                        *ngIf="viewButtonOneByOne"><i class="fa fa-align-justify"
+                                            aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="!pdw.value">
+
+                            <div class="text-center" >
+                                <br><strong class=" ">Please select a survey</strong>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="row mainQuestionAndAnswer-delete" *ngIf="summaryDataList.length > 0">
+
+                            <div *ngIf="!viewOneByOne">
+                                <div class="col-md-3 question" [style.height]='screenHeight'>
+                                    <p-scrollPanel [style]="{height: screenHeight}" styleClass="custom">
+                                        <app-summary-questions [summaryDataList]="summaryDataList">
+                                        </app-summary-questions>
+                                    </p-scrollPanel>
+                                </div>
+                                <div class="col-md-9">
+                                    <p-scrollPanel [style]="{height: screenHeight}" styleClass="custom">
+                                        <app-summary-answer></app-summary-answer>
+                                    </p-scrollPanel>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mainAnswer-delete" *ngIf="viewOneByOne">
+                                <app-summary-answer-one-byone [allAnswersMapByUuid]="allAnswersMapByUuid"
+                                    [answers]="answers"></app-summary-answer-one-byone>
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <!-- <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Questions</h4>
+                                <table class="table">
+                                    <tbody>
+                                        <tr *ngFor="let ques of summaryReportQAList">
+                                            <td>{{ques.question}}</td>
+                                            <td>{{ques.answerType}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr>
+                                <br>
+                             
+
+                                <p-paginator [rows]="rowsPerPage" [totalRecords]="totalRecords"
+                                    (onPageChange)="paginate($event)" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+                            </div>
+                        </div> -->
+
+
+                    </div>
+
+                </section>
+            </section>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+/* .invalid-feedback{
+    color:red;
+}
+
+.requiredasterisk:after {
+    content:"*";
+    color:red;
+  }
+  
+  .invalid-feedback{
+    color:red;
+}
+.dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    height: 100px;
+    border: 2px dotted steelblue;
+    border-radius: 5px;
+    background: white;
+    margin: 10px 0;
+}
+.dropzone.hovering {
+  border: 2px solid #f16624;
+  color: #dadada !important;
+}
+
+.btn-file {
+    position: absolute;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background:steelblue;
+    cursor: inherit;
+    display: block;
+}
+
+.userImage{
+    max-height:200px; 
+    margin: 0 auto;
+    display: block;
+} */

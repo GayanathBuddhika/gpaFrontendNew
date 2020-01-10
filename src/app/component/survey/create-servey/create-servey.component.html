@@ -1,0 +1,398 @@
+<div class="form1">
+    <form [formGroup]="surveyCreateform" #surveyForm="ngForm" class="custom-form">  
+       
+
+        <div class="form-group col-md-12">
+
+            <div class="col-lg-offset-11 col-md-offset-11 col-sm-offset-11">
+                    <span><b> required</b></span><span style="color: red">*</span>
+            </div>    
+
+            <label class="control-label col-md-2">Survey is for<span style="color: red">*</span> </label>
+            <div class="col-md-10">
+                <span *ngFor="let surveyFor of surveyForList">
+                    <label class="radio-inline"><input formControlName="surveyFor" type="radio"
+                            (change)="changeSurveyFor()" [value]="surveyFor" checked>{{surveyFor | titlecase}}&nbsp;
+                        &nbsp;</label>
+                </span>
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('surveyFor')"
+                    errorMsg="Survey for is required"></app-field-error-display>
+            </div>
+        </div>
+
+        <div class="form-group  col-md-12">
+            <label class="control-label col-md-2">Survey Name <span style="color: red">*</span> </label>
+            <div class="col-md-4">
+                <input formControlName="name" type="text" name="name" placeholder="Enter Survey name"
+                    class="form-control">
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('name')"
+                    errorMsg="Survey name is required">
+                </app-field-error-display>
+            </div>
+
+            <label class="control-label col-md-2">White Lable<span style="color: red">*</span> </label>
+            <div class="col-md-4">
+                <input type="text" #whiteLabel class="form-control">
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('name')"
+                    errorMsg="wigth lable is required">
+                </app-field-error-display>
+                <p style="background-color: #ffffcc;border-left: 4px solid #ffb366;">
+                    <b>Note : </b>
+                    "Replace the company name as you wish (optional)"
+                </p>
+            </div>
+
+
+        </div>
+
+
+        <!-- <div>
+            <label>Wigthlable</label>
+            <input type="text" #wightLable>
+        </div> -->
+
+        <div class="form-group  col-md-12">
+            <label class="control-label col-md-2">Description <span style="color: red">*</span> </label>
+            <div class="col-md-10">
+                <textarea formControlName="description" class="form-control" rows="3" class="form-control"
+                    placeholder="Enter description"></textarea>
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('description')"
+                    errorMsg="Description is required"></app-field-error-display>
+            </div>
+
+        </div>
+
+
+
+        <div class="form-group  col-md-12">
+            <label class="control-label col-md-2">Start Date<span style="color: red">*</span> </label>
+            <div class="col-md-4">
+                <p-calendar appendTo="body" formControlName="startDate" [minDate]="currentdDate" name="startDate"
+                    (onSelect)="onSelectedStartDate($event)" showTime="true" hourFormat="12" dateFormat="dd-mm-yy"
+                    baseZIndex='1500000' 
+                    >
+                </p-calendar>
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('startDate')"
+                    errorMsg="Start Date is required"></app-field-error-display>
+            </div>
+            <label class="control-label col-md-2">End Date<span style="color: red">*</span> </label>
+            <div class="col-md-4">
+                <p-calendar appendTo="body" formControlName="endDate" [minDate]="minDateOfendDate " name="endDate"
+                    (onSelect)="onSelectedEndDate()" showTime="true" hourFormat="12" dateFormat="dd-mm-yy"
+                    baseZIndex='1500000' >
+                </p-calendar>
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('endDate')"
+                    errorMsg="End Date is required"></app-field-error-display>
+                <div *ngIf="dateSelectionValidMessege" class="text-danger">
+                    <small>date selection is incorrect</small>
+                </div>
+
+            </div>
+        </div>
+
+        <div class=" form-group  col-md-12">
+            <label class="control-label col-md-2">Select a survey type <span style="color: red">*</span> </label>
+            <div class="col-md-4">
+                <p-dropdown formControlName="surveyTypes" (onChange)="onselectedSurveyType($event.value)"
+                    [options]="surveyTypes" [filter]="true" optionLabel="name" placeholder="Select a surveyTypes"
+                    [style]="{'width':'100%'}"></p-dropdown>
+                <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('surveyTypes')"
+                    errorMsg="surveyTypes is required"></app-field-error-display>
+            </div>
+
+        </div>
+
+
+        <!-- ----------------------------------------gauge survey create---------------------------------------------------- -->
+        <div class="" *ngIf="selectedSurveyType == 'gauges'">
+
+            <div class="form-group col-md-12 gauge-seletion-overlay">
+
+                <div class="col-md-1">
+                    <a data-toggle="modal" class="btn btn-custom btn-success" (click)="addWeightToTitle(i)">Add
+                        Title</a>
+                </div>
+
+                <div class="clearfix"></div>
+                <br>
+                <div class="row " formArrayName="gaugeTitles"
+                    *ngFor="let item of surveyCreateform.get('gaugeTitles').controls; let i = index;">
+                    <div [formGroupName]="i">
+
+
+                        <div class="ro w">
+
+                            <div class="col-md-5 form-group">
+                                <label class="col-md-4 ">Title <span style="color: red">*</span> </label>
+                                <div class="col-md-8 ">
+                                    <p-dropdown formControlName="gaugeTitle" placeholder="Select a Title"
+                                        (onChange)="onChangeGaugeTitle($event.value)" [options]="gaugeTitle"
+                                        [filter]="true" optionLabel="title" [style]="{'width':'100%'}" #guTl>
+                                    </p-dropdown>
+                                </div>
+                                <!-- <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('title')" errorMsg="Title is required"></app-field-error-display>  -->
+                            </div>
+
+                            <div class="col-md-4 form-group">
+                                <label class=" col-md-6">Weight <span style="color: red">*</span> </label>
+                                <input class="col-md-6" [class.is-invalid]="surveyCreateform.hasError('notValid')"
+                                    formControlName="weight" placeholder="Weight" type="text">
+
+                            </div>
+
+                            <div class="col-md-2">
+                                <button [disabled]="!guTl.value" class="btn btn-custom btn-dark-blue"
+                                    (click)="previewGauge(preGauge,surveyForm.value.gaugeTitles[i].gaugeTitle)">Preview</button>
+                            </div>
+
+                            <div class="col-md-1">
+                                <a data-toggle="modal" (click)="removeRow(i)" class="btn btn-danger">X</a>
+                            </div>
+                        </div>
+
+                        <ng-template #preGauge>
+                            <!-- <div class="modal-header">
+                                <button type="button" class="close pull-right" aria-label="Close"
+                                    (click)="modalRef_gaugePreview.hide()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div> -->
+
+                            <div class="modal-body" style="background: #000000e0">
+                                <div class="row" formGroupName="allColors">
+                                    <div class="col-lg-7">
+
+                                        <div class="form-group">
+                                            <label class="lable control-label text-white"> White lable</label>
+                                            <div class="clearfix"></div>
+                                            <p-colorPicker formControlName="colorWhiteLable"></p-colorPicker>
+                                            &nbsp; &nbsp; <span class="text-white">{{surveyForm.value.gaugeTitles[i].allColors.colorWhiteLable}}</span>
+                                        </div>
+                                        <hr>
+
+                                        <div class="form-group">
+                                            <label class="lable control-label text-white"> Survey name</label>
+                                            <div class="clearfix"></div>
+                                            <p-colorPicker formControlName="colorSurveyName"></p-colorPicker>
+                                            &nbsp; &nbsp;<span class="text-white">{{surveyForm.value.gaugeTitles[i].allColors.colorSurveyName}}</span>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="form-group">
+                                            <label class="lable control-label text-white"> Title</label>
+                                            <div class="clearfix"></div>
+                                            <p-colorPicker formControlName="colorTitle"></p-colorPicker>
+                                            &nbsp; &nbsp; <span class="text-white">{{surveyForm.value.gaugeTitles[i].allColors.colorTitle}}</span>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="form-group">
+                                            <label class="lable control-label text-white"> Background</label>
+                                            <div class="clearfix"></div>
+                                            <p-colorPicker formControlName="background"></p-colorPicker>
+                                            &nbsp; &nbsp;<span class="text-white">{{surveyForm.value.gaugeTitles[i].allColors.background}}</span>
+                                        </div>
+
+                                        <hr>
+
+
+
+                                        <div class="form-group">
+                                            <button class="btn btn-custom btn-dark-blue" (click)="applyAll(i)">Apply
+                                                All</button>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button class="btn btn-custom btn-dark-red" #reset
+                                                (click)="resetColor(i)">Reset</button>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <br>
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <app-gauge [gaugeTitle]="gaugePriview"
+                                                [colorWhiteLable]="surveyForm.value.gaugeTitles[i].allColors.colorWhiteLable"
+                                                [colorSurveyName]="surveyForm.value.gaugeTitles[i].allColors.colorSurveyName"
+                                                [colorTitle]="surveyForm.value.gaugeTitles[i].allColors.colorTitle"
+                                                [background]="surveyForm.value.gaugeTitles[i].allColors.background"
+                                                [surveyName]="surveyForm.value.name" [whiteLabel]="whiteLabel.value">
+                                            </app-gauge>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </ng-template>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div *ngIf="errorMassege" class="text-danger text-center">
+                    <span style="color: red;">Total weighted average should be 100</span>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </form>
+
+    <!-- form2 -->
+
+    <div class="form-group col-md-12">
+        <label class="control-label col-md-2">Selection Type <span style="color: red">*</span> </label>
+        <div class="col-md-4">
+            <p-dropdown [(ngModel)]="selectionType" (onChange)="onSelectSelectionType($event.value)"
+                [options]="selectionTypes" [filter]="true" optionLabel="type" placeholder="Select a survey Type"
+                [style]="{'width':'100%'}"></p-dropdown>
+            <div *ngIf="selectionTypeErrorMasses" style="color: red">
+                <p>Selection Type is required</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-group col-md-12" *ngIf="selectedSelectionTypes == 'branch'">
+        <label class="control-label col-md-2">Select branch(s) <span style="color: red">*</span> </label>
+
+        <div class="col-md-4">
+            <p-multiSelect [options]="branchesForSurvey" [style]="{'width':'100%'}"
+                (onChange)="onChangeBranch($event.value)"></p-multiSelect>
+
+        </div>
+    </div>
+
+    <div class="form-group col-md-12" *ngIf="selectedSelectionTypes == 'department'">
+        <label class="control-label col-md-2" style="float: left">Select Department(s) <span style="color: red">*</span>
+        </label>
+        <div class="col-md-4">
+            <p-multiSelect [options]="departmentForSurvey" [style]="{'width':'100%'}"
+                (onChange)="onChangeDepartment($event.value)"></p-multiSelect>
+
+        </div>
+        <!-- <div *ngFor="let department of departmentForSurvey" class="col-md-8" style="float: right">
+            <input #checkboxesDepartment type="checkbox"
+                (change)='onChangeDepartment($event,department)'>{{department.name}}
+        </div> -->
+    </div>
+
+    <div class="form-group col-md-12" *ngIf="selectedSelectionTypes == 'select_department_in_branches'">
+
+        <label class="control-label col-md-2" style="float: left">select Department(s) for each branch <span
+                style="color: red">*</span> </label>
+        <div class="col-md-8">
+            <div *ngFor="let deptForBranch of depForBranchMain" class="col-md-4">
+
+                <strong>{{deptForBranch.branchName}}</strong>
+                <p-multiSelect [options]="deptForBranch.departmentMulty" [style]="{'width':'100%'}"
+                    (onChange)="onChangeDOfB($event.value, $event.itemValue)"></p-multiSelect>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--form3-->
+
+    <!-- <div *ngIf="viewErrormassege">
+        <p style="color: red">Form is invalid</p>
+    </div> -->
+
+    <div class="box-footer">
+
+
+        <div class="text-center">
+            <button class="btn btn-custom btn-dark-blue" (click)="onNext()" *ngIf="selectedSurveyType !== 'gauges'"
+                [routerLink]="formValid?['/main/questionAndAnswerLayout/add']:['/main/survey/add']">Next</button>
+                <!-- formValid? -->
+                <!-- :['/main/survey/add'] -->
+            <button class="btn btn-custom btn-dark-blue" (click)="onNext()"
+                *ngIf="selectedSurveyType == 'gauges'">Finish</button>
+            <button type="button" (click)="onReset()" class="btn-lg  btn-custom btn-dark-red">Reset</button>
+        </div>
+    </div>
+
+    <div>
+
+        <!-- <button class="btn btn-primary" (click)="onNext()" *ngIf="selectedSurveyType !== 'gauges'"
+            [routerLink]="formValid?['/main/questionAndAnswerLayout/add']:['/main/survey/add']">next</button>
+        <button class="btn btn-primary" (click)="onNext()" *ngIf="selectedSurveyType == 'gauges'">Finish</button> -->
+
+    </div>
+
+
+
+    <!-- <ng-template #preGauge>
+    <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef_gaugePreview.hide()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+   <div class="modal-body" formArrayName="gaugeTitles">
+      <div class="row" formGroupName="color">
+
+          <div class="col-xs-2">
+              <div class="row">
+                  <div class="col-xs-12">
+                    White lable 
+                    <p-colorPicker formControlName="colorWhiteLable" ></p-colorPicker>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                      Survey Name
+                      <p-colorPicker formControlName="colorSurveyName" ></p-colorPicker>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                      Title
+                      <p-colorPicker formControlName="colorTitle" ></p-colorPicker>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                      Background
+                      <p-colorPicker formControlName="background" ></p-colorPicker>
+                  </div>
+                </div>
+          </div>
+          <div class="col-xs-10">
+              <app-gauge-demo 
+              [gaugeTitle]="gaugePriview"
+              [colorWhiteLable]="colorWhiteLable"
+              [colorSurveyName]="colorSurveyName"
+              [colorTitle]="colorTitle"
+              [background]="background"
+              [surveyName]="surveyName" >
+            </app-gauge-demo>
+          </div>
+      
+            
+      </div>
+    </div> 
+  </ng-template>-->
+
+
+
+
+
+
+</div>

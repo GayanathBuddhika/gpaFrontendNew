@@ -1,0 +1,66 @@
+<div class="box box-primary">
+ 
+  <!-- form start -->
+  <form [formGroup]="subscriptionFrom" (ngSubmit)="onsubmit()">
+
+     <div class="box-body">
+
+              <div class="row">
+
+
+                      <div class="form-group col-lg-4">
+                          <label class="control-label">Subscription Name</label><span style="color: red">*</span>
+                          <input type="text" class="form-control" formControlName="planName" placeholder="enter Subscription name" /> 
+                          <app-field-error-display [errorIcon]="false" [displayError]="isFieldValid('planName')" errorMsg="Subscription name is required"></app-field-error-display>
+                        </div>
+
+                      <div class="form-group col-lg-4">
+                          <label class="control-label">valid Months</label><span style="color: red">*</span>
+                          <input type="text" class="form-control" formControlName="validMonths" placeholder="Enter valid months" />    
+                          <app-field-error-display 
+                          [errorIcon]="false" 
+                          [displayError]="isFieldValid('validMonths')" 
+                          errorMsg="{{f.validMonths.errors?.required?'Valid month is required.': f.validMonths.errors?.max?'Max shuid be 12.':f.validMonths.errors?.min?'Min shuid be 1.' :f.validMonths.errors?.pattern?'Enter Number(like- 1/ not like 01).': ''}}"></app-field-error-display>
+                        </div>
+
+                      
+                      <div class="form-group col-lg-4">
+                        <label class="control-label">number of  customer</label><span style="color: red">*</span>
+                        <input type="text" class="form-control" formControlName="noOfCustomer" placeholder="enter no of customer" /> 
+                        <app-field-error-display [errorIcon]="false" 
+                        [displayError]="isFieldValid('noOfCustomer')" 
+                        errorMsg="{{f.noOfCustomer.errors?.required?'Number of customer is required.':f.noOfCustomer.errors?.pattern?'Enter Number.': ''}}"></app-field-error-display>
+                      </div>
+
+              </div>
+
+
+              <div class="row">
+
+                      <div class="form-group col-lg-4">
+                        <label class="control-label">number of survey </label><span style="color: red">*</span>
+                        <input type="text" class="form-control" formControlName="noOfSurvey" placeholder="enter no of survey" /> 
+                        <app-field-error-display
+                         [errorIcon]="false" 
+                         [displayError]="isFieldValid('noOfSurvey')" 
+                         errorMsg="{{f.noOfSurvey.errors?.required?'Number of Survey is required.': f.noOfSurvey.errors?.max?'Max shuid be 3.':f.noOfSurvey.errors?.min?'Min shuid be 1.' :f.noOfSurvey.errors?.pattern?'Enter Number(like- 1/ not like 01).': ''}}"></app-field-error-display>
+                      </div>                     
+
+              </div>
+
+              <div class="box-footer">
+                  <div class="text-center">
+                          <button type="submit" class="btn-lg btn-custom btn-success" >Submit</button>
+                          <button type="button" (click)="onReset()" class="btn-lg  btn-custom btn-dark-red" >Reset</button>
+                      </div>
+            </div>
+
+
+
+    </div>
+
+
+
+
+  </form>
+</div>

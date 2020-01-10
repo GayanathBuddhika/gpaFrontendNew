@@ -1,0 +1,12 @@
+<div class="form-group col-lg-6">
+
+  <input class="form-control" [(ngModel)]="question" placeholder="Enter the Question" aria-label="..." type="text" name="question">
+</div>
+<div class="form-group col-lg-6">
+  <div>
+    <p-dropdown (onChange)="selectedAnswerType($event.value)" [options]="answerTypes" [(ngModel)]="editAnswertype" name="editAnswertype" [filter]="true" optionLabel="sentenceCaseType" placeholder="Select a answer type" [style]="{'width':'100%'}" [disabled]="dropdownDisable"></p-dropdown>
+  </div>
+</div>
+
+
+

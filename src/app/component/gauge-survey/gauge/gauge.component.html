@@ -1,0 +1,140 @@
+<table class="main-table">
+    <tbody>
+        <!-------------------------------------------------- real Gauge--------------------------------------------->
+        <tr>
+            <td style="width:50%;">
+                <div class="gradient border-left gauge-steps" style="height: 100%;"
+                    [ngStyle]="styleObject()">
+
+                    <!-- [ngStyle]="{'background': gaugeTitleWeightedAvg ? 
+                    (gaugeTitleWeightedAvg.color | stringToJsonObject).background:backgroundColor}" -->
+                    <div class="welcome">
+                        Welcome to<br>
+                        <span
+                            [ngStyle]="{'color': whightLableColor? whightLableColor :  gaugeTitleWeightedAvg?                         
+                           ( (gaugeTitleWeightedAvg.color| stringToJsonObject).colorWhiteLable?
+                            (gaugeTitleWeightedAvg.color| stringToJsonObject).colorWhiteLable: '#ffffff'):'#ffffff'}">
+
+                           
+                            {{whiteLabelName ? whiteLabelName : gaugeTitleWeightedAvg? (gaugeTitleWeightedAvg.survey.wightLable ?
+                                gaugeTitleWeightedAvg.survey.wightLable : gaugeTitleWeightedAvg.survey.assignDeptToBranch.company.name):"Default Company name" }}
+                        </span>
+                    </div>
+
+                    <h6 *ngIf="gaugeTitleIdRatedVal">Previous Rated Value:
+                        {{gaugeTitleIdRatedVal.ratedVal | number:'1.0-2'}}</h6>
+
+                    <br><br>
+
+
+                    <h3
+                        [ngStyle]="{'color': surveyNameColor? surveyNameColor : gaugeTitleWeightedAvg? (gaugeTitleWeightedAvg.color | stringToJsonObject).colorSurveyName : '#ffffff'}">
+                        {{nameOfSurvey ? nameOfSurvey: gaugeTitleWeightedAvg? gaugeTitleWeightedAvg.survey.name: 'Default survey name'}}</h3>
+
+
+                    <h2>
+                        <b [ngStyle]="{'color': titleColor? titleColor: gaugeTitleWeightedAvg? (gaugeTitleWeightedAvg.color | stringToJsonObject).colorSurveyName: '#ffd34e'}" class="find-title">{{viewGaugeTitle? viewGaugeTitle.title : gaugeTitleWeightedAvg? gaugeTitleWeightedAvg.gaugeTitle.title: 'Default Gauge title'}}</b>
+                    </h2>
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img style="width: 60px; height: 60px;" src="assets/dist/img/gauge-ui/message.png">
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" placeholder="Tell us more about your experience" [(ngModel)]="feedback"
+                                class="feedbacks">
+                        </div>
+                    </div>
+
+                </div>
+            </td>
+            <td style="width:50%;">
+                <div class="border-right">
+                    <table class="gauge-table border-right gauge-steps">
+                        <tbody>
+                            <tr>
+                                <td width="10%" text-right>
+                                    <div class="col-sm-12 vertical-align"><a class="pointer-level"
+                                            style="color: gray;">&nbsp;&nbsp;-</a></div>
+                                    <div class="col-sm-12 vertical-align"><a class="pointer-level"
+                                            style="color: gray;">&nbsp;&nbsp;-</a></div>
+                                    <div class="col-sm-12 vertical-align"><a class="pointer-level"
+                                            style="color: gray;">&nbsp;&nbsp;-</a></div>
+                                    <div class="col-sm-12 vertical-align"><a class="pointer-level"
+                                            style="color: gray;">&nbsp;&nbsp;-</a></div>
+                                    <div class="col-sm-12 vertical-align"><a class="pointer-level"
+                                            style="color: gray;">&nbsp;&nbsp;-</a></div>
+                                </td>
+                                <td width="5%" class="slider-td">
+                                    <p-slider [animate]="true" [(ngModel)]="val" styleClass="my-slider"
+                                        [style]="{'width':'15px','margin-left':'15px'}" orientation="vertical">
+                                    </p-slider>
+                                    <h4 style="font-size: 14px;">{{val?val:100}}</h4>
+                                </td>
+                                <td width="33%">
+                                    <div class="col-sm-12 vertical-align clearfix">
+                                        <a (click)="setVal(100)" class="pointer-level">
+                                            <img style="height: 50%;" src="assets/dist/img/face-emoji/excellent.png"
+                                                class="emoji">
+                                            {{gaugeTitleWeightedAvg?gaugeTitleWeightedAvg.gaugeTitle.highest:'value 1'}}
+                                        </a>
+                                    </div>
+
+
+                                    <div class="col-sm-12 vertical-align clearfix">
+                                        <a (click)="setVal(75)" class="pointer-level">
+                                            <img style="height: 50%;" src="assets/dist/img/face-emoji/very-good.png"
+                                                class="emoji">
+                                            {{gaugeTitleWeightedAvg?gaugeTitleWeightedAvg.gaugeTitle.higher:'value 2'}}
+                                        </a>
+                                    </div>
+
+
+                                    <div class="col-sm-12 vertical-align clearfix">
+                                        <a (click)="setVal(50)" class="pointer-level">
+                                            <img style="height: 50%;" src="assets/dist/img/face-emoji/good.png"
+                                                class="emoji">
+                                            {{gaugeTitleWeightedAvg?gaugeTitleWeightedAvg.gaugeTitle.middle:'value 3'}}
+                                        </a>
+                                    </div>
+
+
+                                    <div class="col-sm-12 vertical-align clearfix">
+                                        <a (click)="setVal(25)" class="pointer-level">
+                                            <img style="height: 50%;" src="assets/dist/img/face-emoji/average.png"
+                                                class="emoji">
+                                            {{gaugeTitleWeightedAvg?gaugeTitleWeightedAvg.gaugeTitle.lower:'value 4'}}
+                                        </a>
+                                    </div>
+
+
+                                    <div class="col-sm-12 vertical-align clearfix">
+                                        <a (click)="setVal(0)" class="pointer-level">
+                                            <img style="height: 50%;" src="assets/dist/img/face-emoji/bad.png"
+                                                class="emoji">
+                                            {{gaugeTitleWeightedAvg?gaugeTitleWeightedAvg.gaugeTitle.lowest:'value 5'}}
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<!-- <div *ngIf="viewGaugeTitle && viewGaugeTitle.imageType !=='image' "> 
+    <img class="img-responsive" src="{{ viewGaugeTitle.image}}">
+</div>
+<div *ngIf="viewGaugeTitle && viewGaugeTitle.imageType ==='image' ">
+   <div *ngIf="viewGaugeTitle.fireStore | async as url">                      
+      <img [src]="url"  class="img-responsive"><br>
+    </div>
+</div> -->

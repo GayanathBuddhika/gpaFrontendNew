@@ -1,0 +1,246 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <section class="content">
+            <div class="box box-primary">
+                    <div class="box-header with-border">
+                            <div class="text-left componet-heading">Assign Departments to Branch</div>
+                        </div>
+                        <br>
+
+                <!-- ------------company list dropdown------------- -->
+                <div class="row" *ngIf="role=='SYSTEM_ADMIN'">
+                    <div class=" form-group">
+                        <div class="control-label col-sm-2">
+                            <label class="control-label ">COMPANY</label>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                            <app-company-list-dropdown></app-company-list-dropdown>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <!-- ------------Branch List Head------------- -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class=" row form-group">
+                          
+                            <div class="col-md-3">
+                                <h4 class="box-title">Branches</h4>
+                            </div>
+
+                            <div class="col-md-4">
+                                <button type="button" [disabled]="addBranchBtn" class="btn btn-custom btn-dark-blue btn-block"
+                                    (click)="addBranch(editTemplateBranch,branch)">
+                                    + Add Branch
+                                </button>
+                            </div>
+
+                            <!-- <div class="col-md-2">
+                  <button  type="button" class="btn btn-info a-btn-slide-text"  (click)="deleteAllBranch()" >
+                      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                      <span><strong>Delete All</strong></span> 
+                  </button>
+              </div> -->
+
+                            <div style="text-align: right" class="col-md-4 clearfix custom-form">
+
+                                <input class="form-control" type="text" pInputText
+                                    placeholder="Search"
+                                    (input)="dtBranch.filterGlobal($event.target.value, 'contains')"
+                                    style="width:auto;">
+                            </div>
+                            
+                        <br>
+                    </div>
+
+                        <!-- --------------------------------------------Branch List-------------------------------------------->
+
+                        <p-table #dtBranch [columns]="branchHeaders" [value]="branchList" [paginator]="true" [rows]="10"
+                            [responsive]="true" [resizableColumns]="true" [columnResizeMode]="'expand'"
+                            [autoLayout]="true" [rowsPerPageOptions]="[10,25,50,100]" selectionMode="single"
+                            [(selection)]="selectedBranch" (onRowSelect)="onRowSelect($event)" dataKey="name">
+                            <ng-template pTemplate="header" let-headers>
+                                <tr>
+                                    <th *ngFor="let th of branchHeaders">
+                                        {{th.header}}</th>
+                                </tr>
+                            </ng-template>
+
+                            <ng-template pTemplate="body" let-branch let-rowIndex="rowIndex">
+                                <tr [pSelectableRow]="branch">
+                                    <td>
+                                        <!-- <input type="checkbox" #select (change)="onChangeBranch($event,branch)"> -->
+                                        {{ rowIndex+1}}</td>
+                                    <td>
+                                        {{ branch.name}}</td>
+                                    <td>
+                                        {{ branch.address}}</td>
+
+                                    <td align="center"><i class="material-icons mi-edit" style="cursor: pointer;"
+                                            (click)="updateBranch(branch,editTemplateBranch)"> &#xE254; </i></td>
+                                    <td align="center"><i class="material-icons mi-delete" style="cursor: pointer;"
+                                            (click)="deleteBranch(branch)"> &#xE872; </i></td>
+                                    <!-- <td><a (click)="updateBranch(branch,editTemplateBranch)">
+                                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a type="click" (click)="deleteBranch(branch)">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </a>
+                                    </td> -->
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="emptymessage" let-headers>
+                                <tr>
+                                    <td [attr.colspan]="headers.length">
+                                        <p class="text-center"><b>No records found</b></p>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+
+                    </div>
+
+                    <div class="vl"></div>
+
+                    <!-- --------------------------------------------Department List Head------------------------------------>
+                    <div class="col-lg-6">
+                        <div class="row form-group">
+                            <div class="col-md-3">
+                                <h4 class="box-title">Departments</h4>
+                            </div>
+
+                            <div class="col-md-4">
+                                <button type="button" [disabled]="addBranchBtn" class="btn btn-custom btn-dark-blue  btn-block"
+                                    (click)="addDepartment(editTemplateDepartment,department)">
+                                    + Add Department
+                                </button>
+                            </div>
+
+                            <!-- <div class="col-md-2">
+                  <button  type="button" class="btn btn-info a-btn-slide-text"  (click)="deleteAllDepartment()" >
+                      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                      <span><strong>Delete All</strong></span> 
+                  </button>
+              </div> -->
+
+                            <div style="text-align: right" class="col-md-4 clearfix custom-form">
+
+                                <input class="form-control" type="text" pInputText
+                                    placeholder="Search" (input)="dtDept.filterGlobal($event.target.value, 'contains')"
+                                    style="width:auto;">
+                            </div>
+                            <br>
+                        </div>
+
+                        <!-- --------------------------------------------Department List----------------------------------------->
+
+                        <p-table #dtDept [columns]="departmentHeaders" [value]="departmentList" [paginator]="true"
+                            [rows]="10" [responsive]="true" [resizableColumns]="true" [columnResizeMode]="'expand'"
+                            [autoLayout]="true" [rowsPerPageOptions]="[10,25,50,100]">
+
+                            <ng-template pTemplate="header" let-headers>
+                                <tr>
+                                    <th *ngFor="let th of departmentHeaders"
+                                        style=" background-color:#5893d4; color: white;">{{th.header}} </th>
+                                </tr>
+                            </ng-template>
+
+                            <ng-template pTemplate="body" let-department let-rowIndex="rowIndex">
+                                <tr>
+                                    <td>
+                                        <!-- <input #select type="checkbox" (change)="onChangeDepartment($event,department)"> -->
+                                        {{ rowIndex+1}}
+                                    </td>
+                                    <!-- <td><input type="checkbox" (change)="onChange($event,department)"></td> -->
+                                    <td>
+                                        <strong>{{ department.name}}</strong></td>
+                                    <td align="center">
+                                        <strong class="primary" style="color: green;" *ngIf="!assignDept">--</strong>
+                                        <div *ngIf="assignDept">
+                                            <div *ngIf="department.assign">
+                                                <small style="color:white;"><label
+                                                        class="label label-success">Assigned</label><br>
+                                                    <strong><a (click)="unassignDept(department)"> Click to Unassign
+                                                        </a></strong></small>
+                                            </div>
+                                            <div *ngIf="!department.assign">
+                                                <small style="color:white;"><label class="label label-danger">Not
+                                                        Assigned</label><br>
+                                                    <strong><a (click)="assignDepartment(department)"> Click to Assign
+                                                        </a></strong></small>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td align="center"><i class="material-icons mi-edit" style="cursor: pointer;"
+                                            (click)="updateDepartment(department,editTemplateDepartment)"> &#xE254; </i>
+                                    </td>
+                                    <td align="center"><i class="material-icons mi-delete" style="cursor: pointer;"
+                                            (click)="deleteDepartment(department)"> &#xE872; </i></td>
+                                    <!-- <td>
+                                        <a (click)="updateDepartment(department,editTemplateDepartment)">
+                                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a (click)="deleteDepartment(department)">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </a>
+                                    </td> -->
+                                </tr>
+                            </ng-template>
+
+                            <ng-template pTemplate="emptymessage" let-headers>
+                                <tr>
+                                    <td [attr.colspan]="headers.length">
+                                        <p class="text-center"><b>No records found</b></p>
+                                    </td>
+                                </tr>
+                            </ng-template>
+
+                        </p-table>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </section>
+</div>
+
+
+<!---------------------All popup model--------------------------->
+<!---------------------------------------------------------------->
+<!---------------------------------------------------------------->
+
+<!-- this modal will open when click the edit  button -->
+<ng-template #editTemplateBranch>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Edit Branch</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef_addOr_Edit_Branch.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <!-- This model is using for BRANCH ADD purpose, So edit == false-->
+        <app-branch-add [editBranch]="branch" [edit]="addOrEditBranch"></app-branch-add>
+    </div>
+</ng-template>
+
+<!-- this modal will open when click the edit  button -->
+<ng-template #editTemplateDepartment>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Edit Department</h4>
+        <button type="button" class="close pull-right" aria-label="Close"
+            (click)="modalRef_addOr_Edit_Department.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <!-- This model is using for BRANCH ADD purpose, So edit == false-->
+        <app-department-add [editDepartment]="department" [edit]="addOrEditDepartment"></app-department-add>
+    </div>
+</ng-template>

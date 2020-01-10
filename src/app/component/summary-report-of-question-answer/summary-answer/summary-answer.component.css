@@ -1,0 +1,29 @@
+.questionInAnswer{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.answer{
+    padding-top: 20px;
+    -webkit-box-shadow: 0px 0px 3px 4px rgba(207,205,207,0.17);
+    -moz-box-shadow: 0px 0px 3px 4px rgba(207,205,207,0.17);
+    box-shadow: 0px 0px 3px 4px rgba(207,205,207,0.17);
+}
+/* .chart-container{
+    width: 1000px !important;
+    height: 280px !important;
+  } */
+
+  .chart-table{
+    
+    position: absolute;
+    margin-top: 10px;
+}
+
+
+/* p-chart{
+    width:1000px !important;
+    height:200px !important;
+} */
+
+

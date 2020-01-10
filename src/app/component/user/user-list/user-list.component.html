@@ -1,0 +1,95 @@
+<!-- <div class="box-header with-border">
+    <h3 class="box-title">User List</h3>
+</div> -->
+
+<!-- <button type='click' (click)="onClick()">Save in db</button>
+<button type='click' (click)="onList()">List</button>
+<button type='click' (click)="onUpdate()">Update</button>
+<button type='click' (click)="onDelete()">Delete</button>
+<button type='click' (click)="onFind()">Find</button>
+<button type='click' (click)="getLoggedInUserEmail()">Local storage</button> -->
+
+
+<!-- <div *ngFor="let note of notes | async">{{note | json}}</div> -->
+
+<!-- <div class="table-responsive"> -->
+        <div style="text-align: right" class="clearfix custom-form">
+        
+            <input class="form-control pull-right" type="text" pInputText size="50" placeholder="Search"
+                (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+            <br>
+    <p-table #dt 
+    [columns]="headers"
+    [value]="userList" 
+    [paginator]="true" 
+    [rows]="10" 
+    [responsive]="true" 
+    [resizableColumns]="true" 
+    [columnResizeMode]="'expand'" 
+    [autoLayout]="true"
+    [rowsPerPageOptions]="[10,25,50,100]" emptyMessage="abudbsuid"
+    >
+
+        <!-- <ng-template pTemplate="caption">
+            <span style="font-size: 14px">User List</span>
+            <span class="pull-right">        
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input type="text" pInputText size="40" placeholder="Search" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            </span>
+        </ng-template> -->
+        <ng-template pTemplate="header" let-headers>
+            
+            <tr>
+                <th align="center" *ngFor="let th of headers" [pSortableColumn]="th.field">
+                    {{th.header}}
+                    <p-sortIcon [field]="th.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                </th>
+            </tr>
+            <!-- <tr>
+                <th *ngFor="let col of headers" [ngSwitch]="col.field">
+                    
+                    <input *ngSwitchCase="'firstname'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                    <input *ngSwitchCase="'lastname'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                    <input *ngSwitchCase="'email'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode='contains')">
+                    <p-dropdown *ngSwitchCase="'isEnabled'" appendTo="body"  [options]="isEnabled" [style]="{'width':'100%'}"  (onChange)="dt.filter($event.value, col.field,'equals')"></p-dropdown>
+                    
+                </th>
+            </tr> -->
+        </ng-template>
+        <ng-template pTemplate="body" let-user let-rowIndex="rowIndex">
+            <tr>
+                <td align="center">{{ rowIndex+1 }}</td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.isEnabled==1?'Enabled':'Disabled' }}</td>
+                <td>{{ user.role | camelcase }}</td>
+                <td align="center"><i class="material-icons mi-edit" style="cursor: pointer;" (click)="update(user,edit)"> &#xE254; </i></td>
+                <td align="center"><i class="material-icons mi-delete" style="cursor: pointer;" (click)="delete(user)" *ngIf="loggedInUserEmail != user.email"> &#xE872; </i></td>                             
+            </tr>                       
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage" let-headers>
+                <tr>
+                    <td [attr.colspan]="headers.length">
+                        <p class="text-center"><b>No records found</b></p>
+                    </td>
+                </tr>
+            </ng-template>
+    </p-table>
+<!-- </div> -->
+
+
+<ng-template #edit>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add new User</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-user-add [setEditUser]="editUser" [edit]="true"></app-user-add>
+    </div>
+</ng-template>
+    

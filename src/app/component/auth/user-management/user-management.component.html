@@ -1,0 +1,105 @@
+<!-- <div class="form-gap"></div>
+<div class="container" *ngIf="actionCodeChecked">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+
+            <div class="text-center">
+                    <h1 class="pulse-beat text-white bg-color">Reset Password Form </h1>
+            </div>
+
+            <div class="panel panel-default">                   
+                <div class="panel-body">
+                    <div class="text-center">     
+
+                        <h2 class="text-center text-softblue">Rest Password</h2>
+                        <p>this form is to reset your password.<br> Enter your new password.</p>
+                        <div class="panel-body">
+                            <form [formGroup]="resetPasswordForm" (ngSubmit)="onSubmit()">
+
+                                <div class="form-group">
+                                    <div class="form-group col-lg-12" [ngClass]="displayFieldCss('password')">
+                                            <label class="control-label">Password</label>
+                                            <input type="text" class="form-control col-lg-12" id="password" placeholder="Enter Password" formControlName="password" />
+                                            <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('password')" errorMsg="{{f.password.errors?.required?'Please enter password.' : f.password.errors?.minlength?'Password must be at least 6 characters' : ''}}"></app-field-error-display>
+                                        </div>
+                            
+                                        <div class="form-group col-lg-12" [ngClass]="displayFieldCss('confirmPassword')">
+                                            <label class="control-label">Confirm Password</label>
+                                            <input type="text" class="form-control col-lg-12" id="confirmPassword" placeholder="Retype Password" formControlName="confirmPassword">
+                                            <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('confirmPassword')" errorMsg="{{f.confirmPassword.errors?.required?'Please retype your password.' : f.confirmPassword.errors?.mustMatch?'Passwords must match' : ''}}"></app-field-error-display>
+                                        </div>
+                                    </div>
+                                <span class="text-success">{{successfulMsg}}</span>
+                                <span class="text-danger">{{errorMsg}}</span>
+                             
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block">Rest Password</button>
+                                    
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="sign-forms">
+        <div class="wrapper ">
+            <div class="container">
+                <div class="col-lg-12">
+                    <div class="col-lg-6 col-md-12 visible-lg" style="background:red;height:100px">
+                    </div>
+                    <div class="col-lg-6 col-md-12 section">
+                        <div class="login-wrapper">
+                            <div class="title">
+                                <h2>
+                                    Reset Password <span class="theme-color">PulseBeat</span>
+                                </h2>
+                                <h6>
+                                    Welcome to a world of Data Driven Consumer and Employee insights
+                                </h6>
+                            </div>
+                            <form [formGroup]="resetPasswordForm" (ngSubmit)="onSubmit()"  autocomplete="off" >
+                            <div class="form-input">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="wrap-email">
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="text" name="email" class="form-control" placeholder="New Password" formControlName="password" id="email">
+                                    
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="wrap-password">
+                                        <i class="fa fa-key" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="text" name="password" class="form-control" formControlName="confirmPassword"
+                                        placeholder="Confirm Password" id="password">
+                                       
+                                </div>
+                                <br>
+                                <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('password')" errorMsg="{{f.password.errors?.required?'Please enter password.' : f.password.errors?.minlength?'Password must be at least 6 characters' : ''}}"></app-field-error-display>
+                                <app-field-error-display [errorIcon]="true" [displayError]="isFieldValid('confirmPassword')" errorMsg="{{f.confirmPassword.errors?.required?'Please retype your password.' : f.confirmPassword.errors?.mustMatch?'Passwords must match' : ''}}"></app-field-error-display>
+                            </div>
+                            <br>
+                         
+                            
+                            <br>
+                            <div class="form-group">
+                                <button class="btn btn-info btn-theme" (click)="signin()" >
+                                    Login
+                                </button>
+                                <a [routerLink]="['/']" class="pull-right">Back to Home</a><br>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
